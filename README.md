@@ -1,4 +1,13 @@
-New Shopify-Sinatra-App
-=======================
+# Doing
+- deployment
 
-Fill me in!
+# To Do
+- add in screentime
+- add in settings
+- add in admin
+
+# Done
+
+# Deferred
+- puma config
+
