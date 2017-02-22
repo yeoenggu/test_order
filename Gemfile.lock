@@ -161,6 +161,7 @@ DEPENDENCIES
   dotenv
   fakeweb
   foreman
+  i18n
   liquid
   minitest
   mocha
@@ -182,4 +183,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.14.4
+   1.14.5

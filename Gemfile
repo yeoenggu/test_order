@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
+gem 'i18n'
 gem 'rake'
 gem 'sinatra'
 gem 'shopify-sinatra-app', '~> 0.3.3'
@@ -28,7 +29,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rake'
   gem 'foreman'
   gem 'dotenv'
 end
