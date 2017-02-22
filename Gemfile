@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
 
+gem 'rake'
 gem 'sinatra'
 gem 'shopify-sinatra-app', '~> 0.3.3'
 gem 'activerecord'
