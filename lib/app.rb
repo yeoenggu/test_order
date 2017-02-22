@@ -25,23 +25,23 @@ class SinatraApp < Sinatra::Base
     BetterErrors.application_root = File.expand_path('..', __FILE__)
   end
 
-  configure :production do
-    # Configure logging, WTF
-    set :logging, false
-    class ::Logger; alias_method :write, :<<; end
-    logfile = File.join(App.root, 'log', "#{App.environment}.log")
-    # Send STDs to log file
-    $stdout.reopen(logfile)
-    $stderr.reopen(logfile)
-    $stderr.sync = true
-    $stdout.sync = true
-    # Weekly roll
-    log  = Logger.new(logfile, 'weekly')
-    log.level = Logger::DEBUG
-    # use Rack::CommonLogger, log
-    set :log, log
+  # configure :production do
+  #   # Configure logging, WTF
+  #   set :logging, false
+  #   class ::Logger; alias_method :write, :<<; end
+  #   logfile = File.join(App.root, 'log', "#{App.environment}.log")
+  #   # Send STDs to log file
+  #   $stdout.reopen(logfile)
+  #   $stderr.reopen(logfile)
+  #   $stderr.sync = true
+  #   $stdout.sync = true
+  #   # Weekly roll
+  #   log  = Logger.new(logfile, 'weekly')
+  #   log.level = Logger::DEBUG
+  #   # use Rack::CommonLogger, log
+  #   set :log, log
 
-  end
+  # end
 
   # set the scope that your app needs, read more here:
   # http://docs.shopify.com/api/tutorials/oauth
