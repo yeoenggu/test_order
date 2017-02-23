@@ -3,6 +3,11 @@
   - logging does not work ... comment out for the moment.
   - bundle versions still mismatch ... need to fix
 
+Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler (1.13.7) is older than the version that created the lockfile (1.14.5). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+
+
+
 transcient error
 - omniauth csrf detected
 - Sinatra::App ... nil.
