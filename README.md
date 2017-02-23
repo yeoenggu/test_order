@@ -1,13 +1,17 @@
 # Doing
+- merge with screen time
+- merge it with peekabar
+
+- user event loop to process it
+
+# To Do
+- add in screentime
+- add in settings
+- add in admin
+
+# Done
 - deployment
-  - logging does not work ... comment out for the moment.
-  - bundle versions still mismatch ... need to fix
-
-Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
-remote:        Warning: the running version of Bundler (1.13.7) is older than the version that created the lockfile (1.14.5). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
-
-
-
+  
 transcient error
 - omniauth csrf detected
 - Sinatra::App ... nil.
@@ -40,12 +44,8 @@ transcient error
 2017-02-22T16:20:33.758860+00:00 app[web.1]:  /app/vendor/bundle/ruby/2.3.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:1066:in `invoke'
 2017-02-22T16:20:33.758861+00:00 app[web.1]:  /app/vendor/bundle/ruby/2.3.0/gems/sinatra-1.4.6/lib/sinatra/base.rb:906:in `call!'
 
-# To Do
-- add in screentime
-- add in settings
-- add in admin
 
-# Done
+
 
 # Deferred
 - puma config
