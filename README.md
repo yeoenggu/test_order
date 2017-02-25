@@ -1,8 +1,13 @@
 # Doing
 - merge with screen time
+  - change html to have product microdata
+  - test it
+  - import it 
 - merge it with peekabar
+- add in credit
+=======>
+- add discount and redirect to checkout
 
-- user event loop to process it
 
 # To Do
 - add in screentime
@@ -50,3 +55,14 @@ transcient error
 # Deferred
 - puma config
 
+
+# notes
+
+$("meta[itemprop='image'").parent().html()
+$("meta[itemprop='image']").parent().html()
+ bundle exec foreman run rackup -s Puma config.ru
+
+
+ https://sg-drinks-party.myshopify.com/admin/oauth/authorize?client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&
+ redirect_uri=https%3A%2F%2F127da8fe.ngrok.io%2Fauth%2Fshopify%
+ 2Fcallback&response_type=code&scope=read_products%2Cread_orders%2Cwrite_script_tags&state=9e3d019f0de1b42decb54b6dfb4f28c4d15b20397bcc4cf2

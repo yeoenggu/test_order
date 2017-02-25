@@ -57,8 +57,9 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/load_first_order.js' do
-    # "Hello World"
-    coffee :load_first_order
+    content_type :js
+    # coffee :load_first_order
+    erb :'first_order.js', :layout => false
   end
 
 
