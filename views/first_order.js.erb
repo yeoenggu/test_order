@@ -62,7 +62,7 @@ aren’t available to the outside world.
     };
 
     $.screentime = function(options) {
-      var Field, Viewport, cache, checkViewport, classicGA, counter, init, log, looker, onScreen, random, report, sendGAEvent, startTimers, started, stopTimers, universalGA;
+      var Field, Viewport, cache, checkViewport, classicGA, counter, init, log, reporter, looker, onScreen, random, report, sendGAEvent, startTimers, started, stopTimers, universalGA;
       random = function() {
         return Math.round(Math.random() * 2147483647);
     };
@@ -148,6 +148,7 @@ aren’t available to the outside world.
       }
     };
     startTimers = function() {
+      console.log("starting timer");
       var looker, reporter, started;
       if (!started) {
         checkViewport();
@@ -161,6 +162,7 @@ aren’t available to the outside world.
       }), options.reportInterval * 1000);
     };
     stopTimers = function() {
+      console.log("stopping timer");
       clearInterval(looker);
       clearInterval(reporter);
     };
@@ -177,9 +179,11 @@ aren’t available to the outside world.
       });
       startTimers();
       visibly.onHidden(function() {
+        console.log("onHidden");
         stopTimers();
       });
       visibly.onVisible(function() {
+        console.log("onVisible");
         stopTimers();
         startTimers();
       });
@@ -190,6 +194,7 @@ aren’t available to the outside world.
     cache = {};
     log = {};
     looker = null;
+    reporter = null;
     started = false;
     universalGA = void 0;
     classicGA = void 0;
@@ -440,6 +445,7 @@ aren’t available to the outside world.
 
       /** Apply Custom Bar Settings */
       var _applyCustomSettings = function() {
+        _applyStyleSheet();
         _applyHTML();
         _applyAutohide();
         _applyPadding();
@@ -448,6 +454,17 @@ aren’t available to the outside world.
         _applyCSSClass();
         _applyPosition();
         _applyCloseOnClick();
+      };
+
+      /** Apply Stylesheet */
+      /** Added the styling from stylesheet - jquery.peekabar.css by Yeo Eng Guan */
+      var _applyStyleSheet = function() {
+        that.bar.css('margin', '0');
+        that.bar.css('position', 'fixed');
+        that.bar.css('width', '100%');
+        that.bar.css('left', '0');
+        that.bar.css('right', '0');
+        that.bar.css('text-align', 'center');
       };
 
       /** Set Custom Bar HTML */
@@ -514,6 +531,15 @@ aren’t available to the outside world.
       return this;
     };
 
+    function loadStylesheet(url) {
+        var link = document.createElement('link');
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = url;
+    var entry = document.getElementsByTagName('script')[0];
+        entry.parentNode.insertBefore(link, entry);
+    };
+
     // replace with our application code
     trackProductScreen = function($) {
       console.log('Loading something else');
@@ -569,6 +595,7 @@ aren’t available to the outside world.
     /* This is my app's JavaScript */
     myAppJavaScript = function($) {
       console.log('Success');
+      // loadStylesheet("/peekabar/jquery.peekabar.css");
       loadProxy($);
       trackProductScreen($);
     };

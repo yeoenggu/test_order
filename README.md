@@ -5,9 +5,15 @@
   - import it 
 - merge it with peekabar
 - add in credit
+- add in peekabar css 
+- new issue ... switching tab should pause count but it does not ...
 =======>
 - add discount and redirect to checkout
 
+
+
+after uninstalling, installing it again with lead to error ?  why
+if I delay in logging in to dev shop .... when I log in later and try to install I will get csrf error
 
 # To Do
 - add in screentime
@@ -66,3 +72,35 @@ $("meta[itemprop='image']").parent().html()
  https://sg-drinks-party.myshopify.com/admin/oauth/authorize?client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&
  redirect_uri=https%3A%2F%2F127da8fe.ngrok.io%2Fauth%2Fshopify%
  2Fcallback&response_type=code&scope=read_products%2Cread_orders%2Cwrite_script_tags&state=9e3d019f0de1b42decb54b6dfb4f28c4d15b20397bcc4cf2
+
+
+
+
+
+html: "
+<p class='bizztext'>
+  Drive more attention to your most important website content with Bizz Bar. 
+  <button class='bizzbutton'>Click me
+  </button>
+</p>"
+
+
+.peek-a-bar {
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  text-align: center; }
+
+
+
+
+
+
+
+
+
+
+
+
