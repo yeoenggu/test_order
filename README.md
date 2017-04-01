@@ -1,3 +1,4 @@
+
 # Doing
 - merge with screen time
   - change html to have product microdata
@@ -7,13 +8,55 @@
 - add in credit
 - add in peekabar css 
 - new issue ... switching tab should pause count but it does not ...
-=======>
 - add discount and redirect to checkout
+  - get variant id 
+    - get product id
+    - if only 1 variant
+      - grep it from url.json
+    - if more than 1 variant
+      - grep the id from url or ask user to enter id  
+  - refer to a perma cart with the item added
+  shop_url/cart/variant_id:qty?discount=code
+  - add in discount code
+  - redirect to checkout page
+- conditions
+  - check whether new customer ... 
+    if it is a customer whether he has paid a purchase
+    or 30 days reorder .... (deferred)
+  - whether revisit 
 
+  - if signed in 
+    - and if have placed 1st order, do not display
+      else display
+    else
+      display
+
+
+=================>
+- change shopify app setting due to mac os reboot ... ngrok
+- get their name. 
+- styling
+  - bar
+    
+  - close
+
+
+
+- settings
+  - targeted time
+  - styling
+  - message
+- admin
+- testing
+
+proxy get loaded in login page
 
 
 after uninstalling, installing it again with lead to error ?  why
 if I delay in logging in to dev shop .... when I log in later and try to install I will get csrf error
+
+
+if u click on click me, then go back ... it does not run
 
 # To Do
 - add in screentime
@@ -60,45 +103,58 @@ transcient error
 
 # Deferred
 - puma config
-
+- conversion tracking
+    - https://help.shopify.com/themes/customization/order-status/add-conversion-tracking-to-thank-you-page
+      - need conditional integration - landing_site_ref
+      - use keen or anything ...
+- usuage Charge billing
 
 # notes
 
-$("meta[itemprop='image'").parent().html()
-$("meta[itemprop='image']").parent().html()
+
  bundle exec foreman run rackup -s Puma config.ru
-
-
- https://sg-drinks-party.myshopify.com/admin/oauth/authorize?client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&
- redirect_uri=https%3A%2F%2F127da8fe.ngrok.io%2Fauth%2Fshopify%
- 2Fcallback&response_type=code&scope=read_products%2Cread_orders%2Cwrite_script_tags&state=9e3d019f0de1b42decb54b6dfb4f28c4d15b20397bcc4cf2
+ngrok http 4567
 
 
 
+# admin
+- credit cards
+  - manhatten - done
+    Y08027204150Z
+  - hsbc - done
+    08Feb1972000801
+  - POSB
+  - UOB - done
+
+- buy car camera
+
+# Zacky
+
+## games
+1) treasure hunt
+2) water bomb
+3) dino tail stomp
+- balloon as tail, string.  
+- last man standing
+4) PIN THE TOOTH ON THE DINO
+ 
+- 2 prizes
+
+## DECO
+
+1) balloons
+2) plates
+3) feet?
 
 
-html: "
-<p class='bizztext'>
-  Drive more attention to your most important website content with Bizz Bar. 
-  <button class='bizzbutton'>Click me
-  </button>
-</p>"
 
-
-.peek-a-bar {
-  margin: 0;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  right: 0;
-  text-align: center; }
-
-
-
-
-
-
-
+# Ipoh
+16 Jun - Fri - depart to Ipoh
+17 Jun - Sat Ipoh
+18 Jun - Sun Ipoh
+19 Jun - Mon Port Dickson
+20 Jun - Tue Port Dickson
+21 Jun - Wed back
 
 
 

@@ -1,0 +1,42 @@
+<hr>
+  Shop Name       : {{ shop.name }}
+  myshopify name      : {{ shop.permanent_domain }}
+  Primary Domain of Shop    : {{ shop.domain }}
+  Shop URL      : {{ shop.url }}
+  Shop Currency       : {{ shop.currency }}
+  No. of products in this shop  : {{ shop.products_count }}
+
+  {% if customer %}
+    Customer is logged in. 
+    No of orders : {{customer.orders_count }};
+    <script>
+      var customer_cookie_name =  "{{ shop.permanent_domain }}" +"_signed_in";
+      var first_order_cookie_name =  "{{ shop.permanent_domain }}" +"_placed_first_order";
+      var customer_first_name = "{{ customer.first_name }}"
+      var customer_first_name_cookie_name =  "{{ shop.permanent_domain }}" + "_customer_name"
+      sessionStorage.setItem(customer_cookie_name, "true");
+
+      var o_count = {{customer.orders_count }};
+      if (o_count < 1) {
+        localStorage.setItem(first_order_cookie_name, "false");
+        localStorage.setItem(customer_first_name_cookie_name, customer_first_name);
+        console.log(" new customer " + customer_first_name);
+      }
+      else {
+        // put a cookie so we won't display.
+        console.log(" old customer " + customer_first_name);
+        localStorage.setItem(first_order_cookie_name, "true");
+      }
+    </script>
+  {% else %}
+    Customer is not logged in
+    <script>
+      var customer_cookie_name =  "{{ shop.permanent_domain }}" +"_signed_in";
+      sessionStorage.setItem(customer_cookie_name, "false");
+    </script>
+    
+  {% endif %}
+  customer last order    : {{ customer.last_order }}
+
+<hr>  
+

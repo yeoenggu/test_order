@@ -49,14 +49,18 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/proxy/' do
+    params = request.env['rack.request.query_hash']
+    puts "params " + params.to_json
     shopify_session do
       # do something
     end
 
-    liquid :proxy
+    content_type :'application/liquid'
+    erb :'proxy.liquid', :layout => false
   end
 
   get '/load_first_order.js' do
+    @shop_name = params["shop"]
     content_type :js
     # coffee :load_first_order
     erb :'first_order.js', :layout => false

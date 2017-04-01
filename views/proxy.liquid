@@ -1,12 +1,3 @@
-<h2>App Proxy Page</h2>
-
-<p>Congratulations! You have successfully configured App Proxy for your shopify application.</p>
-<p>Any valid liquid code included in this page will be parsed and rendered by Shopify.</p>
-
-<br>
-
-<pre>
-Your Shop Details:
 <hr>
   Shop Name       : {{ shop.name }}
   myshopify name      : {{ shop.permanent_domain }}
@@ -20,21 +11,17 @@ Your Shop Details:
     attributes such as {{ customer.last_order }}.
     
     <script>
-      alert("Customer logged in.");
       sessionStorage.setItem("CustomerLoggedIn", "True")
       sessionStorage.setItem("FirstOrder", "True")
     </script>
-    
-      
   {% else %}
     Customer is not logged in
     <script>
-      alert("Customer is not logged in.");
       sessionStorage.setItem("CustomerLoggedIn", "False")
     </script>
     
   {% endif %}
   customer last order    : {{ customer.last_order }}
-<br>  
+
 <hr>  
-</pre>
+
