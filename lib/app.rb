@@ -4,6 +4,7 @@ require 'sinatra/shopify-sinatra-app'
 require "webrick/https"
 require 'liquid'
 require 'tilt/coffee'
+require 'pry'
 
 class SinatraApp < Sinatra::Base
   register Sinatra::Shopify
@@ -11,6 +12,7 @@ class SinatraApp < Sinatra::Base
   use Rack::Flash, :accessorize => [:info, :error, :success], :sweep => true
 
   configure :development do
+    require 'pry'
     require 'better_errors'
     require "sinatra/reloader"
     register Sinatra::Reloader
@@ -60,7 +62,11 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/load_first_order.js' do
-    @shop_name = params["shop"]
+
+    shop_name = params['shop']
+
+    shop = Shop.find_by(name: shop_name)
+    @setting = shop.setting
     content_type :js
     # coffee :load_first_order
     erb :'first_order.js', :layout => false

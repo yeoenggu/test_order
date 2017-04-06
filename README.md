@@ -33,21 +33,17 @@
 
 
 =================>
-- change shopify app setting due to mac os reboot ... ngrok
-- get their name. 
 - styling
-  - bar
-    
-  - close
-
-
-
-- settings
-  - targeted time
-  - styling
-  - message
+  ==>
+  - add message
 - admin
+  - use sample app from shopify
+    - working end to end
+  - add from seaff (css)
+  - add color picker
 - testing
+
+
 
 proxy get loaded in login page
 
@@ -115,7 +111,7 @@ transcient error
  bundle exec foreman run rackup -s Puma config.ru
 ngrok http 4567
 
-
+bundle exec pry -I. -r lib/app.rb
 
 # admin
 - credit cards

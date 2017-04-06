@@ -14,6 +14,8 @@ gem 'puma'
 gem 'liquid'
 gem "coffee-script"
 gem "racksh"
+gem "default_value_for", "~> 3.0.0"
+gem 'pry'
 
 group :production do
   gem 'pg'
@@ -22,7 +24,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
-  gem 'pry'
+  
   gem 'pry-byebug'
   gem 'better_errors'
   gem "binding_of_caller"

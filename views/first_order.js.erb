@@ -36,7 +36,7 @@ aren’t available to the outside world.
         console.log("loading proxy");
         // $('body').append("<div id='proxy'> </div>").hide().load('/apps/test');
         $('body').append("<div id='proxy' display='none'> </div>")
-        $('#proxy').load('/apps/test');
+        $('#proxy').load('/apps/test').hide();
     };
 
     loadLib = function($) {
@@ -590,10 +590,18 @@ aren’t available to the outside world.
     };
 
     addStyles = function($) {
-      injectStyles($, '.bizzbar{  background:#eb593c;  color:#fff;  z-index:1000;  font-family:Georgia;  font-size:14px; border-bottom:3px solid rgb(255,255,255); box-shadow:0 1px 5px rgba(0,0,0,.7)}');
-      injectStyles($, '.bizzbar .bizztext .bizzbutton{-webkit-box-shadow:rgba(0,0,0,0.278431) 1px 1px 3px; background:#333;  border-bottom-left-radius:4px;  border-bottom-right-radius:4px;  border-top-left-radius:4px;  border-top-right-radius:4px;  border:none;  box-shadow:rgba(0,0,0,0.278431) 1px 1px 3px;  color:white;  cursor:pointer;  font-size:0.854em;  margin:0px 0px 0px 7px;  outline:none;  padding:2px 10px 1px;  position:relative;  text-decoration:initial}');
-      injectStyles($, '.bizzbar .bizztext .bizzbutton a{  color:white;}');
-      injectStyles($, '.bizzbar .bizzbutton a:hover{  cursor:pointer;background:#444}');
+      
+      var bar_style = '.bizzbar{  background:<%= @setting.bar_color %>;  color:<%= @setting.text_color %>;  z-index:1000;  font-family:<%= @setting.text_font_family %>;  font-size:<%= @setting.text_font_size %>; border-bottom:3px solid rgb(255,255,255); box-shadow:0 1px 5px rgba(0,0,0,.7)}';
+      var button_style = '.bizzbar .bizztext .bizzbutton{-webkit-box-shadow:rgba(0,0,0,0.278431) 1px 1px 3px; background:<%= @setting.button_color %>;  border-bottom-left-radius:4px;  border-bottom-right-radius:4px;  border-top-left-radius:4px;  border-top-right-radius:4px;  border:none;  box-shadow:rgba(0,0,0,0.278431) 1px 1px 3px;  color:<%= @setting.button_text_color %>;  cursor:pointer;  font-size:0.854em;  margin:0px 0px 0px 7px;  outline:none;  padding:2px 10px 1px;  position:relative;  text-decoration:initial}';
+
+      console.log(bar_style);
+      console.log(button_style);
+
+      injectStyles($, bar_style);
+      injectStyles($, button_style);
+      
+      injectStyles($, '.bizzbar .bizztext .bizzbutton a{  color:<%= @setting.button_text_color %>;}');
+      injectStyles($, '.bizzbar .bizztext .bizzbutton:hover{  cursor:pointer;background:<%= @setting.button_hover_color%>}');
       injectStyles($, '.bizzbar .bizzbutton a:active{  top:1px}');
 
     };
@@ -626,7 +634,7 @@ aren’t available to the outside world.
       var elem = $("meta[itemprop='image']").parent();
       var total = 0;
       // hard coded targeted_time
-      var targeted_time = 5;
+      var targeted_time = <%= @setting.targeted_time %>;
       addStyles($);
 
       $.screentime({
@@ -665,8 +673,8 @@ aren’t available to the outside world.
             }
             console.log("name of the customer: " + first_name);
             var final_html;
-            var html_1 = "<p class='bizztext'>Buy now with 20% off your first purchase. <button class='bizzbutton'><a href=";
-            var html_2 = ">Buy Now</a></button></p>"
+            var html_1 = "<p class='bizztext'> <%= @setting.bar_text %> <button class='bizzbutton'><a href=";
+            var html_2 = "><%= @setting.button_text %></a></button></p>"
             // hard code for the time being
             var discount_html = "?discount=TEST";
             final_html = html_1 + "https://" +window.location.hostname + productUrl + discount_html + html_2;
