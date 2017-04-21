@@ -1,0 +1,306 @@
+
+:javascript
+    jQuery(document).ready(function($) {
+            $("div#bizzbar.bizzbar").css({
+                background: '#{@setting.bar_color}',
+                color: '#{@setting.text_color}',
+                'z-index': '1000',
+                'font-family': "#{@setting.text_font_family}",
+                'font-size': '#{@setting.text_font_size}', 
+                'border-bottom':'3px solid rgb(255,255,255)', 
+                'box-shadow':'0 1px 5px rgba(0,0,0,.7)'
+            });
+            $("p#bizztext.bizztext").css({
+                'text-align': 'center'
+            });
+            $("button#bizzbutton.bizzbutton").css({
+                '-webkit-box-shadow': 'rgba(0,0,0,0.278431) 1px 1px 3px',
+                background: '#{@setting.button_color}',
+                'border-bottom-left-radius': '4px',
+                'border-bottom-right-radius': '4px',
+                'border-top-left-radius': '4px',
+                'border-top-right-radius': '4px',
+                border:'none',  
+                'box-shadow': 'rgba(0,0,0,0.278431) 1px 1px 3px',  
+                color: '#{@setting.button_text_color}',
+                cursor: 'pointer',  
+                'font-size': '0.854em',
+                margin: '0px 0px 0px 7px',
+                outline:'none',
+                padding: '2px 10px 1px',
+                position: 'relative',  
+                'text-decoration':'initial'
+            });
+            $("button#bizzbutton.bizzbutton").hover(
+                function(){ $(this).css({
+                    background: '#{@setting.button_hover_color}'
+                });},
+                function(){ $(this).css({
+                    background: '#{@setting.button_color}'
+                });}
+            );
+            $("#Bar_Color").spectrum({
+                color: "#{@setting.bar_color}",
+                showInput: true,
+                showInitial: true,
+                showPalette: true,
+                showSelectionPalette: true,
+                maxSelectionSize: 10,
+                preferredFormat: "hex",
+                localStorageKey: "spectrum.first_order",
+                move: function (color) {
+                    
+                },
+                show: function () {
+                
+                },
+                beforeShow: function () {
+                
+                },
+                hide: function () {
+                
+                },
+                change: function() {
+                    
+                },
+                palette: [
+                    ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                    "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                    ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                    "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                    ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                    "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                    "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                    "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                    "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                    "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                    "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                    "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                    "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                    "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+                ]
+            });
+            $("#Button_Color").spectrum({
+                color: "#{@setting.button_color}",
+                showInput: true,
+                showInitial: true,
+                showPalette: true,
+                showSelectionPalette: true,
+                maxSelectionSize: 10,
+                preferredFormat: "hex",
+                localStorageKey: "spectrum.first_order",
+                move: function (color) {
+                    
+                },
+                show: function () {
+                
+                },
+                beforeShow: function () {
+                
+                },
+                hide: function () {
+                
+                },
+                change: function() {
+                    
+                },
+                palette: [
+                    ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                    "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                    ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                    "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                    ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                    "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                    "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                    "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                    "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                    "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                    "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                    "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                    "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                    "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+                ]
+            });
+            $("#Text_Color").spectrum({
+                color: "#{@setting.text_color}",
+                showInput: true,
+                showInitial: true,
+                showPalette: true,
+                showSelectionPalette: true,
+                maxSelectionSize: 10,
+                preferredFormat: "hex",
+                localStorageKey: "spectrum.first_order",
+                move: function (color) {
+                    
+                },
+                show: function () {
+                
+                },
+                beforeShow: function () {
+                
+                },
+                hide: function () {
+                
+                },
+                change: function() {
+                    
+                },
+                palette: [
+                    ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                    "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                    ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                    "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                    ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                    "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                    "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                    "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                    "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                    "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                    "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                    "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                    "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                    "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+                ]
+            });
+            $("#Button_Text_Color").spectrum({
+                color: "#{@setting.button_text_color}",
+                showInput: true,
+                showInitial: true,
+                showPalette: true,
+                showSelectionPalette: true,
+                maxSelectionSize: 10,
+                preferredFormat: "hex",
+                localStorageKey: "spectrum.first_order",
+                move: function (color) {
+                    
+                },
+                show: function () {
+                
+                },
+                beforeShow: function () {
+                
+                },
+                hide: function () {
+                
+                },
+                change: function() {
+                    
+                },
+                palette: [
+                    ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                    "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                    ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                    "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                    ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                    "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                    "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                    "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                    "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                    "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                    "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                    "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                    "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                    "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+                ]
+            });
+            $("#Button_Hover_Color").spectrum({
+                color: "#{@setting.button_hover_color}",
+                showInput: true,
+                showInitial: true,
+                showPalette: true,
+                showSelectionPalette: true,
+                maxSelectionSize: 10,
+                preferredFormat: "hex",
+                localStorageKey: "spectrum.first_order",
+                move: function (color) {
+                    
+                },
+                show: function () {
+                
+                },
+                beforeShow: function () {
+                
+                },
+                hide: function () {
+                
+                },
+                change: function() {
+                    
+                },
+                palette: [
+                    ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                    "rgb(204, 204, 204)", "rgb(217, 217, 217)","rgb(255, 255, 255)"],
+                    ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                    "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"], 
+                    ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)", 
+                    "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)", 
+                    "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)", 
+                    "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)", 
+                    "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)", 
+                    "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                    "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                    "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                    "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)", 
+                    "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"]
+                ]
+            });
+        }
+    );
+
+= form_tag '/form_setting', :'data-shopify-app-submit' => "save-setting", :class => 'form-horizontal', :method => 'post' do
+    = field_set_tag do
+        %legend Form Name
+        .panel.panel-default
+            .panel-heading
+                %h4 The Pitch
+                .form-group
+                    = label_tag "Message", :class => 'col-md-4 control-label', :for => "Message"
+                    .col-md-4
+                        = text_field_tag "bar_text", :id => "Message", :value => @setting.bar_text, :class => "form-control input-md"
+                        %span.help-block help
+                .form-group
+                    = label_tag "Button Text", :class => 'col-md-4 control-label', :for => "Message"
+                    .col-md-4
+                        = text_field_tag "button_text", :id => "Message", :value => @setting.button_text, :class => "form-control input-md"
+                        %span.help-block help
+                .form-group
+                    = label_tag "Font", :class => 'col-md-4 control-label', :for => "font_family"
+                    .col-md-4
+                        = select_tag "text_font_family" , :options => ["Serif", "Sans Serif", 'Arial', 'Arial Black', "Georgia", 'Cambria', 'Calibri', 'Courier New', 'Futura', 'Helvetica', ' Lucida Grande', 'Tahoma', 'Times New Roman', 'Trebuchet MS', 'Verdana'], :selected => @setting.text_font_family.split[0],  :class => 'form-control'
+                        %span.help-block help
+                .form-group
+                    = label_tag "Time to trigger bar", :class => 'col-md-4 control-label', :for => "targeted_time"
+                    .col-md-4
+                        = number_field_tag "targeted_time", :id => "targeted_time", :min => 10, :max => 60, :step => 1, :value => @setting.targeted_time, :class => "form-control input-md"
+                        %span.help-block help
+        .panel.panel-default
+            .panel-heading
+                %h4 How it look
+                .form-group
+                    = label_tag "Bar", :class => 'col-md-4 control-label', :for => "Bar_Color"
+                    .col-md-1
+                        = text_field_tag "bar_color", :id => "Bar_Color", :value => @setting.bar_color , :class => "form-control input-md"
+                        %span.help-block help
+                    = label_tag "Message", :class => 'col-md-1 control-label', :for => "Text_Color"
+                    .col-md-1
+                        = text_field_tag "text_color", :id => "Text_Color", :value => @setting.text_color, :class => "form-control input-md"
+                        %span.help-block help
+                .form-group
+                    = label_tag "Button", :class => 'col-md-4 control-label', :for => "Button_Color"
+                    .col-md-1
+                        = text_field_tag "button_color", :id => "Button_Color", :value => @setting.button_color, :class => "form-control input-md"
+                        %span.help-block help
+                    = label_tag "Button Text", :class => 'col-md-1 control-label', :for => "Button_Text_Color"
+                    .col-md-1
+                        = text_field_tag "button_text_color", :id => "Button_Text_Color", :value => @setting.button_text_color, :class => "form-control input-md"
+                        %span.help-block help
+                    = label_tag "Text Hover", :class => 'col-md-1 control-label', :for => "Button_Hover_Color"
+                    .col-md-1
+                        = text_field_tag "button_hover_color", :id => "Button_Hover_Color", :value => @setting.button_hover_color, :class => "form-control input-md"
+                        %span.help-block help
+        #bizzbar.bizzbar
+            %p#bizztext.bizztext
+                Drive more attention to your most important website content with Bizz Bar.
+                %button#bizzbutton.bizzbutton Click me
+        
+

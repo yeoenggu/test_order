@@ -16,6 +16,11 @@ gem "coffee-script"
 gem "racksh"
 gem "default_value_for", "~> 3.0.0"
 gem 'pry'
+gem 'pry-stack_explorer'
+# gem 'rack-traffic-logger'
+gem 'httplog'
+gem 'haml'
+gem 'padrino'
 
 group :production do
   gem 'pg'

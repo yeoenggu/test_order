@@ -1,9 +1,62 @@
-<h3>Shopify Sinatra App</h3>
-<p>Welcome!</p>
+<h1>Create new Unicorn</h1>
 
-<h3>Products</h3>
-<ul>
-  <% @products.each do |product| %>
-    <li><a href=<%="#{current_shop_url}/admin/products/#{product.id}"%> target="_blank"> <%= product.id %> </a></li>
-  <% end %>
-</ul>
+<p>A normal form submitted by a data tag and a button in Shopify. Embedded apps can mostly work exactly like a normal app, except with Shopify admin UI integration.</p>
+
+<form method="POST" action="form_setting" data-shopify-app-submit="save-setting">
+  <p>
+    <label>bar_color:</label>
+    <input type="text" name="bar_color" value=<%= @setting.bar_color %>>
+  </p>
+
+  <p>
+    <label>text_color:</label>
+    <input type="text" name="text_color" value= <%= @setting.text_color %>>
+  </p>
+
+  <p>
+    <label>text_font_family:</label>
+    <select name="text_font_family">
+      <option>Georgia</option>
+      <option>Sans Serif</option>
+    </select>
+  </p>
+
+  <p>
+    <label>text_font_size:</label>
+    <select name="text_font_family">
+      <option>14px</option>
+      <option>15px</option>
+    </select>
+  </p>
+
+  <p>
+    <label>button_color:</label>
+    <input type="text" name="button_color" value= <%= @setting.button_color %>>
+  </p>
+
+  <p>
+    <label>button_hover_color:</label>
+    <input type="text" name="button_hover_color" value= <%= @setting.button_hover_color %>>
+  </p>
+
+  <p>
+    <label>button_text_color:</label>
+    <input type="text" name="button_text_color" value= <%= @setting.button_text_color %>>
+  </p>
+
+  <p>
+    <label>bar_text:</label>
+    <input type="text" name="bar_text" value="<%= @setting.bar_text %>">
+  </p>
+
+  <p>
+    <label>button_text:</label>
+    <input type="text" name="button_text" value="<%= @setting.button_text %>">
+  </p>
+
+  <p>
+    <label>targeted_time:</label>
+    <input type="number" min="10" max="60" step="1" name="targeted_time" value="<%= @setting.targeted_time %>">
+  </p>
+
+</form>

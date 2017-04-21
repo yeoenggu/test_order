@@ -1,15 +1,56 @@
 require 'sinatra'
+require "sinatra/content_for"
 require "sinatra/activerecord"
 require 'sinatra/shopify-sinatra-app'
 require "webrick/https"
 require 'liquid'
 require 'tilt/coffee'
+require 'haml'
 require 'pry'
+
+require 'httplog'
+require 'padrino-helpers'
+
 
 class SinatraApp < Sinatra::Base
   register Sinatra::Shopify
+  register Padrino::Helpers
+  helpers Sinatra::ContentFor
 
   use Rack::Flash, :accessorize => [:info, :error, :success], :sweep => true
+  set :static, true
+
+  enable :sessions
+
+  configure do 
+    HttpLog.configure do |config|
+     
+      # You can assign a different logger
+      config.logger = Logger.new($stdout)
+      
+      # I really wouldn't change this...
+      config.severity = Logger::Severity::DEBUG
+      
+      # Tweak which parts of the HTTP cycle to log...
+      config.log_connect   = true
+      config.log_request   = true
+      config.log_headers   = true
+      config.log_data      = true
+      config.log_status    = true
+      config.log_response  = true
+      config.log_benchmark = true
+      
+      # ...or log all request as a single line by setting this to `true`
+      config.compact_log = false 
+      
+      # Prettify the output - see below
+      config.color = false
+      
+      # Limit logging based on URL patterns
+      config.url_whitelist_pattern = /.*/
+      config.url_blacklist_pattern = nil
+    end
+  end
 
   configure :development do
     require 'pry'
@@ -36,8 +77,12 @@ class SinatraApp < Sinatra::Base
   # from Shopify and displays them inside your app
   get '/' do
     shopify_session do
+      # need this to test whether the token is valid.  
       @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
-      erb :home
+      # retrieve setting
+      @setting = current_shop.setting
+      # erb :home
+      haml :home, :layout => :first_order_app
     end
   end
 
@@ -46,13 +91,75 @@ class SinatraApp < Sinatra::Base
   # stores more data.
   post '/uninstall' do
     webhook_session do |params|
+      # binding.pry
+      # clear_session(current_shop)
+
       current_shop.destroy
+    end
+    logout
+  end
+  @@font = {
+    'Serif' => "Georgia, 'Times New Roman', Times, serif",
+    'Sans Sanrif' => "Helvetica, Arial, sans-serif",
+    'Arial' => "Arial, Helvetica, sans-serif",
+    'Arial black' => "'Arial Black', Gadget, sans-serif",
+    'Cambria' => "Cambria, serif",
+    'Calibri' => "Calibri, sans-serif",
+    'Courier New' => "'Courier New', monospace",
+    'Futura'  => "Futura, sans-serif",
+    'Georgia' => "Georgia, serif",
+    'Helvetica' => "Helvetica, sans-serif",
+    'Lucida Grande' => "'Lucida Grande', 'Lucida Sans Unicode', sans-serif",
+    'Tahoma' => "Tahoma, Geneva, sans-serif",
+    'Times New Roman' => "'Times New Roman', Times, serif",
+    'Trebuchet MS' => "'Trebuchet MS', sans-serif",
+    'Verdana' => "Verdana, Geneva"
+  }
+
+  post '/form_setting' do
+    shopify_session do
+      # retrieve setting
+      @setting = current_shop.setting
+      bar_color = params['bar_color']
+      @setting.bar_color = bar_color if bar_color
+
+      text_color = params['text_color']
+      @setting.text_color = text_color if text_color
+      
+      text_font_family = params['text_font_family']
+      if text_font_family
+        font = @@font[text_font_family] 
+        @setting.text_font_family = font if font
+      end
+
+      button_color = params['button_color']
+      @setting.button_color = button_color if button_color
+
+      button_hover_color = params['button_hover_color']
+      @setting.button_hover_color = button_hover_color if button_hover_color
+
+      button_text_color = params['button_text_color']
+      @setting.button_text_color = button_text_color if button_text_color
+
+      bar_text = params['bar_text']
+      @setting.bar_text = bar_text if bar_text
+
+      button_text = params['button_text']
+      @setting.button_text = button_text if button_text
+
+      targeted_time = params['targeted_time']
+      @setting.targeted_time = targeted_time if targeted_time
+
+      @setting.save!
+
+      # erb :home
+      flash[:notice] = "Changes saved."
+      haml :home, :layout => :first_order_app
     end
   end
 
   get '/proxy/' do
     params = request.env['rack.request.query_hash']
-    puts "params " + params.to_json
     shopify_session do
       # do something
     end
@@ -72,6 +179,9 @@ class SinatraApp < Sinatra::Base
     erb :'first_order.js', :layout => false
   end
 
+  def is_protected_from_csrf?
+    return false
+  end
 
   private
 

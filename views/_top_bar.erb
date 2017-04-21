@@ -1,7 +1,20 @@
 <script type="text/javascript">
-  ShopifyApp.ready(function(){
-    ShopifyApp.Bar.initialize({
-      icon: '<%= "#{base_url}/icon.png" %>'
+     window.mainPageTitle = 'Setting';
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({
+        title: window.mainPageTitle,
+        icon: '<%= "#{base_url}/icon.png" %>',
+        buttons: {
+          primary: {
+            label: "Save",
+            message: 'save-setting'
+          },
+          secondary: {
+            label: "Back",
+            href: "/",
+            target: 'app'
+          }
+        }
+      });
     });
-  });
 </script>

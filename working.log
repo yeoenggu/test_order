@@ -1,0 +1,184 @@
+yeoenggu-3:first_order yeoenggu$ bundle exec foreman run rackup -s Puma config.ru
+== Sinatra (v1.4.6) has taken the stage on 4567 for development with backup from Puma
+Puma starting in single mode...
+* Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+* Min threads: 0, max threads: 16
+* Environment: development
+* Listening on tcp://localhost:4567
+Use Ctrl-C to stop
+I, [2017-04-20T14:36:31.481672 #34913]  INFO -- omniauth: (shopify) Setup endpoint detected, running now.
+I, [2017-04-20T14:36:31.482078 #34913]  INFO -- omniauth: (shopify) Request phase initiated.
+I, [2017-04-20T14:36:32.636355 #34913]  INFO -- omniauth: (shopify) Setup endpoint detected, running now.
+I, [2017-04-20T14:36:32.636772 #34913]  INFO -- omniauth: (shopify) Callback phase initiated.
+******************************
+********
+inside build_access_token of omniauth shopify
+********
+*********
+ inside build_access_token of omniauth-oauth 
+verifier :410632de64fdce362693c08f8664c50b
+*********
+
+From: /Users/yeoenggu/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/omniauth-oauth2-1.4.0/lib/omniauth/strategies/oauth2.rb @ line 105 OmniAuth::Strategies::OAuth2#build_access_token:
+
+     96: def build_access_token
+     97:   puts "*********"
+     98:   puts " inside build_access_token of omniauth-oauth "
+     99: 
+    100: 
+    101:   verifier = request.params["code"]
+    102:   puts "verifier :" + verifier
+    103:   puts "*********"
+    104:   binding.pry
+ => 105:   client.auth_code.get_token(verifier, {:redirect_uri => callback_url}.merge(token_params.to_hash(:symbolize_keys => true)), deep_symbolize(options.auth_token_params))
+    106: end
+
+[1] pry(#<OmniAuth::Strategies::Shopify>)> continue
+D, [2017-04-20T14:36:38.922128 #34913] DEBUG -- : [httplog] Connecting: sg-drinks-party.myshopify.com:443
+D, [2017-04-20T14:36:40.207521 #34913] DEBUG -- : [httplog] Sending: POST http://sg-drinks-party.myshopify.com:443/admin/oauth/access_token
+D, [2017-04-20T14:36:40.207876 #34913] DEBUG -- : [httplog] Header: user-agent: Faraday v0.9.2
+D, [2017-04-20T14:36:40.207916 #34913] DEBUG -- : [httplog] Header: content-type: application/x-www-form-urlencoded
+D, [2017-04-20T14:36:40.207945 #34913] DEBUG -- : [httplog] Header: accept-encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+D, [2017-04-20T14:36:40.207972 #34913] DEBUG -- : [httplog] Header: accept: */*
+D, [2017-04-20T14:36:40.207997 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:40.208060 #34913] DEBUG -- : [httplog] Data: client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&client_secret=e334c3f009badf61e79db743a64faeaa&code=410632de64fdce362693c08f8664c50b&grant_type=authorization_code&redirect_uri=https%3A%2F%2Fa30de7b6.ngrok.io%2Fauth%2Fshopify%2Fcallback
+D, [2017-04-20T14:36:40.617409 #34913] DEBUG -- : [httplog] Status: 200
+D, [2017-04-20T14:36:40.617525 #34913] DEBUG -- : [httplog] Benchmark: 0.40928 seconds
+D, [2017-04-20T14:36:40.617573 #34913] DEBUG -- : [httplog] Header: server: nginx
+D, [2017-04-20T14:36:40.617602 #34913] DEBUG -- : [httplog] Header: date: Thu, 20 Apr 2017 06:36:40 GMT
+D, [2017-04-20T14:36:40.617628 #34913] DEBUG -- : [httplog] Header: content-type: application/json; charset=utf-8
+D, [2017-04-20T14:36:40.617653 #34913] DEBUG -- : [httplog] Header: transfer-encoding: chunked
+D, [2017-04-20T14:36:40.617748 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:40.617773 #34913] DEBUG -- : [httplog] Header: vary: Accept-Encoding
+D, [2017-04-20T14:36:40.617799 #34913] DEBUG -- : [httplog] Header: referrer-policy: origin-when-cross-origin
+D, [2017-04-20T14:36:40.617824 #34913] DEBUG -- : [httplog] Header: x-frame-options: DENY
+D, [2017-04-20T14:36:40.617848 #34913] DEBUG -- : [httplog] Header: x-shopid: 7041073
+D, [2017-04-20T14:36:40.617871 #34913] DEBUG -- : [httplog] Header: x-shardid: 14
+D, [2017-04-20T14:36:40.617895 #34913] DEBUG -- : [httplog] Header: cache-control: no-cache
+D, [2017-04-20T14:36:40.617920 #34913] DEBUG -- : [httplog] Header: set-cookie: _secure_admin_session_id=c95012b3fd26a768e025ff8858f856f8; path=/admin; secure; HttpOnly, request_method=POST; path=/
+D, [2017-04-20T14:36:40.617945 #34913] DEBUG -- : [httplog] Header: x-request-id: d7109596-5877-4b9a-8cb0-f8d5210751d5
+D, [2017-04-20T14:36:40.617972 #34913] DEBUG -- : [httplog] Header: content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=d7109596-5877-4b9a-8cb0-f8d5210751d5
+D, [2017-04-20T14:36:40.618068 #34913] DEBUG -- : [httplog] Header: x-content-type-options: nosniff, nosniff
+D, [2017-04-20T14:36:40.618116 #34913] DEBUG -- : [httplog] Header: x-download-options: noopen
+D, [2017-04-20T14:36:40.618144 #34913] DEBUG -- : [httplog] Header: x-permitted-cross-domain-policies: none
+D, [2017-04-20T14:36:40.618170 #34913] DEBUG -- : [httplog] Header: x-xss-protection: 1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=d7109596-5877-4b9a-8cb0-f8d5210751d5
+D, [2017-04-20T14:36:40.618196 #34913] DEBUG -- : [httplog] Header: p3p: CP="NOI DSP COR NID ADMa OPTa OUR NOR"
+D, [2017-04-20T14:36:40.618222 #34913] DEBUG -- : [httplog] Header: x-dc: chi2
+D, [2017-04-20T14:36:40.618326 #34913] DEBUG -- : [httplog] Response:
+{"access_token":"7f039ee23b93ca2457cedd786d282e0f","scope":"read_products,read_orders,write_script_tags"}
+I, [2017-04-20T14:36:40.618516 #34913]  INFO -- : post https://sg-drinks-party.myshopify.com/admin/oauth/access_token
+D, [2017-04-20T14:36:40.618588 #34913] DEBUG -- request: User-Agent: "Faraday v0.9.2"
+Content-Type: "application/x-www-form-urlencoded"
+I, [2017-04-20T14:36:40.618674 #34913]  INFO -- Status: 200
+D, [2017-04-20T14:36:40.618862 #34913] DEBUG -- response: server: "nginx"
+date: "Thu, 20 Apr 2017 06:36:40 GMT"
+content-type: "application/json; charset=utf-8"
+transfer-encoding: "chunked"
+connection: "close"
+vary: "Accept-Encoding"
+referrer-policy: "origin-when-cross-origin"
+x-frame-options: "DENY"
+x-shopid: "7041073"
+x-shardid: "14"
+cache-control: "no-cache"
+set-cookie: "_secure_admin_session_id=c95012b3fd26a768e025ff8858f856f8; path=/admin; secure; HttpOnly, request_method=POST; path=/"
+x-request-id: "d7109596-5877-4b9a-8cb0-f8d5210751d5"
+content-security-policy: "default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=d7109596-5877-4b9a-8cb0-f8d5210751d5"
+x-content-type-options: "nosniff, nosniff"
+x-download-options: "noopen"
+x-permitted-cross-domain-policies: "none"
+x-xss-protection: "1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=d7109596-5877-4b9a-8cb0-f8d5210751d5"
+p3p: "CP=\"NOI DSP COR NID ADMa OPTa OUR NOR\""
+x-dc: "chi2"
+token 7f039ee23b93ca2457cedd786d282e0f
+******************************
+******************************
+omniauth.state fe1ee8679ee3977c93a17a3573b96c4f8249d937c2281ed0
+******************************
+********
+inside build_access_token of omniauth shopify
+@built_access_token is defined
+#<OAuth2::AccessToken:0x007fd7a9366068>
+********
+**************
+shopify sinatra callback ... invoked
+**************
+D, [2017-04-20T14:36:40.691103 #34913] DEBUG -- :   Shop Load (0.1ms)  SELECT  "shops".* FROM "shops"  WHERE "shops"."name" = 'sg-drinks-party.myshopify.com' LIMIT 1
+D, [2017-04-20T14:36:40.720693 #34913] DEBUG -- :    (0.1ms)  begin transaction
+D, [2017-04-20T14:36:40.722141 #34913] DEBUG -- :   SQL (0.4ms)  UPDATE "shops" SET "token_encrypted" = ? WHERE "shops"."id" = 33  [["token_encrypted", "zjWqjpV59AQZF2UFF7eP97F5HJ6Ytm+Sb8a2n12cQxhUupihzQC9lyoQ9IQo\nYDwl\n"]]
+D, [2017-04-20T14:36:40.724330 #34913] DEBUG -- :    (2.0ms)  commit transaction
+D, [2017-04-20T14:36:41.278677 #34913] DEBUG -- : [httplog] Connecting: sg-drinks-party.myshopify.com:443
+D, [2017-04-20T14:36:42.254498 #34913] DEBUG -- : [httplog] Sending: GET http://sg-drinks-party.myshopify.com:443/admin/products.json?limit=10
+D, [2017-04-20T14:36:42.254714 #34913] DEBUG -- : [httplog] Header: accept: application/json
+D, [2017-04-20T14:36:42.254769 #34913] DEBUG -- : [httplog] Header: x-shopify-access-token: 7f039ee23b93ca2457cedd786d282e0f
+D, [2017-04-20T14:36:42.254797 #34913] DEBUG -- : [httplog] Header: accept-encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+D, [2017-04-20T14:36:42.254821 #34913] DEBUG -- : [httplog] Header: user-agent: Ruby
+D, [2017-04-20T14:36:42.254843 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:42.254906 #34913] DEBUG -- : [httplog] Data: 
+D, [2017-04-20T14:36:42.664370 #34913] DEBUG -- : [httplog] Status: 200
+D, [2017-04-20T14:36:42.664450 #34913] DEBUG -- : [httplog] Benchmark: 0.409414 seconds
+D, [2017-04-20T14:36:42.664505 #34913] DEBUG -- : [httplog] Header: server: nginx
+D, [2017-04-20T14:36:42.664528 #34913] DEBUG -- : [httplog] Header: date: Thu, 20 Apr 2017 06:36:42 GMT
+D, [2017-04-20T14:36:42.664547 #34913] DEBUG -- : [httplog] Header: content-type: application/json; charset=utf-8
+D, [2017-04-20T14:36:42.664564 #34913] DEBUG -- : [httplog] Header: transfer-encoding: chunked
+D, [2017-04-20T14:36:42.664582 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:42.664600 #34913] DEBUG -- : [httplog] Header: vary: Accept-Encoding
+D, [2017-04-20T14:36:42.664617 #34913] DEBUG -- : [httplog] Header: referrer-policy: origin-when-cross-origin
+D, [2017-04-20T14:36:42.664635 #34913] DEBUG -- : [httplog] Header: x-frame-options: DENY
+D, [2017-04-20T14:36:42.664652 #34913] DEBUG -- : [httplog] Header: x-shopid: 7041073
+D, [2017-04-20T14:36:42.664668 #34913] DEBUG -- : [httplog] Header: x-shardid: 14
+D, [2017-04-20T14:36:42.664685 #34913] DEBUG -- : [httplog] Header: x-shopify-shop-api-call-limit: 1/40
+D, [2017-04-20T14:36:42.664703 #34913] DEBUG -- : [httplog] Header: http_x_shopify_shop_api_call_limit: 1/40
+D, [2017-04-20T14:36:42.664721 #34913] DEBUG -- : [httplog] Header: x-stats-userid: 0
+D, [2017-04-20T14:36:42.664738 #34913] DEBUG -- : [httplog] Header: x-stats-apiclientid: 1558121
+D, [2017-04-20T14:36:42.664796 #34913] DEBUG -- : [httplog] Header: x-stats-apipermissionid: 48488417
+D, [2017-04-20T14:36:42.664829 #34913] DEBUG -- : [httplog] Header: x-request-id: 7db2a071-d8f9-4c15-9d5e-99d9726e0a13
+D, [2017-04-20T14:36:42.664850 #34913] DEBUG -- : [httplog] Header: content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=index&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin&source%5Buuid%5D=7db2a071-d8f9-4c15-9d5e-99d9726e0a13
+D, [2017-04-20T14:36:42.664993 #34913] DEBUG -- : [httplog] Header: x-content-type-options: nosniff, nosniff
+D, [2017-04-20T14:36:42.665028 #34913] DEBUG -- : [httplog] Header: x-download-options: noopen
+D, [2017-04-20T14:36:42.665050 #34913] DEBUG -- : [httplog] Header: x-permitted-cross-domain-policies: none
+D, [2017-04-20T14:36:42.665069 #34913] DEBUG -- : [httplog] Header: x-xss-protection: 1; mode=block; report=/xss-report?source%5Baction%5D=index&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin&source%5Buuid%5D=7db2a071-d8f9-4c15-9d5e-99d9726e0a13
+D, [2017-04-20T14:36:42.665088 #34913] DEBUG -- : [httplog] Header: p3p: CP="NOI DSP COR NID ADMa OPTa OUR NOR"
+D, [2017-04-20T14:36:42.665105 #34913] DEBUG -- : [httplog] Header: x-dc: chi2
+D, [2017-04-20T14:36:42.665207 #34913] DEBUG -- : [httplog] Response:
+{"products":[{"id":10088571855,"title":"Test","body_html":"Test","vendor":"Sg Drinks Party","product_type":"","created_at":"2017-02-06T11:29:04-05:00","handle":"test","updated_at":"2017-03-03T12:48:51-05:00","published_at":"2017-02-06T11:28:00-05:00","template_suffix":null,"published_scope":"global","tags":"","variants":[{"id":38016438287,"product_id":10088571855,"title":"small","price":"9.00","sku":"","position":1,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"small","option2":null,"option3":null,"created_at":"2017-03-03T11:24:00-05:00","updated_at":"2017-03-08T01:44:45-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":-1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":-1,"requires_shipping":true},{"id":38019405135,"product_id":10088571855,"title":"medium","price":"9.00","sku":"","position":2,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"medium","option2":null,"option3":null,"created_at":"2017-03-03T12:48:51-05:00","updated_at":"2017-03-03T12:48:51-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":1,"requires_shipping":true},{"id":38019405199,"product_id":10088571855,"title":"large","price":"9.00","sku":"","position":3,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"large","option2":null,"option3":null,"created_at":"2017-03-03T12:48:51-05:00","updated_at":"2017-03-03T12:48:51-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":1,"requires_shipping":true}],"options":[{"id":12085165199,"product_id":10088571855,"name":"Size","position":1,"values":["small","medium","large"]}],"images":[{"id":23959633999,"product_id":10088571855,"position":1,"created_at":"2017-02-06T11:29:06-05:00","updated_at":"2017-02-06T11:29:06-05:00","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0704\/1073\/products\/145264-cfcc4be2fceb4baf985cf5e407ca6472.png?v=1486398546","variant_ids":[]}],"image":{"id":23959633999,"product_id":10088571855,"position":1,"created_at":"2017-02-06T11:29:06-05:00","updated_at":"2017-02-06T11:29:06-05:00","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0704\/1073\/products\/145264-cfcc4be2fceb4baf985cf5e407ca6472.png?v=1486398546","variant_ids":[]}}]}
+D, [2017-04-20T14:36:42.707405 #34913] DEBUG -- :   Shop Load (0.2ms)  SELECT  "shops".* FROM "shops"  WHERE "shops"."name" = 'sg-drinks-party.myshopify.com' LIMIT 1
+D, [2017-04-20T14:36:42.866880 #34913] DEBUG -- :   Setting Load (0.3ms)  SELECT  "settings".* FROM "settings"  WHERE "settings"."shop_id" = ? LIMIT 1  [["shop_id", 33]]
+D, [2017-04-20T14:36:45.183663 #34913] DEBUG -- : [httplog] Connecting: sg-drinks-party.myshopify.com:443
+D, [2017-04-20T14:36:45.941408 #34913] DEBUG -- : [httplog] Sending: GET http://sg-drinks-party.myshopify.com:443/admin/products.json?limit=10
+D, [2017-04-20T14:36:45.941516 #34913] DEBUG -- : [httplog] Header: accept: application/json
+D, [2017-04-20T14:36:45.941561 #34913] DEBUG -- : [httplog] Header: x-shopify-access-token: 7f039ee23b93ca2457cedd786d282e0f
+D, [2017-04-20T14:36:45.941592 #34913] DEBUG -- : [httplog] Header: accept-encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+D, [2017-04-20T14:36:45.941611 #34913] DEBUG -- : [httplog] Header: user-agent: Ruby
+D, [2017-04-20T14:36:45.941628 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:45.941730 #34913] DEBUG -- : [httplog] Data: 
+D, [2017-04-20T14:36:46.225317 #34913] DEBUG -- : [httplog] Status: 200
+D, [2017-04-20T14:36:46.225398 #34913] DEBUG -- : [httplog] Benchmark: 0.283532 seconds
+D, [2017-04-20T14:36:46.225432 #34913] DEBUG -- : [httplog] Header: server: nginx
+D, [2017-04-20T14:36:46.225452 #34913] DEBUG -- : [httplog] Header: date: Thu, 20 Apr 2017 06:36:46 GMT
+D, [2017-04-20T14:36:46.225470 #34913] DEBUG -- : [httplog] Header: content-type: application/json; charset=utf-8
+D, [2017-04-20T14:36:46.225487 #34913] DEBUG -- : [httplog] Header: transfer-encoding: chunked
+D, [2017-04-20T14:36:46.225504 #34913] DEBUG -- : [httplog] Header: connection: close
+D, [2017-04-20T14:36:46.225521 #34913] DEBUG -- : [httplog] Header: vary: Accept-Encoding
+D, [2017-04-20T14:36:46.225544 #34913] DEBUG -- : [httplog] Header: referrer-policy: origin-when-cross-origin
+D, [2017-04-20T14:36:46.225562 #34913] DEBUG -- : [httplog] Header: x-frame-options: DENY
+D, [2017-04-20T14:36:46.225580 #34913] DEBUG -- : [httplog] Header: x-shopid: 7041073
+D, [2017-04-20T14:36:46.225597 #34913] DEBUG -- : [httplog] Header: x-shardid: 14
+D, [2017-04-20T14:36:46.225614 #34913] DEBUG -- : [httplog] Header: x-shopify-shop-api-call-limit: 1/40
+D, [2017-04-20T14:36:46.225631 #34913] DEBUG -- : [httplog] Header: http_x_shopify_shop_api_call_limit: 1/40
+D, [2017-04-20T14:36:46.225649 #34913] DEBUG -- : [httplog] Header: x-stats-userid: 0
+D, [2017-04-20T14:36:46.225666 #34913] DEBUG -- : [httplog] Header: x-stats-apiclientid: 1558121
+D, [2017-04-20T14:36:46.225686 #34913] DEBUG -- : [httplog] Header: x-stats-apipermissionid: 48488417
+D, [2017-04-20T14:36:46.225704 #34913] DEBUG -- : [httplog] Header: x-request-id: 63ac03bb-539b-4778-91c0-351f357a4272
+D, [2017-04-20T14:36:46.225722 #34913] DEBUG -- : [httplog] Header: content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=index&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin&source%5Buuid%5D=63ac03bb-539b-4778-91c0-351f357a4272
+D, [2017-04-20T14:36:46.225822 #34913] DEBUG -- : [httplog] Header: x-content-type-options: nosniff, nosniff
+D, [2017-04-20T14:36:46.225855 #34913] DEBUG -- : [httplog] Header: x-download-options: noopen
+D, [2017-04-20T14:36:46.225875 #34913] DEBUG -- : [httplog] Header: x-permitted-cross-domain-policies: none
+D, [2017-04-20T14:36:46.225902 #34913] DEBUG -- : [httplog] Header: x-xss-protection: 1; mode=block; report=/xss-report?source%5Baction%5D=index&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fproducts&source%5Bsection%5D=admin&source%5Buuid%5D=63ac03bb-539b-4778-91c0-351f357a4272
+D, [2017-04-20T14:36:46.226021 #34913] DEBUG -- : [httplog] Header: p3p: CP="NOI DSP COR NID ADMa OPTa OUR NOR"
+D, [2017-04-20T14:36:46.226053 #34913] DEBUG -- : [httplog] Header: x-dc: chi2
+D, [2017-04-20T14:36:46.226120 #34913] DEBUG -- : [httplog] Response:
+{"products":[{"id":10088571855,"title":"Test","body_html":"Test","vendor":"Sg Drinks Party","product_type":"","created_at":"2017-02-06T11:29:04-05:00","handle":"test","updated_at":"2017-03-03T12:48:51-05:00","published_at":"2017-02-06T11:28:00-05:00","template_suffix":null,"published_scope":"global","tags":"","variants":[{"id":38016438287,"product_id":10088571855,"title":"small","price":"9.00","sku":"","position":1,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"small","option2":null,"option3":null,"created_at":"2017-03-03T11:24:00-05:00","updated_at":"2017-03-08T01:44:45-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":-1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":-1,"requires_shipping":true},{"id":38019405135,"product_id":10088571855,"title":"medium","price":"9.00","sku":"","position":2,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"medium","option2":null,"option3":null,"created_at":"2017-03-03T12:48:51-05:00","updated_at":"2017-03-03T12:48:51-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":1,"requires_shipping":true},{"id":38019405199,"product_id":10088571855,"title":"large","price":"9.00","sku":"","position":3,"grams":0,"inventory_policy":"deny","compare_at_price":null,"fulfillment_service":"manual","inventory_management":null,"option1":"large","option2":null,"option3":null,"created_at":"2017-03-03T12:48:51-05:00","updated_at":"2017-03-03T12:48:51-05:00","taxable":true,"barcode":"","image_id":null,"inventory_quantity":1,"weight":0.0,"weight_unit":"kg","old_inventory_quantity":1,"requires_shipping":true}],"options":[{"id":12085165199,"product_id":10088571855,"name":"Size","position":1,"values":["small","medium","large"]}],"images":[{"id":23959633999,"product_id":10088571855,"position":1,"created_at":"2017-02-06T11:29:06-05:00","updated_at":"2017-02-06T11:29:06-05:00","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0704\/1073\/products\/145264-cfcc4be2fceb4baf985cf5e407ca6472.png?v=1486398546","variant_ids":[]}],"image":{"id":23959633999,"product_id":10088571855,"position":1,"created_at":"2017-02-06T11:29:06-05:00","updated_at":"2017-02-06T11:29:06-05:00","src":"https:\/\/cdn.shopify.com\/s\/files\/1\/0704\/1073\/products\/145264-cfcc4be2fceb4baf985cf5e407ca6472.png?v=1486398546","variant_ids":[]}}]}
+D, [2017-04-20T14:36:46.228228 #34913] DEBUG -- :   Shop Load (0.2ms)  SELECT  "shops".* FROM "shops"  WHERE "shops"."name" = 'sg-drinks-party.myshopify.com' LIMIT 1
+D, [2017-04-20T14:36:46.228968 #34913] DEBUG -- :   Setting Load (0.1ms)  SELECT  "settings".* FROM "settings"  WHERE "settings"."shop_id" = ? LIMIT 1  [["shop_id", 33]]
+
