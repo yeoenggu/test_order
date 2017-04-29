@@ -21,6 +21,7 @@ gem 'pry-stack_explorer'
 gem 'httplog'
 gem 'haml'
 gem 'padrino'
+gem 'foreman'
 
 group :production do
   gem 'pg'
@@ -36,7 +37,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'foreman'
   gem 'dotenv'
 end
 

@@ -22,7 +22,51 @@ class SinatraApp < Sinatra::Base
 
   enable :sessions
 
-  configure do 
+  # configure do 
+  #   HttpLog.configure do |config|
+     
+  #     # You can assign a different logger
+  #     config.logger = Logger.new($stdout)
+      
+  #     # I really wouldn't change this...
+  #     config.severity = Logger::Severity::DEBUG
+      
+  #     # Tweak which parts of the HTTP cycle to log...
+  #     config.log_connect   = true
+  #     config.log_request   = true
+  #     config.log_headers   = true
+  #     config.log_data      = true
+  #     config.log_status    = true
+  #     config.log_response  = true
+  #     config.log_benchmark = true
+      
+  #     # ...or log all request as a single line by setting this to `true`
+  #     config.compact_log = false 
+      
+  #     # Prettify the output - see below
+  #     config.color = false
+      
+  #     # Limit logging based on URL patterns
+  #     config.url_whitelist_pattern = /.*/
+  #     config.url_blacklist_pattern = nil
+  #   end
+  # end
+
+  configure :development do
+    require 'pry'
+    require 'better_errors'
+    require "sinatra/reloader"
+    register Sinatra::Reloader
+
+    also_reload 'app/**/*.rb'
+    also_reload 'lib/**/*.rb'
+    also_reload 'conf/**/*.rb'
+    set :raise_errors, true
+    use BetterErrors::Middleware
+    # you need to set the application root in order to abbreviate filenames
+    # within the application:
+    BetterErrors.application_root = File.expand_path('..', __FILE__)
+
     HttpLog.configure do |config|
      
       # You can assign a different logger
@@ -50,22 +94,6 @@ class SinatraApp < Sinatra::Base
       config.url_whitelist_pattern = /.*/
       config.url_blacklist_pattern = nil
     end
-  end
-
-  configure :development do
-    require 'pry'
-    require 'better_errors'
-    require "sinatra/reloader"
-    register Sinatra::Reloader
-
-    also_reload 'app/**/*.rb'
-    also_reload 'lib/**/*.rb'
-    also_reload 'conf/**/*.rb'
-    set :raise_errors, true
-    use BetterErrors::Middleware
-    # you need to set the application root in order to abbreviate filenames
-    # within the application:
-    BetterErrors.application_root = File.expand_path('..', __FILE__)
   end
 
   # set the scope that your app needs, read more here:
