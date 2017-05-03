@@ -186,6 +186,10 @@ class SinatraApp < Sinatra::Base
     end
   end
 
+  get '/help' do
+    erb :help
+  end
+
   get '/proxy/' do
     params = request.env['rack.request.query_hash']
     shopify_session do

@@ -259,27 +259,35 @@
         %legend Form Name
         .panel.panel-default
             .panel-heading
+                %h4 Discount code
+                .form-group
+                    = label_tag "Discount Code", :class => 'col-md-4 control-label', :for => "Discount Code"
+                    .col-md-4
+                        = text_field_tag "discount_code", :id => "Discount Code", :value => @setting.discount_code, :class => "form-control input-md"
+                        %span.help-block Change it to a discount that limit 1 use per user and has no end date.
+        .panel.panel-default
+            .panel-heading
                 %h4 The Pitch
                 .form-group
                     = label_tag "Message", :class => 'col-md-4 control-label', :for => "Message"
                     .col-md-4
                         = text_field_tag "bar_text", :id => "Message", :value => @setting.bar_text, :class => "form-control input-md"
-                        %span.help-block help
+                        %span.help-block This is the pitch.
                 .form-group
                     = label_tag "Button Text", :class => 'col-md-4 control-label', :for => "Message"
                     .col-md-4
                         = text_field_tag "button_text", :id => "Message", :value => @setting.button_text, :class => "form-control input-md"
-                        %span.help-block help
+                        %span.help-block The text in the call to action button.
                 .form-group
                     = label_tag "Font", :class => 'col-md-4 control-label', :for => "font_family"
                     .col-md-4
                         = select_tag "text_font_family" , :options => ["Serif", "Sans Serif", 'Arial', 'Arial Black', "Georgia", 'Cambria', 'Calibri', 'Courier New', 'Futura', 'Helvetica', ' Lucida Grande', 'Tahoma', 'Times New Roman', 'Trebuchet MS', 'Verdana'], :selected => @setting.text_font_family.split[0],  :class => 'form-control'
-                        %span.help-block help
+                        %span.help-block Font family
                 .form-group
                     = label_tag "Time to trigger bar", :class => 'col-md-4 control-label', :for => "targeted_time"
                     .col-md-4
                         = number_field_tag "targeted_time", :id => "targeted_time", :min => 10, :max => 60, :step => 1, :value => @setting.targeted_time, :class => "form-control input-md"
-                        %span.help-block help
+                        %span.help-block No of seconds that you consider the visitor to be engaged.  It will trigger the bar to make an offer.
         .panel.panel-default
             .panel-heading
                 %h4 How it look
@@ -287,24 +295,23 @@
                     = label_tag "Bar", :class => 'col-md-4 control-label', :for => "Bar_Color"
                     .col-md-1
                         = text_field_tag "bar_color", :id => "Bar_Color", :value => @setting.bar_color , :class => "form-control input-md"
-                        %span.help-block help
+
                     = label_tag "Message", :class => 'col-md-1 control-label', :for => "Text_Color"
                     .col-md-1
                         = text_field_tag "text_color", :id => "Text_Color", :value => @setting.text_color, :class => "form-control input-md"
-                        %span.help-block help
-                .form-group
-                    = label_tag "Button", :class => 'col-md-4 control-label', :for => "Button_Color"
+                    = label_tag "Button", :class => 'col-md-1 control-label', :for => "Button_Color"
                     .col-md-1
                         = text_field_tag "button_color", :id => "Button_Color", :value => @setting.button_color, :class => "form-control input-md"
-                        %span.help-block help
-                    = label_tag "Button Text", :class => 'col-md-1 control-label', :for => "Button_Text_Color"
-                    .col-md-1
+
+                .form-group
+                    = label_tag "Button Text", :class => 'col-md-4 control-label', :for => "Button_Text_Color"
+                    .col-md-2
                         = text_field_tag "button_text_color", :id => "Button_Text_Color", :value => @setting.button_text_color, :class => "form-control input-md"
-                        %span.help-block help
-                    = label_tag "Text Hover", :class => 'col-md-1 control-label', :for => "Button_Hover_Color"
-                    .col-md-1
+                        %span.help-block Color of the button text
+                    = label_tag "Button Text-Hover", :class => 'col-md-1 control-label', :for => "Button_Hover_Color"
+                    .col-md-2
                         = text_field_tag "button_hover_color", :id => "Button_Hover_Color", :value => @setting.button_hover_color, :class => "form-control input-md"
-                        %span.help-block help
+                        %span.help-block Color when the mouse hover over it.
         #bizzbar.bizzbar
             %p#bizztext.bizztext
                 Drive more attention to your most important website content with Bizz Bar.

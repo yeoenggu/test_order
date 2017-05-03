@@ -1,17 +1,13 @@
 <script type="text/javascript">
-     window.mainPageTitle = 'Customerize Your Offer';
+     window.mainPageTitle = 'Help';
     ShopifyApp.ready(function(){
       ShopifyApp.Bar.initialize({
         title: window.mainPageTitle,
         icon: '<%= "#{base_url}/icon.png" %>',
         buttons: {
           primary: {
-            label: "Save",
-            message: 'save-setting'
-          },
-          secondary: {
-            label: "Help",
-            href: "/help",
+            label: "Back",
+            href: "/",
             target: 'app'
           }
         }

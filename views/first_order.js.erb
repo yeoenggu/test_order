@@ -676,7 +676,7 @@ aren’t available to the outside world.
             var html_1 = "<p class='bizztext'> <%= @setting.bar_text %> <button class='bizzbutton'><a href=";
             var html_2 = "><%= @setting.button_text %></a></button></p>"
             // hard code for the time being
-            var discount_html = "?discount=TEST";
+            var discount_html = "?discount=<%= @setting.discount_code %>";
             final_html = html_1 + "https://" +window.location.hostname + productUrl + discount_html + html_2;
             // console.log("final html "+ final_html);
             bar.show({

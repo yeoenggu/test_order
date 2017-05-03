@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170401155602) do
     t.string  "button_text",        null: false
     t.integer "targeted_time",      null: false
     t.integer "shop_id"
+    t.string  "discount_code",      null: false
   end
 
   add_index "settings", ["shop_id"], name: "index_settings_on_shop_id"

@@ -5,7 +5,6 @@
   - saves the form.
   - flash alert
   - preview bar
-=================>
   - error
 
 - omniauth error redirect
@@ -28,11 +27,23 @@
     but when I tried it with foreman ... request never come back.  connection establish.  but took very long to process ..
 
   - coupon code
-    - email ?
+    - email  - no need.
+    - create the table
+    - change the form.
+
+=================>
+  - conversion
+    - manually step thru to see what parameters can we pass
+
 
 - deploy
   set RACK_ENV = production 
   set database url 
+
+- omniauth
+  - routing to failure ...
+  - retry
+  - clear ... data?
 
 # To Do
 - deployment
@@ -77,6 +88,8 @@
   - styling
 
   
+- github
+  - fork all the repos
 
 # Deferred
 - puma config
@@ -102,22 +115,4 @@ rack intercept calls ... if it is callback path ... it will call it
 # admin
 - company 
 
-# Zacky
-
-## games
-1) treasure hunt
-2) water bomb
-3) dino tail stomp
-- balloon as tail, string.  
-- last man standing
- 
-- 2 prizes
-
-## DECO
-
-1) balloons
-2) plates
-3) feet?
-
-
-
+https://sg-drinks-party.myshopify.com/admin/apps/ca39e1ad3ef61cb46d61311cc8ca5cbf/?hmac=5a7a7a2f265fd897e03b49758b69958d889d3c11bb394adb4b22fb44ca057fbd&locale=en&protocol=https%3A%2F%2F&shop=sg-drinks-party.myshopify.com&timestamp=1493814703
