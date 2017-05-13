@@ -3,6 +3,7 @@ class CreateShops < ActiveRecord::Migration
     create_table :shops do |t|
       t.string :name
       t.string :token_encrypted
+      t.integer :count, default: 0
     end
   end
 

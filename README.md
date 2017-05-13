@@ -1,52 +1,86 @@
+# rethinking
+- marketing is the main problem.
+- so I need audience that is actively seeking and open
+  - new store
+    - store set up
+      http://shopafree.me/
+    - first sales up to 100
+    - product validation
+    - is there an app for that?
+  - others
+    - approve editing  
+  - from amazon
+  - from etsy
+  - kickstarter
+    - there is already some content on it
 
+
+
+# Testing
+
+- installing and uninstalling
+- onboarding
+  - install
+  - change setting
+  - discount
+  - increase count
+- test enabling and disabling
+  - product, collection
+  - checkout, blog, etc
+- test product variant
+  - with single options 
+  - with multiple options
+    - default value
+    - no default value
+      - it select the first one
+      - if you select the option, it will switch to the new one.
+- test new customer vs old customer.
+  - new customer will see it
+  - old customer will not.
+    
 # Doing
 
-- admin
-  - saves the form.
-  - flash alert
-  - preview bar
-  - error
-
-- omniauth error redirect
-
-- review UI for appearance
-  - font size => 14 Px
-
-
-- testing
-  - test scenarios
-- deployment
-
-
-- httplog .... 
-  - only 
-
-  foreman proc file
-  - cannot solve 
-  - something wrong with foreman since I can run the command in procfile ... no problem.
-    but when I tried it with foreman ... request never come back.  connection establish.  but took very long to process ..
-
-  - coupon code
-    - email  - no need.
-    - create the table
-    - change the form.
-
 =================>
-  - conversion
-    - manually step thru to see what parameters can we pass
 
 
 - deploy
   set RACK_ENV = production 
   set database url 
 
+- test
+
 - omniauth
   - routing to failure ...
   - retry
   - clear ... data?
 
+
+testing again.
+- new customer
+- old customer.
+
+
+what happen
+- did not log in
+- at checkout page, I logged in
+- when I get back, the page does not seem to have proxy loaded.
+
+- review product page
+
+- remove name of the customer ...
+
+
 # To Do
+
+- github
+  - fork all the repos
+
+- clean up 
+  - review setting
+    - timing for trigger and font size
+
 - deployment
+- packaging
 
 # Done
 - add in screentime
@@ -81,26 +115,44 @@
       else
         display
 
-
-
 - add in settings
 - add in admin
   - styling
 
-  
-- github
-  - fork all the repos
+- admin
+  - saves the form.
+  - flash alert
+  - preview bar
+  - error
+
+- webhooks
+  - set up webhooks to see which one   
+  - deal with duplicates
+  - clean up
+    - 36, 568  569 load_first_order
+  - disable it at certain places
+    - where?
+      - as long as there is add to cart
+      - collections/all should not load
+      - search
+      - about us
+      - blog
+      - cart
+      - checkout as well
 
 # Deferred
 - puma config
-- conversion tracking
-    - https://help.shopify.com/themes/customization/order-status/add-conversion-tracking-to-thank-you-page
-      - need conditional integration - landing_site_ref
-      - use keen or anything ...
 - usuage Charge billing
+- foreman proc file
+  - cannot solve 
+  - something wrong with foreman since I can run the command in procfile ... no problem.
+    but when I tried it with foreman ... request never come back.  connection establish.  but took very long to process ..
+- charging the user
+
 
 # notes
 
+bundle exec rake resque:work QUEUE=*
 
  bundle exec foreman run rackup -s Puma config.ru
 ngrok http 4567
@@ -115,4 +167,20 @@ rack intercept calls ... if it is callback path ... it will call it
 # admin
 - company 
 
-https://sg-drinks-party.myshopify.com/admin/apps/ca39e1ad3ef61cb46d61311cc8ca5cbf/?hmac=5a7a7a2f265fd897e03b49758b69958d889d3c11bb394adb4b22fb44ca057fbd&locale=en&protocol=https%3A%2F%2F&shop=sg-drinks-party.myshopify.com&timestamp=1493814703
+HSBC 3012
+08Feb1972000801
+
+Manhattan -168
+Y08027204150Z
+E
+
+
+Wed 9pm 
+1 Yong Yuan
+2 Tiago
+3 
+4
+5
+6
+7
+8

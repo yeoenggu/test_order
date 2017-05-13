@@ -22,6 +22,8 @@ gem 'httplog'
 gem 'haml'
 gem 'padrino'
 gem 'foreman'
+gem 'redis', '~>3.2'
+gem 'redis-namespace'
 
 group :production do
   gem 'pg'

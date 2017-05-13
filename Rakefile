@@ -1,5 +1,6 @@
 require 'sinatra/activerecord/rake'
 require 'rake/testtask'
+require 'resque/tasks'
 require_relative './lib/app'
 
 task :creds2heroku do
@@ -35,3 +36,4 @@ task :test do
     t.verbose = true
   end
 end
+

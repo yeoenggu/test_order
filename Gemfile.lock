@@ -228,6 +228,8 @@ DEPENDENCIES
   rack-test
   racksh
   rake
+  redis (~> 3.2)
+  redis-namespace
   shopify-sinatra-app (~> 0.3.3)
   sinatra
   sinatra-activerecord

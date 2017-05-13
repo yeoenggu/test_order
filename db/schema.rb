@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20170401155602) do
   add_index "settings", ["shop_id"], name: "index_settings_on_shop_id"
 
   create_table "shops", force: true do |t|
-    t.string "name"
-    t.string "token_encrypted"
+    t.string  "name"
+    t.string  "token_encrypted"
+    t.integer "count",           default: 0
   end
 
   add_index "shops", ["name"], name: "index_shops_on_name"

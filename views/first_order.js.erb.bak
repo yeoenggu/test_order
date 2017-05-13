@@ -8,7 +8,7 @@ aren’t available to the outside world.
     /* Load Script function we may need to load jQuery from the Google's CDN */
     /* That code is world-reknown. */
     /* One source: http://snipplr.com/view/18756/loadscript/ */
-    var loadProxy, loadScript, loadLib, myAppJavaScript, trackProductScreen, loadProductUrl, productUrl, injectStyles, addStyles, enabled, shouldIRetry;
+    var loadProxy, loadScript, loadLib, myAppJavaScript, trackProductScreen, loadProductUrl, productUrl, injectStyles, addStyles;
 
     loadScript = function(url, callback) {
       var script;
@@ -536,23 +536,50 @@ aren’t available to the outside world.
     };
 
     loadProductUrl = function($) {
-      shouldIRetry = false;
-      var form = this.$("form[action='/cart/add']");
-      var variant_id = this.$('input[name^=id]:checked, select[name^=id], input[name=id], hidden[name^=id]', form).val();
-      if (typeof variant_id == 'undefined') {
-        enabled = false;
-      } else if (variant_id == null) {
-        var option_1 = this.$('option[value]', form).val();
-        if (typeof option_1 != 'undefined') {
-          enabled = false;
-        } else {
-          enabled = true;
-          shouldIRetry = true;
-          productUrl = "/cart/" +  option_1 + ":1";
+      var current_url = window.location.pathname;
+      var p_url = current_url + '.json';
+      // console.log("loading" + current_url);
+
+      // if this is a product page
+      if (current_url.includes('product')) {
+        // and if variant is not one of the parameters
+        var variant_id = getUrlParameter('variant');
+        if (variant_id != '') {
+          // console.log("variants id from url is " + variant_id);
+          productUrl = "/cart/" +  variant_id + ":1";
         }
-      } else {
-        enabled = true
-        productUrl = "/cart/" +  variant_id + ":1";
+        else {
+          // then grep it from json
+          $.ajax({
+            type : "Get",
+            url :p_url,
+            dataType :"json",
+            success : function(data){
+              // Get the length of variants
+              //var json = JSON.parse(data);
+
+              // check if there is product property
+              if (data.hasOwnProperty('product')) {
+                if (data.product.hasOwnProperty('variants')) {
+                  var v_len = data.product.variants.length;
+                  if (v_len == 1 || v_len >1) {
+                     productUrl = "/cart/" + data.product.variants[0].id + ":1"
+                  } 
+                  else {
+                     console.log("variants is less than 1.  problem");
+                  }
+                }
+              }
+            },
+            error : function(httpReq,status,exception){
+              console.log(status+" "+exception);
+            }
+          });
+        } // end if
+      }
+      else {
+        // otherwise do nothing.  set the product to be '#'
+        productUrl = '#'
       }
     }; // end of loadProductUrl
 
@@ -632,16 +659,6 @@ aren’t available to the outside world.
               console.log("not displaying ...." + first_order_cookie);
               return;
             }
-            if (shouldIRetry) {
-              // if it is not enabled, try again.  If it fail, return
-              loadProductUrl();
-              if (!enabled) {
-                console.log("Tried re-enabling.  Could not get productUrl.")
-                return;
-              }
-            }
-
-            // Need to check whether we need to reload the productUrl
             // otherwise, display
             console.log("Display " + productUrl);
 
@@ -675,10 +692,6 @@ aren’t available to the outside world.
       // console.log('Success');
       // loadStylesheet("/peekabar/jquery.peekabar.css");
       loadProductUrl($);
-      if (!enabled) {
-        console.log("First Order is not enabled")
-        return;
-      }
       loadLib($);
       loadProxy($);
       trackProductScreen($);

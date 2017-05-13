@@ -7,6 +7,7 @@ require 'liquid'
 require 'tilt/coffee'
 require 'haml'
 require 'pry'
+require './lib/jobs/increment_job'
 
 require 'httplog'
 require 'padrino-helpers'
@@ -22,51 +23,7 @@ class SinatraApp < Sinatra::Base
 
   enable :sessions
 
-  # configure do 
-  #   HttpLog.configure do |config|
-     
-  #     # You can assign a different logger
-  #     config.logger = Logger.new($stdout)
-      
-  #     # I really wouldn't change this...
-  #     config.severity = Logger::Severity::DEBUG
-      
-  #     # Tweak which parts of the HTTP cycle to log...
-  #     config.log_connect   = true
-  #     config.log_request   = true
-  #     config.log_headers   = true
-  #     config.log_data      = true
-  #     config.log_status    = true
-  #     config.log_response  = true
-  #     config.log_benchmark = true
-      
-  #     # ...or log all request as a single line by setting this to `true`
-  #     config.compact_log = false 
-      
-  #     # Prettify the output - see below
-  #     config.color = false
-      
-  #     # Limit logging based on URL patterns
-  #     config.url_whitelist_pattern = /.*/
-  #     config.url_blacklist_pattern = nil
-  #   end
-  # end
-
-  configure :development do
-    require 'pry'
-    require 'better_errors'
-    require "sinatra/reloader"
-    register Sinatra::Reloader
-
-    also_reload 'app/**/*.rb'
-    also_reload 'lib/**/*.rb'
-    also_reload 'conf/**/*.rb'
-    set :raise_errors, true
-    use BetterErrors::Middleware
-    # you need to set the application root in order to abbreviate filenames
-    # within the application:
-    BetterErrors.application_root = File.expand_path('..', __FILE__)
-
+  configure do 
     HttpLog.configure do |config|
      
       # You can assign a different logger
@@ -96,6 +53,50 @@ class SinatraApp < Sinatra::Base
     end
   end
 
+  configure :development do
+    require 'pry'
+    require 'better_errors'
+    require "sinatra/reloader"
+    register Sinatra::Reloader
+
+    also_reload 'app/**/*.rb'
+    also_reload 'lib/**/*.rb'
+    also_reload 'conf/**/*.rb'
+    set :raise_errors, true
+    use BetterErrors::Middleware
+    # you need to set the application root in order to abbreviate filenames
+    # within the application:
+    BetterErrors.application_root = File.expand_path('..', __FILE__)
+
+    # HttpLog.configure do |config|
+     
+    #   # You can assign a different logger
+    #   config.logger = Logger.new($stdout)
+      
+    #   # I really wouldn't change this...
+    #   config.severity = Logger::Severity::DEBUG
+      
+    #   # Tweak which parts of the HTTP cycle to log...
+    #   config.log_connect   = true
+    #   config.log_request   = true
+    #   config.log_headers   = true
+    #   config.log_data      = true
+    #   config.log_status    = true
+    #   config.log_response  = true
+    #   config.log_benchmark = true
+      
+    #   # ...or log all request as a single line by setting this to `true`
+    #   config.compact_log = false 
+      
+    #   # Prettify the output - see below
+    #   config.color = false
+      
+    #   # Limit logging based on URL patterns
+    #   config.url_whitelist_pattern = /.*/
+    #   config.url_blacklist_pattern = nil
+    # end
+  end
+
   # set the scope that your app needs, read more here:
   # http://docs.shopify.com/api/tutorials/oauth
   set :scope, 'read_products, read_orders, read_script_tags, write_script_tags'
@@ -119,13 +120,33 @@ class SinatraApp < Sinatra::Base
   # stores more data.
   post '/uninstall' do
     webhook_session do |params|
-      # binding.pry
-      # clear_session(current_shop)
-
       current_shop.destroy
     end
     logout
   end
+  
+  # this endpoint recieves the order webhook
+  # and cleans up data, add to this endpoint as your app
+  # stores more data.
+  post '/order' do
+
+    webhook_session do |params|
+      # if there is a discount code
+      if params["discount_codes"][0]
+        if params["discount_codes"][0]["code"] == current_shop.setting.discount_code
+          puts "*******"
+          puts "found the discount code test"
+          puts "*******"
+          my_webhook_job(IncrementJob, params)
+        else 
+          puts "the discount code does not match"
+        end
+      else
+        puts "there are no discount_code"
+      end
+    end
+  end
+  
   @@font = {
     'Serif' => "Georgia, 'Times New Roman', Times, serif",
     'Sans Sanrif' => "Helvetica, Arial, sans-serif",
@@ -148,6 +169,9 @@ class SinatraApp < Sinatra::Base
     shopify_session do
       # retrieve setting
       @setting = current_shop.setting
+      discount_code = params['discount_code']
+      @setting.discount_code = discount_code if discount_code
+
       bar_color = params['bar_color']
       @setting.bar_color = bar_color if bar_color
 
@@ -191,9 +215,13 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/proxy/' do
+    if !enabled?
+      halt 204
+    end
+
     params = request.env['rack.request.query_hash']
     shopify_session do
-      # do something
+      # do nothing.
     end
 
     content_type :'application/liquid'
@@ -201,6 +229,9 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/load_first_order.js' do
+    if !enabled?
+      halt 204
+    end
 
     shop_name = params['shop']
 
@@ -216,6 +247,20 @@ class SinatraApp < Sinatra::Base
   end
 
   private
+
+  def my_webhook_job(jobKlass, params)
+    # return unless verify_shopify_webhook
+    @shop_name = request.env['HTTP_X_SHOPIFY_SHOP_DOMAIN']
+    shop = Shop.find_by(name: @shop_name)
+    # params = ActiveSupport::JSON.decode(request.body.read.to_s)
+    Resque.enqueue(jobKlass, shop.name, shop.token, params)
+    status 200
+  end
+
+  def enabled?
+    # beta ... so free for now.  Placeholder to change when I want to charge.
+    return true
+  end
 
   # This method gets called when your app is installed.
   # setup any webhooks or services you need on Shopify
@@ -233,6 +278,11 @@ class SinatraApp < Sinatra::Base
         format: 'json'
       )
 
+      order_webhook = ShopifyAPI::Webhook.new(
+        topic: 'orders/create',
+        address: "#{base_url}/order",
+        format: 'json'
+      )
 
       begin
         uninstall_webhook.save!
@@ -240,10 +290,17 @@ class SinatraApp < Sinatra::Base
         raise unless uninstall_webhook.persisted?
       end
 
+      begin
+        order_webhook.save!
+      rescue => e
+        raise unless order_webhook.persisted?
+      end
+
       # need to create tags
       load_script_tag = ShopifyAPI::ScriptTag.new(
         event: "onload", 
-        src: "#{base_url}/load_first_order.js"
+        src: "#{base_url}/load_first_order.js",
+        display_scope: 'online_store'
       )
       begin
         load_script_tag.save!
