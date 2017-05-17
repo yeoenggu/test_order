@@ -1,5 +1,5 @@
 GIT
-  remote: git@bitbucket.org:eng_guan_yeo/omniauth-shopify-oauth2.git
+  remote: https://bitbucket.org/eng_guan_yeo/omniauth-shopify-oauth2.git
   revision: 47937540a2ee0ce72e9161af31d1ebeaeccf6434
   specs:
     omniauth-shopify-oauth2 (1.1.17)
@@ -7,7 +7,7 @@ GIT
       omniauth-oauth2 (~> 1.2)
 
 GIT
-  remote: git@bitbucket.org:eng_guan_yeo/shopify-sinatra-app.git
+  remote: https://bitbucket.org/eng_guan_yeo/shopify-sinatra-app.git
   revision: da519e3d0aa8643da81f26d8d3ef1d8445e585e8
   specs:
     shopify-sinatra-app (0.3.3)
