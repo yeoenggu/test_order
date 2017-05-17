@@ -38,6 +38,9 @@
     
 # Doing
 
+https://#{ ENV['CONTRIBSYS_USERNAME_PASSWORD'] }@gems.contribsys.com
+git@bitbucket.org:eng_guan_yeo/omniauth-shopify-oauth2.git
+https://eng_guan_yeo:Zepth72BB@bitbucket.org:eng_guan_yeo/omniauth-shopify-oauth2.git
 =================>
 - deploy
   - I change the gems.  so I need to package them and deploy.
