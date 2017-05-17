@@ -14,8 +14,6 @@
   - kickstarter
     - there is already some content on it
 
-
-
 # Testing
 
 - installing and uninstalling
@@ -41,9 +39,17 @@
 # Doing
 
 =================>
-
-
 - deploy
+  - I change the gems.  so I need to package them and deploy.
+    - gems that I changed
+      - omniauth-shopify-oauth2-1.1.17
+      - shopify-sinatra-app-0.3.3
+    - clone them on github
+    - import them to bitbucket
+    - make changes to them 
+    - how do I do that?
+  
+
   set RACK_ENV = production 
   set database url 
 
