@@ -111,7 +111,7 @@ class SinatraApp < Sinatra::Base
       # retrieve setting
       @setting = current_shop.setting
       # erb :home
-      # flash[:notice] ="You have installed first order"
+      flash[:error] ="Testing error .."
       haml :home, :layout => :first_order_app
     end
   end

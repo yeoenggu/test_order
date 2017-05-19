@@ -43,12 +43,6 @@
           ShopifyApp.ready(function(){
             ShopifyApp.flashNotice("#{flash[:notice]}");
           });
-      - else
-        :javascript
-          console.log("No Notice");
-          ShopifyApp.ready(function(){
-            ShopifyApp.flashNotice("No notice");
-          });
       - if flash[:error]
         :javascript
           console.log("error");
