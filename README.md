@@ -191,3 +191,4 @@ Y08027204150Z
 E
 
 = erb :'_top_bar', layout: false, locals: locals
+=erb :'_flash_messages', layout: false, locals: locals

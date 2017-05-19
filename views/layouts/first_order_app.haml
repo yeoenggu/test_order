@@ -37,5 +37,12 @@
             }
           });
         });
-      =erb :'_flash_messages', layout: false, locals: locals
+      - if flash[:notice]
+        %p Notice
+      - else
+        %p No Notice
+      - if flash[:error]
+        %p error
+      - else
+        %p No error
       = yield
