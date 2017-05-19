@@ -36,6 +36,13 @@
   - new customer will see it
   - old customer will not.
     
+# Heroku
+
+heroku logs --tails
+heroku run bundle exec rake -T
+heroku run bundle exec rake db:rollback
+
+
 # Doing
 
 https://#{ ENV['CONTRIBSYS_USERNAME_PASSWORD'] }@gems.contribsys.com
@@ -183,13 +190,4 @@ Manhattan -168
 Y08027204150Z
 E
 
-
-Wed 9pm 
-1 Yong Yuan
-2 Tiago
-3 
-4
-5
-6
-7
-8
+= erb :'_top_bar', layout: false, locals: locals

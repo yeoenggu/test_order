@@ -18,6 +18,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   %body
     .container
-      = erb :'_top_bar', layout: false, locals: locals
+      :javascript
+        window.mainPageTitle = 'Customerize Your Offer';
+        ShopifyApp.ready(function(){
+          ShopifyApp.Bar.initialize({
+            title: window.mainPageTitle,
+            icon: "#{base_url}/icon.png",
+            buttons: {
+              primary: {
+                label: "Save",
+                message: 'save-setting'
+              },
+              secondary: {
+                label: "Help",
+                href: "/help",
+                target: 'app'
+              }
+            }
+          });
+        });
       = erb :'_flash_messages', layout: false, locals: locals
       = yield
