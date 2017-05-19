@@ -38,11 +38,15 @@
           });
         });
       - if flash[:notice]
-        %p Notice
+        :javascript
+          console.log("Notice");
       - else
-        %p No Notice
+        :javascript
+          console.log("No Notice");
       - if flash[:error]
-        %p error
+        :javascript
+          console.log("error");
       - else
-        %p No error
+        :javascript
+          console.log("No Error");
       = yield
