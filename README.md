@@ -192,3 +192,10 @@ E
 
 = erb :'_top_bar', layout: false, locals: locals
 =erb :'_flash_messages', layout: false, locals: locals
+
+- else
+        :javascript
+          console.log("No Error");
+          ShopifyApp.ready(function(){
+            ShopifyApp.flashNotice("No Error");
+          });
