@@ -13,29 +13,7 @@
   - from etsy
   - kickstarter
     - there is already some content on it
-
-# Testing
-
-- installing and uninstalling
-- onboarding
-  - install
-  - change setting
-  - discount
-  - increase count
-- test enabling and disabling
-  - product, collection
-  - checkout, blog, etc
-- test product variant
-  - with single options 
-  - with multiple options
-    - default value
-    - no default value
-      - it select the first one
-      - if you select the option, it will switch to the new one.
-- test new customer vs old customer.
-  - new customer will see it
-  - old customer will not.
-    
+   
 # Heroku
 
 heroku logs --tails
@@ -44,26 +22,30 @@ heroku run bundle exec rake db:rollback
 
 
 # Doing
-
-https://#{ ENV['CONTRIBSYS_USERNAME_PASSWORD'] }@gems.contribsys.com
-git@bitbucket.org:eng_guan_yeo/omniauth-shopify-oauth2.git
-https://eng_guan_yeo:Zepth72BB@bitbucket.org:eng_guan_yeo/omniauth-shopify-oauth2.git
-=================>
-- deploy
-  - I change the gems.  so I need to package them and deploy.
-    - gems that I changed
-      - omniauth-shopify-oauth2-1.1.17
-      - shopify-sinatra-app-0.3.3
-    - clone them on github
-    - import them to bitbucket
-    - make changes to them 
-    - how do I do that?
-  
-
-  set RACK_ENV = production 
-  set database url 
-
 - test
+  - installing and uninstalling
+  - onboarding
+    - install
+    - change setting
+    - discount
+    - increase count
+  - test discount
+    - default 
+    - invalid
+    - valid
+  - test enabling and disabling
+    - product, collection
+    - checkout, blog, etc
+  - test product variant
+    - with single options 
+    - with multiple options
+      - default value
+      - no default value
+        - it select the first one
+        - if you select the option, it will switch to the new one.
+  - test new customer vs old customer.
+    - new customer will see it
+    - old customer will not.
 
 - omniauth
   - routing to failure ...
@@ -190,12 +172,3 @@ Manhattan -168
 Y08027204150Z
 E
 
-= erb :'_top_bar', layout: false, locals: locals
-=erb :'_flash_messages', layout: false, locals: locals
-
-- else
-        :javascript
-          console.log("No Error");
-          ShopifyApp.ready(function(){
-            ShopifyApp.flashNotice("No Error");
-          });
