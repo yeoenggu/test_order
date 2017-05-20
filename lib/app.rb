@@ -111,7 +111,7 @@ class SinatraApp < Sinatra::Base
       # retrieve setting
       @setting = current_shop.setting
       # erb :home
-      # flash[:error] = "testing 123"
+      flash[:notice] = "testing abc"
       haml :home, :layout => :first_order_app
     end
   end
