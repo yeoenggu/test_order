@@ -24,6 +24,10 @@ heroku run bundle exec rake db:rollback
 # Doing
 - test
   - installing and uninstalling
+  - flash issue
+      - fixing haml. i hard coded flash messages.  these message seem to hang around.
+      - change to sinatra flash - worked
+==========>
   - onboarding
     - install
     - change setting
@@ -53,18 +57,8 @@ heroku run bundle exec rake db:rollback
   - clear ... data?
 
 
-testing again.
-- new customer
-- old customer.
-
-
-what happen
-- did not log in
-- at checkout page, I logged in
-- when I get back, the page does not seem to have proxy loaded.
 
 - review product page
-
 - remove name of the customer ...
 
 
@@ -172,3 +166,24 @@ Manhattan -168
 Y08027204150Z
 E
 
+
+Sunday FRIENDLY Soccer Match ⚽ 
+21st May 2017
+5 pm 🌥
+
+In 
+1) Mel 
+2) 
+3) 
+4) 
+5) 
+6) 
+7) 
+8) 
+9) 
+10) 
+
+Out 
+1) 
+2) 
+3)
