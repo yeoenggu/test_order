@@ -311,7 +311,6 @@
                     .col-md-2
                         = text_field_tag "button_hover_color", :id => "Button_Hover_Color", :value => @setting.button_hover_color, :class => "form-control input-md"
                         %span.help-block Color when the mouse hover over it.
-        @setting.text_font_family.split(',')[0].tr("'", '').strip
         #bizzbar.bizzbar
             %p#bizztext.bizztext
                 Drive more attention to your most important website content with Bizz Bar.
