@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170401155602) do
+ActiveRecord::Schema.define(version: 20170523044358) do
 
   create_table "settings", force: true do |t|
-    t.string  "bar_color",          null: false
-    t.string  "text_color",         null: false
-    t.string  "text_font_family",   null: false
-    t.string  "text_font_size",     null: false
-    t.string  "button_color",       null: false
-    t.string  "button_hover_color", null: false
-    t.string  "button_text_color",  null: false
-    t.string  "bar_text",           null: false
-    t.string  "button_text",        null: false
-    t.integer "targeted_time",      null: false
+    t.string  "bar_color",             null: false
+    t.string  "text_color",            null: false
+    t.string  "text_font_family",      null: false
+    t.string  "text_font_size",        null: false
+    t.string  "button_color",          null: false
+    t.string  "button_hover_color",    null: false
+    t.string  "button_text_color",     null: false
+    t.string  "bar_text",              null: false
+    t.string  "button_text",           null: false
+    t.integer "targeted_time",         null: false
     t.integer "shop_id"
-    t.string  "discount_code",      null: false
+    t.string  "discount_code",         null: false
+    t.string  "text_font_family_name"
   end
 
   add_index "settings", ["shop_id"], name: "index_settings_on_shop_id"

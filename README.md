@@ -27,16 +27,31 @@ heroku run bundle exec rake db:rollback
   - flash issue
       - fixing haml. i hard coded flash messages.  these message seem to hang around.
       - change to sinatra flash - worked
-==========>
+- bugs
+
   - onboarding
     - install
     - change setting
-    - discount
-    - increase count
+      - change the message
+      - change the button text
+==========>
+      - change the font
+        - bug.  switching font does not work.  revert to local copy
+==========>
+      - change time to trigger 
+      - change the colors
+        - bar
+        - message
+        - buttons 
+        - buttons text
+        - buttons text hover
+      increase count
   - test discount
     - default 
     - invalid
     - valid
+      - test web hook
+        - increase count
   - test enabling and disabling
     - product, collection
     - checkout, blog, etc
@@ -57,8 +72,11 @@ heroku run bundle exec rake db:rollback
   - clear ... data?
 
 
-
+- review 
+  - default setting,
+  - messages etc
 - review product page
+
 - remove name of the customer ...
 
 

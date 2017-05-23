@@ -150,9 +150,9 @@ class SinatraApp < Sinatra::Base
   
   @@font = {
     'Serif' => "Georgia, 'Times New Roman', Times, serif",
-    'Sans Sanrif' => "Helvetica, Arial, sans-serif",
+    'Sans Senrif' => "Helvetica, Arial, sans-serif",
     'Arial' => "Arial, Helvetica, sans-serif",
-    'Arial black' => "'Arial Black', Gadget, sans-serif",
+    'Arial Black' => "'Arial Black', Gadget, sans-serif",
     'Cambria' => "Cambria, serif",
     'Calibri' => "Calibri, sans-serif",
     'Courier New' => "'Courier New', monospace",
@@ -181,7 +181,10 @@ class SinatraApp < Sinatra::Base
       
       text_font_family = params['text_font_family']
       if text_font_family
+        @setting.text_font_family_name = text_font_family
         font = @@font[text_font_family] 
+        puts "text_font_family_name : " + text_font_family
+        puts "text_font_family : " + font
         @setting.text_font_family = font if font
       end
 

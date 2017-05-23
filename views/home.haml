@@ -280,7 +280,7 @@
                 .form-group
                     = label_tag "Font", :class => 'col-md-4 control-label', :for => "font_family"
                     .col-md-4
-                        = select_tag "text_font_family" , :options => ["Serif", "Sans Serif", 'Arial', 'Arial Black', "Georgia", 'Cambria', 'Calibri', 'Courier New', 'Futura', 'Helvetica', ' Lucida Grande', 'Tahoma', 'Times New Roman', 'Trebuchet MS', 'Verdana'], :selected => @setting.text_font_family.split[0],  :class => 'form-control'
+                        = select_tag "text_font_family" , :options => ["Serif", "Sans Serif", 'Arial', 'Arial Black', "Georgia", 'Cambria', 'Calibri', 'Courier New', 'Futura', 'Helvetica', 'Lucida Grande', 'Tahoma', 'Times New Roman', 'Trebuchet MS', 'Verdana'], :selected => @setting.text_font_family_name,  :class => 'form-control'
                         %span.help-block Font family
                 .form-group
                     = label_tag "Time to trigger bar", :class => 'col-md-4 control-label', :for => "targeted_time"
@@ -311,6 +311,7 @@
                     .col-md-2
                         = text_field_tag "button_hover_color", :id => "Button_Hover_Color", :value => @setting.button_hover_color, :class => "form-control input-md"
                         %span.help-block Color when the mouse hover over it.
+        @setting.text_font_family.split(',')[0].tr("'", '').strip
         #bizzbar.bizzbar
             %p#bizztext.bizztext
                 Drive more attention to your most important website content with Bizz Bar.
