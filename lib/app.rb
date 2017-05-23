@@ -150,7 +150,7 @@ class SinatraApp < Sinatra::Base
   
   @@font = {
     'Serif' => "Georgia, 'Times New Roman', Times, serif",
-    'Sans Senrif' => "Helvetica, Arial, sans-serif",
+    'Sans Serif' => "Helvetica, Arial, sans-serif",
     'Arial' => "Arial, Helvetica, sans-serif",
     'Arial Black' => "'Arial Black', Gadget, sans-serif",
     'Cambria' => "Cambria, serif",
