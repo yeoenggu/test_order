@@ -34,18 +34,19 @@ heroku run bundle exec rake db:rollback
     - change setting
       - change the message
       - change the button text
-==========>
+
       - change the font
         - bug.  switching font does not work.  revert to local copy
-==========>
+
       - change time to trigger 
+==========>
       - change the colors
         - bar
         - message
         - buttons 
         - buttons text
         - buttons text hover
-      increase count
+==========>
   - test discount
     - default 
     - invalid
