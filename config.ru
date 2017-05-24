@@ -11,4 +11,6 @@ require './lib/app'
 require 'tilt/liquid'
 
 
-SinatraApp.run!
+run Rack::URLMap.new \
+  '/'       => SinatraApp,
+  '/resque' => Resque::Server.new

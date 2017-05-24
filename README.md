@@ -34,25 +34,25 @@ heroku run bundle exec rake db:rollback
     - change setting
       - change the message
       - change the button text
-
       - change the font
         - bug.  switching font does not work.  revert to local copy
-
       - change time to trigger 
-==========>
       - change the colors
         - bar
+
         - message
         - buttons 
         - buttons text
         - buttons text hover
-==========>
+
   - test discount
     - default 
     - invalid
+==========>
     - valid
       - test web hook
         - increase count
+==========>
   - test enabling and disabling
     - product, collection
     - checkout, blog, etc
@@ -80,6 +80,8 @@ heroku run bundle exec rake db:rollback
 
 - remove name of the customer ...
 
+
+at=info method=GET path="/form_setting?hmac=49f2f5645a3ee6d90134984cff8cf8bbb435edf18f5198a7990a31b7992e1e99&locale=en&protocol=https%3A%2F%2F&shop=sg-drinks-party.myshopify.com&timestamp=1495558016" host=firstorder.herokuapp.com request_id=ed101a97-d979-4a12-9943-b080ebbd1260 fwd="175.156.72.13" dyno=web.1 connect=1ms service=7ms status=404 bytes=1674 protocol=https
 
 # To Do
 
