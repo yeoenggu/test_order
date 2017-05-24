@@ -9,6 +9,8 @@ end
 require 'tilt/erb'
 require './lib/app'
 require 'tilt/liquid'
+require './lib/app'
+require 'resque/server'
 
 
 run Rack::URLMap.new \
