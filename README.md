@@ -39,23 +39,30 @@ heroku run bundle exec rake db:rollback
       - change time to trigger 
       - change the colors
         - bar
-
         - message
         - buttons 
         - buttons text
         - buttons text hover
-
   - test discount
     - default 
     - invalid
-==========>
     - valid
       - test web hook
         - increase count
-==========>
+
   - test enabling and disabling
+    - enabled in 
+      - home page
+      - product page
+    - not enabled
+      - about us
+      - blog
+      - search
+      - cart
+
     - product, collection
     - checkout, blog, etc
+==========>
   - test product variant
     - with single options 
     - with multiple options
@@ -63,6 +70,9 @@ heroku run bundle exec rake db:rollback
       - no default value
         - it select the first one
         - if you select the option, it will switch to the new one.
+      - how do I test the edge cases ?
+        - manually trace or recreate it 
+==========>
   - test new customer vs old customer.
     - new customer will see it
     - old customer will not.
@@ -162,6 +172,8 @@ at=info method=GET path="/form_setting?hmac=49f2f5645a3ee6d90134984cff8cf8bbb435
     but when I tried it with foreman ... request never come back.  connection establish.  but took very long to process ..
 - charging the user
 
+- store specific jquery selector
+  - to select the variant
 
 # notes
 
@@ -171,6 +183,21 @@ bundle exec rake resque:work QUEUE=*
 ngrok http 4567
 
 bundle exec pry -I. -r lib/app.rb
+
+
+stores that I can test jquery
+
+https://www.popchartlab.com/products/signature-axes-greeting-card
+no default option.
+
+https://www.theghostlystore.com/collections/music/products/detroit-part-ii
+first order won't work.  custom jquery
+
+https://www.flatspot.com/products/drakies-fc-shirt-black-white
+default option is "defaultValue"
+should select last option
+
+
 
 # omniauth
 oauth2 => omniauth => omniauth-oauth2 => omniauth-shopify-oauth2
@@ -208,3 +235,9 @@ Out
 1) 
 2) 
 3)
+
+
+
+<option {% if product.selected_variant == nil %} selected="selected" {% endif %} value="defaultValue">{{ "Size" }} - {{ 0 | money_with_currency }}</option>
+
+

@@ -535,22 +535,50 @@ aren’t available to the outside world.
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     };
 
+    function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n)
+    }
+
     loadProductUrl = function($) {
-      shouldIRetry = false;
+      shouldIRetry = true;
+      // the following will select the option that is in the form
       var form = this.$("form[action='/cart/add']");
-      var variant_id = this.$('input[name^=id]:checked, select[name^=id], input[name=id], hidden[name^=id]', form).val();
+      var variant_id = this.$('input[name^=id]:checked, select[name^=id], input[name^=id], hidden[name^=id]', form).val();
       if (typeof variant_id == 'undefined') {
+        // They have customized the form.  We cannot support it.
         enabled = false;
-      } else if (variant_id == null) {
-        var option_1 = this.$('option[value]', form).val();
-        if (typeof option_1 != 'undefined') {
-          enabled = false;
+      } else if ((variant_id == null) || (variant_id == "")) {
+        // form is supported but there is no option selected.
+        
+        // var option_1 = this.$('option[value]', form).val();
+        // Select the option that is selected
+        // https://www.allbirds.com/products/mens-wool-runners?variant=40210878599
+        // $('option[selected]', form).val()
+
+        var option_1 = this.$('option[selected]', form).val();
+        if ((typeof option_1 != 'undefined') || ( option_1 == "")){
+          // We do not know how to grep the selected option
+          // try to grep the first or the last option
+          option_1 = this.$('option[value]', form).val();
+          if (typeof option_1 != 'undefined') {
+            enabled = false;
+          }
+          else {
+            if (!isNumeric(option_1)) {
+              // if the first option is not a valid variant id, we grep the last one.
+              option_1 = this.$('option[value]', form).last().val()
+            }
+            enabled = true;
+            productUrl = "/cart/" +  option_1 + ":1";
+          }
         } else {
           enabled = true;
-          shouldIRetry = true;
           productUrl = "/cart/" +  option_1 + ":1";
+          // The reason for retry is that I pick the first option if nothing is selected.  
+          // In the event, customer select some option later.  I should check again.
         }
       } else {
+        // this is the case where we can grep the variant normally.
         enabled = true
         productUrl = "/cart/" +  variant_id + ":1";
       }
