@@ -241,3 +241,28 @@ Out
 <option {% if product.selected_variant == nil %} selected="selected" {% endif %} value="defaultValue">{{ "Size" }} - {{ 0 | money_with_currency }}</option>
 
 
+<select name="id" id="productSelect" class="product-variants">
+            {% if product.variants.size > 0 %}
+              <option {% if product.selected_variant == nil %} selected="selected" {% endif %} value="defaultValue">{{ "Size" }} - {{ 0 | money_with_currency }}</option>
+            {% endif %}
+
+            {% for variant in product.variants %}
+              {% if variant.available %}
+
+                {% comment %}
+                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                {% endcomment %}
+                <option {% if variant == product.selected_variant%} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+
+
+{% comment %}
+                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                {% endcomment %}

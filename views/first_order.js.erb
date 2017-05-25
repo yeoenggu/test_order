@@ -559,7 +559,7 @@ aren’t available to the outside world.
           // We do not know how to grep the selected option
           // try to grep the first or the last option
           option_1 = this.$('option[value]', form).val();
-          if (typeof option_1 != 'undefined') {
+          if (typeof option_1 == 'undefined') {
             enabled = false;
           }
           else {
