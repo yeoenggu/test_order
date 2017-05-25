@@ -8,7 +8,7 @@ aren’t available to the outside world.
     /* Load Script function we may need to load jQuery from the Google's CDN */
     /* That code is world-reknown. */
     /* One source: http://snipplr.com/view/18756/loadscript/ */
-    var loadProxy, loadScript, loadLib, myAppJavaScript, trackProductScreen, loadProductUrl, productUrl, injectStyles, addStyles, enabled, shouldIRetry;
+    var loadProxy, loadScript, loadLib, myAppJavaScript, trackProductScreen, loadProductUrl, productUrl, injectStyles, addStyles, enabled;
 
     loadScript = function(url, callback) {
       var script;
@@ -540,7 +540,6 @@ aren’t available to the outside world.
     }
 
     loadProductUrl = function($) {
-      shouldIRetry = true;
       // the following will select the option that is in the form
       var form = this.$("form[action='/cart/add']");
       var variant_id = this.$('input[name^=id]:checked, select[name^=id], input[name^=id], hidden[name^=id]', form).val();
@@ -660,13 +659,12 @@ aren’t available to the outside world.
               console.log("not displaying ...." + first_order_cookie);
               return;
             }
-            if (shouldIRetry) {
-              // if it is not enabled, try again.  If it fail, return
-              loadProductUrl();
-              if (!enabled) {
-                console.log("Tried re-enabling.  Could not get productUrl.")
-                return;
-              }
+            
+            // if it is not enabled, try again.  If it fail, return
+            loadProductUrl();
+            if (!enabled) {
+              console.log("Tried re-enabling.  Could not get productUrl.")
+              return;
             }
 
             // Need to check whether we need to reload the productUrl
