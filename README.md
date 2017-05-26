@@ -72,10 +72,16 @@ heroku run bundle exec rake db:rollback
         - if you select the option, it will switch to the new one.
       - how do I test the edge cases ?
         - manually trace or recreate it 
+        - manually grep the generated js.  add console log lines to it.
+          - test on the 3 websites
+          - test more ...
+
 ==========>
   - test new customer vs old customer.
     - new customer will see it
+      - eg@showcrowd.co
     - old customer will not.
+      yeoenggu@gmail.com
 
 - omniauth
   - routing to failure ...
@@ -215,54 +221,65 @@ Y08027204150Z
 E
 
 
-Sunday FRIENDLY Soccer Match ⚽ 
-21st May 2017
-5 pm 🌥
+# test simulation for js jquery
 
-In 
-1) Mel 
-2) 
-3) 
-4) 
-5) 
-6) 
-7) 
-8) 
-9) 
-10) 
+1) manually grep the generated js.
+2) augment it like following with the var declaration and console.log
 
-Out 
-1) 
-2) 
-3)
+var productUrl = "";
+var enabled = false;
 
+function isNumeric(n) {
+      return !isNaN(parseFloat(n)) && isFinite(n)
+    }
 
+var loadProductUrl = function($) {
+      // the following will select the option that is in the form
+      console.log("running");
+      var form = this.$("form[action='/cart/add']");
+      var variant_id = this.$('input[name^=id]:checked, select[name^=id], input[name^=id], hidden[name^=id]', form).val();
+      if (typeof variant_id == 'undefined') {
+        // They have customized the form.  We cannot support it.
+        enabled = false;
+        console.log("Not enabled.  Cannot find the form");
+      } else if ((variant_id == null) || (variant_id == "")) {
+        // form is supported but there is no option selected.
+        
+        // var option_1 = this.$('option[value]', form).val();
+        // Select the option that is selected
+        // https://www.allbirds.com/products/mens-wool-runners?variant=40210878599
+        // $('option[selected]', form).val()
 
-<option {% if product.selected_variant == nil %} selected="selected" {% endif %} value="defaultValue">{{ "Size" }} - {{ 0 | money_with_currency }}</option>
-
-
-<select name="id" id="productSelect" class="product-variants">
-            {% if product.variants.size > 0 %}
-              <option {% if product.selected_variant == nil %} selected="selected" {% endif %} value="defaultValue">{{ "Size" }} - {{ 0 | money_with_currency }}</option>
-            {% endif %}
-
-            {% for variant in product.variants %}
-              {% if variant.available %}
-
-                {% comment %}
-                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
-                {% endcomment %}
-                <option {% if variant == product.selected_variant%} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-
-              {% else %}
-                <option disabled="disabled">
-                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                </option>
-              {% endif %}
-            {% endfor %}
-          </select>
-
-
-{% comment %}
-                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
-                {% endcomment %}
+        var option_1 = this.$('option[selected]', form).val();
+        if ((typeof option_1 != 'undefined') || ( option_1 == "")){
+          // We do not know how to grep the selected option
+          // try to grep the first or the last option
+          option_1 = this.$('option[value]', form).val();
+          if (typeof option_1 == 'undefined') {
+            enabled = false;
+            console.log("Not enabled.  Cannot grep the option");
+          }
+          else {
+            if (!isNumeric(option_1)) {
+              // if the first option is not a valid variant id, we grep the last one.
+              option_1 = this.$('option[value]', form).last().val();
+              console.log("Grep the last option");
+            }
+            console.log("Grep first or last option");
+            enabled = true;
+            productUrl = "/cart/" +  option_1 + ":1";
+          }
+        } else {
+          enabled = true;
+          productUrl = "/cart/" +  option_1 + ":1";
+          console.log("Got the selected option");
+          // The reason for retry is that I pick the first option if nothing is selected.  
+          // In the event, customer select some option later.  I should check again.
+        }
+      } else {
+        // this is the case where we can grep the variant normally.
+        enabled = true
+        productUrl = "/cart/" +  variant_id + ":1";
+        console.log("Normal grep.")
+      }
+    }; // end of loadProductUrl

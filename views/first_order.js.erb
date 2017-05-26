@@ -560,21 +560,22 @@ aren’t available to the outside world.
           // try to grep the first or the last option
           option_1 = this.$('option[value]', form).val();
           if (typeof option_1 == 'undefined') {
+            // cannot find the options.
             enabled = false;
           }
           else {
             if (!isNumeric(option_1)) {
               // if the first option is not a valid variant id, we grep the last one.
-              option_1 = this.$('option[value]', form).last().val()
+              option_1 = this.$('option[value]', form).last().val();
             }
+            // first or last option.
             enabled = true;
             productUrl = "/cart/" +  option_1 + ":1";
           }
         } else {
+          // Grep the selected option
           enabled = true;
           productUrl = "/cart/" +  option_1 + ":1";
-          // The reason for retry is that I pick the first option if nothing is selected.  
-          // In the event, customer select some option later.  I should check again.
         }
       } else {
         // this is the case where we can grep the variant normally.
@@ -659,7 +660,7 @@ aren’t available to the outside world.
               console.log("not displaying ...." + first_order_cookie);
               return;
             }
-            
+            console.log("first_order_cookie value " + first_order_cookie);
             // if it is not enabled, try again.  If it fail, return
             loadProductUrl();
             if (!enabled) {
