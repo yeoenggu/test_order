@@ -240,7 +240,7 @@ class SinatraApp < Sinatra::Base
     shop_name = params['shop']
 
     @shop = Shop.find_by(name: shop_name)
-    @setting = shop.setting
+    @setting = @shop.setting
     content_type :js
     # coffee :load_first_order
     erb :'first_order.js', :layout => false
