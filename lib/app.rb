@@ -130,14 +130,10 @@ class SinatraApp < Sinatra::Base
   # and cleans up data, add to this endpoint as your app
   # stores more data.
   post '/order' do
-
     webhook_session do |params|
       # if there is a discount code
       if params["discount_codes"][0]
         if params["discount_codes"][0]["code"] == current_shop.setting.discount_code
-          puts "*******"
-          puts "found the discount code test"
-          puts "*******"
           my_webhook_job(IncrementJob, params)
         else 
           puts "the discount code does not match"
@@ -183,8 +179,6 @@ class SinatraApp < Sinatra::Base
       if text_font_family
         @setting.text_font_family_name = text_font_family
         font = @@font[text_font_family] 
-        puts "text_font_family_name : " + text_font_family
-        puts "text_font_family : " + font
         @setting.text_font_family = font if font
       end
 

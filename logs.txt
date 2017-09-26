@@ -1,0 +1,301 @@
+2017-08-26T11:46:53.584788+00:00 app[web.1]: * Listening on tcp://0.0.0.0:24794
+2017-08-26T11:46:53.584973+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-26T11:46:54.043992+00:00 heroku[web.1]: State changed from starting to up
+2017-08-27T06:14:37.057202+00:00 heroku[resque.1]: Cycling
+2017-08-27T06:14:37.057690+00:00 heroku[resque.1]: State changed from up to starting
+2017-08-27T06:14:38.127988+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-08-27T06:14:39.781588+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-08-27T06:14:40.459623+00:00 heroku[resque.1]: State changed from starting to up
+2017-08-27T06:14:42.019721+00:00 heroku[resque.1]: Process exited with status 0
+2017-08-27T12:14:16.358376+00:00 heroku[web.1]: Cycling
+2017-08-27T12:14:16.359070+00:00 heroku[web.1]: State changed from up to starting
+2017-08-27T12:14:17.127071+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-08-27T12:14:17.150979+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-08-27T12:14:17.162415+00:00 app[web.1]: === puma shutdown: 2017-08-27 12:14:17 +0000 ===
+2017-08-27T12:14:17.162418+00:00 app[web.1]: - Goodbye!
+2017-08-27T12:14:17.474663+00:00 heroku[web.1]: Process exited with status 0
+2017-08-27T12:14:20.194377+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 30142`
+2017-08-27T12:14:26.256824+00:00 heroku[web.1]: State changed from starting to up
+2017-08-27T12:14:26.188825+00:00 app[web.1]: Puma starting in single mode...
+2017-08-27T12:14:26.188853+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-08-27T12:14:26.188860+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-08-27T12:14:26.188861+00:00 app[web.1]: * Environment: production
+2017-08-27T12:14:26.188950+00:00 app[web.1]: * Listening on tcp://0.0.0.0:30142
+2017-08-27T12:14:26.189173+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-28T06:53:49.770330+00:00 heroku[resque.1]: Cycling
+2017-08-28T06:53:49.770846+00:00 heroku[resque.1]: State changed from up to starting
+2017-08-28T06:53:50.669809+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-08-28T06:53:52.701052+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-08-28T06:53:53.467154+00:00 heroku[resque.1]: State changed from starting to up
+2017-08-28T06:53:54.427695+00:00 heroku[resque.1]: Process exited with status 0
+2017-08-28T13:09:10.315464+00:00 heroku[web.1]: Cycling
+2017-08-28T13:09:10.315982+00:00 heroku[web.1]: State changed from up to starting
+2017-08-28T13:09:11.034306+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-08-28T13:09:11.051353+00:00 app[web.1]: === puma shutdown: 2017-08-28 13:09:11 +0000 ===
+2017-08-28T13:09:11.046800+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-08-28T13:09:11.051407+00:00 app[web.1]: - Goodbye!
+2017-08-28T13:09:11.296658+00:00 heroku[web.1]: Process exited with status 0
+2017-08-28T13:09:15.811860+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 49595`
+2017-08-28T13:09:27.871515+00:00 app[web.1]: Puma starting in single mode...
+2017-08-28T13:09:27.871535+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-08-28T13:09:27.871536+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-08-28T13:09:27.871537+00:00 app[web.1]: * Environment: production
+2017-08-28T13:09:27.871656+00:00 app[web.1]: * Listening on tcp://0.0.0.0:49595
+2017-08-28T13:09:27.871887+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-28T13:09:29.701014+00:00 heroku[web.1]: State changed from starting to up
+2017-08-29T07:40:50.535840+00:00 heroku[resque.1]: Cycling
+2017-08-29T07:40:50.536479+00:00 heroku[resque.1]: State changed from up to starting
+2017-08-29T07:40:51.252454+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-08-29T07:40:53.263959+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-08-29T07:40:53.865201+00:00 heroku[resque.1]: State changed from starting to up
+2017-08-29T07:40:56.248809+00:00 heroku[resque.1]: Process exited with status 0
+2017-08-29T13:33:45.356771+00:00 heroku[web.1]: Cycling
+2017-08-29T13:33:45.357088+00:00 heroku[web.1]: State changed from up to starting
+2017-08-29T13:33:45.898850+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-08-29T13:33:45.919437+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-08-29T13:33:45.931469+00:00 app[web.1]: === puma shutdown: 2017-08-29 13:33:45 +0000 ===
+2017-08-29T13:33:45.931475+00:00 app[web.1]: - Goodbye!
+2017-08-29T13:33:46.495369+00:00 heroku[web.1]: Process exited with status 0
+2017-08-29T13:33:48.810936+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 7970`
+2017-08-29T13:33:53.296572+00:00 app[web.1]: Puma starting in single mode...
+2017-08-29T13:33:53.296616+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-08-29T13:33:53.296618+00:00 app[web.1]: * Environment: production
+2017-08-29T13:33:53.296617+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-08-29T13:33:53.296755+00:00 app[web.1]: * Listening on tcp://0.0.0.0:7970
+2017-08-29T13:33:53.296933+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-29T13:33:53.566516+00:00 heroku[web.1]: State changed from starting to up
+2017-08-30T07:58:43.082380+00:00 heroku[resque.1]: Cycling
+2017-08-30T07:58:43.082809+00:00 heroku[resque.1]: State changed from up to starting
+2017-08-30T07:58:44.094089+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-08-30T07:58:46.832784+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-08-30T07:58:47.046488+00:00 heroku[resque.1]: Process exited with status 0
+2017-08-30T07:58:47.482035+00:00 heroku[resque.1]: State changed from starting to up
+2017-08-30T14:11:58.446346+00:00 heroku[web.1]: Cycling
+2017-08-30T14:11:58.446966+00:00 heroku[web.1]: State changed from up to starting
+2017-08-30T14:11:59.371798+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-08-30T14:11:59.408046+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-08-30T14:11:59.415964+00:00 app[web.1]: === puma shutdown: 2017-08-30 14:11:59 +0000 ===
+2017-08-30T14:11:59.415972+00:00 app[web.1]: - Goodbye!
+2017-08-30T14:12:00.979261+00:00 heroku[web.1]: Process exited with status 0
+2017-08-30T14:12:02.796364+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 56764`
+2017-08-30T14:12:09.876752+00:00 app[web.1]: Puma starting in single mode...
+2017-08-30T14:12:09.876773+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-08-30T14:12:09.876774+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-08-30T14:12:09.876775+00:00 app[web.1]: * Environment: production
+2017-08-30T14:12:09.883692+00:00 app[web.1]: * Listening on tcp://0.0.0.0:56764
+2017-08-30T14:12:09.884006+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-30T14:12:10.412084+00:00 heroku[web.1]: State changed from starting to up
+2017-08-31T08:29:25.449513+00:00 heroku[resque.1]: Cycling
+2017-08-31T08:29:25.450186+00:00 heroku[resque.1]: State changed from up to starting
+2017-08-31T08:29:26.215633+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-08-31T08:29:28.039610+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-08-31T08:29:28.623987+00:00 heroku[resque.1]: State changed from starting to up
+2017-08-31T08:29:29.051384+00:00 heroku[resque.1]: Process exited with status 0
+2017-08-31T14:31:45.344225+00:00 heroku[web.1]: Cycling
+2017-08-31T14:31:45.345211+00:00 heroku[web.1]: State changed from up to starting
+2017-08-31T14:31:46.016298+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-08-31T14:31:46.034218+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-08-31T14:31:46.046646+00:00 app[web.1]: === puma shutdown: 2017-08-31 14:31:46 +0000 ===
+2017-08-31T14:31:46.046679+00:00 app[web.1]: - Goodbye!
+2017-08-31T14:31:47.914681+00:00 heroku[web.1]: Process exited with status 0
+2017-08-31T14:31:48.163436+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 44694`
+2017-08-31T14:31:52.343605+00:00 app[web.1]: Puma starting in single mode...
+2017-08-31T14:31:52.343633+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-08-31T14:31:52.343634+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-08-31T14:31:52.343635+00:00 app[web.1]: * Environment: production
+2017-08-31T14:31:52.343733+00:00 app[web.1]: * Listening on tcp://0.0.0.0:44694
+2017-08-31T14:31:52.343984+00:00 app[web.1]: Use Ctrl-C to stop
+2017-08-31T14:31:52.636849+00:00 heroku[web.1]: State changed from starting to up
+2017-08-31T15:32:29.588178+00:00 heroku[router]: at=info method=GET path="/?hmac=3b9cbf4e095117f0519a536830cde1c5896b5107e9315f646c28b1742ee4b582&shop=sg-drinks-party.myshopify.com&timestamp=1504193548" host=firstorder.herokuapp.com request_id=e70b8d2d-27a9-4a72-a140-2e83217386ea fwd="175.156.60.170" dyno=web.1 connect=1ms service=29ms status=200 bytes=2464 protocol=https
+2017-08-31T15:32:29.575267+00:00 app[web.1]: authenticate
+2017-08-31T15:32:29.575265+00:00 app[web.1]: return_to in shopify session /
+2017-08-31T15:32:29.575956+00:00 app[web.1]: redirecting to shopify for authentication
+2017-08-31T15:32:29.575243+00:00 app[web.1]: inside shopify session
+2017-08-31T15:32:30.261147+00:00 heroku[router]: at=info method=GET path="/auth/shopify?shop=sg-drinks-party.myshopify.com&return_to=https://firstorder.herokuapp.com/" host=firstorder.herokuapp.com request_id=7b83d36a-001c-45dd-91b8-886da0da625a fwd="175.156.60.170" dyno=web.1 connect=1ms service=37ms status=302 bytes=3002 protocol=https
+2017-08-31T15:32:30.227702+00:00 app[web.1]: I, [2017-08-31T15:32:30.227650 #4]  INFO -- omniauth: (shopify) Request phase initiated.
+2017-08-31T15:32:30.227530+00:00 app[web.1]: I, [2017-08-31T15:32:30.226707 #4]  INFO -- omniauth: (shopify) Setup endpoint detected, running now.
+2017-08-31T15:32:30.346229+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=firstorder.herokuapp.com request_id=9fc0136a-e0d1-49aa-8631-20d34ad009be fwd="175.156.60.170" dyno=web.1 connect=2ms service=4ms status=404 bytes=1378 protocol=https
+2017-08-31T15:32:34.815258+00:00 app[web.1]: ***********************
+2017-08-31T15:32:34.815284+00:00 app[web.1]: calculated_hmac DHJ/N+tOaBDK9APTDsi2upCBFi0OdzLC62T9KM4hx3o=
+2017-08-31T15:32:34.815286+00:00 app[web.1]: HTTP_X_SHOPIFY_HMAC_SHA256 DHJ/N+tOaBDK9APTDsi2upCBFi0OdzLC62T9KM4hx3o=
+2017-08-31T15:32:34.815288+00:00 app[web.1]:  secret e334c3f009badf61e79db743a64faeaa
+2017-08-31T15:32:34.815289+00:00 app[web.1]: ***********************
+2017-08-31T15:32:34.928729+00:00 heroku[router]: at=info method=POST path="/uninstall" host=firstorder.herokuapp.com request_id=5a8bca8f-f106-4fd6-b43f-0160b735cf87 fwd="23.227.37.112" dyno=web.1 connect=1ms service=116ms status=200 bytes=1335 protocol=https
+2017-08-31T15:32:42.698456+00:00 app[web.1]: I, [2017-08-31T15:32:42.698361 #4]  INFO -- omniauth: (shopify) Setup endpoint detected, running now.
+2017-08-31T15:32:42.704596+00:00 app[web.1]: D, [2017-08-31T15:32:42.704538 #4] DEBUG -- : [httplog] Connecting: sg-drinks-party.myshopify.com:443
+2017-08-31T15:32:42.699494+00:00 app[web.1]: ********
+2017-08-31T15:32:42.698822+00:00 app[web.1]: I, [2017-08-31T15:32:42.698774 #4]  INFO -- omniauth: (shopify) Callback phase initiated.
+2017-08-31T15:32:42.699472+00:00 app[web.1]: ******************************
+2017-08-31T15:32:42.784282+00:00 app[web.1]: D, [2017-08-31T15:32:42.784239 #4] DEBUG -- : [httplog] Header: content-type: application/x-www-form-urlencoded
+2017-08-31T15:32:42.784585+00:00 app[web.1]: D, [2017-08-31T15:32:42.784513 #4] DEBUG -- : [httplog] Header: connection: close
+2017-08-31T15:32:42.699491+00:00 app[web.1]: ********
+2017-08-31T15:32:42.875710+00:00 app[web.1]: D, [2017-08-31T15:32:42.875672 #4] DEBUG -- : [httplog] Header: referrer-policy: origin-when-cross-origin
+2017-08-31T15:32:42.784201+00:00 app[web.1]: D, [2017-08-31T15:32:42.784140 #4] DEBUG -- : [httplog] Header: user-agent: Faraday v0.9.2
+2017-08-31T15:32:42.875047+00:00 app[web.1]: D, [2017-08-31T15:32:42.874998 #4] DEBUG -- : [httplog] Benchmark: 0.089487 seconds
+2017-08-31T15:32:42.699492+00:00 app[web.1]: inside build_access_token of omniauth shopify
+2017-08-31T15:32:42.875322+00:00 app[web.1]: D, [2017-08-31T15:32:42.875276 #4] DEBUG -- : [httplog] Header: transfer-encoding: chunked
+2017-08-31T15:32:42.874378+00:00 app[web.1]: D, [2017-08-31T15:32:42.874289 #4] DEBUG -- : [httplog] Status: 200
+2017-08-31T15:32:42.784488+00:00 app[web.1]: D, [2017-08-31T15:32:42.784447 #4] DEBUG -- : [httplog] Header: accept: */*
+2017-08-31T15:32:42.784011+00:00 app[web.1]: D, [2017-08-31T15:32:42.783919 #4] DEBUG -- : [httplog] Sending: POST http://sg-drinks-party.myshopify.com:443/admin/oauth/access_token
+2017-08-31T15:32:42.876980+00:00 app[web.1]: date: "Thu, 31 Aug 2017 15:32:42 GMT"
+2017-08-31T15:32:42.784694+00:00 app[web.1]: D, [2017-08-31T15:32:42.784636 #4] DEBUG -- : [httplog] Data: client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&client_secret=e334c3f009badf61e79db743a64faeaa&code=43d8820e992a3e1c788a6bc1e5eb24d3&grant_type=authorization_code&redirect_uri=https%3A%2F%2Ffirstorder.herokuapp.com%2Fauth%2Fshopify%2Fcallback
+2017-08-31T15:32:42.875213+00:00 app[web.1]: D, [2017-08-31T15:32:42.875171 #4] DEBUG -- : [httplog] Header: date: Thu, 31 Aug 2017 15:32:42 GMT
+2017-08-31T15:32:42.875168+00:00 app[web.1]: D, [2017-08-31T15:32:42.875115 #4] DEBUG -- : [httplog] Header: server: nginx
+2017-08-31T15:32:42.875395+00:00 app[web.1]: D, [2017-08-31T15:32:42.875356 #4] DEBUG -- : [httplog] Header: connection: close
+2017-08-31T15:32:42.876982+00:00 app[web.1]: connection: "close"
+2017-08-31T15:32:42.875257+00:00 app[web.1]: D, [2017-08-31T15:32:42.875216 #4] DEBUG -- : [httplog] Header: content-type: application/json; charset=utf-8
+2017-08-31T15:32:42.876989+00:00 app[web.1]: cache-control: "no-cache, no-store"
+2017-08-31T15:32:42.784422+00:00 app[web.1]: D, [2017-08-31T15:32:42.784346 #4] DEBUG -- : [httplog] Header: accept-encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+2017-08-31T15:32:42.876772+00:00 app[web.1]: D, [2017-08-31T15:32:42.876727 #4] DEBUG -- request: User-Agent: "Faraday v0.9.2"
+2017-08-31T15:32:42.876990+00:00 app[web.1]: strict-transport-security: "max-age=7776000"
+2017-08-31T15:32:42.875532+00:00 app[web.1]: D, [2017-08-31T15:32:42.875494 #4] DEBUG -- : [httplog] Header: x-sorting-hat-shopid: 7041073
+2017-08-31T15:32:42.875574+00:00 app[web.1]: D, [2017-08-31T15:32:42.875534 #4] DEBUG -- : [httplog] Header: x-sorting-hat-section: pod
+2017-08-31T15:32:42.875929+00:00 app[web.1]: D, [2017-08-31T15:32:42.875889 #4] DEBUG -- : [httplog] Header: strict-transport-security: max-age=7776000
+2017-08-31T15:32:42.877449+00:00 app[web.1]: E, [2017-08-31T15:32:42.877379 #4] ERROR -- omniauth: (shopify) Authentication failure! csrf_detected: OmniAuth::Strategies::OAuth2::CallbackError, csrf_detected | CSRF detected
+2017-08-31T15:32:42.876256+00:00 app[web.1]: D, [2017-08-31T15:32:42.876216 #4] DEBUG -- : [httplog] Header: x-permitted-cross-domain-policies: none
+2017-08-31T15:32:42.876380+00:00 app[web.1]: D, [2017-08-31T15:32:42.876345 #4] DEBUG -- : [httplog] Header: x-dc: chi2
+2017-08-31T15:32:42.876495+00:00 app[web.1]: {"access_token":"f2c67c776bd829ce159d08c9ec47fdcc","scope":"read_products,read_orders,write_script_tags"}
+2017-08-31T15:32:42.876299+00:00 app[web.1]: D, [2017-08-31T15:32:42.876258 #4] DEBUG -- : [httplog] Header: x-xss-protection: 1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=a7608586-cf9b-4d08-8dcf-06c0941214ee
+2017-08-31T15:32:42.876774+00:00 app[web.1]: Content-Type: "application/x-www-form-urlencoded"
+2017-08-31T15:32:42.875630+00:00 app[web.1]: D, [2017-08-31T15:32:42.875577 #4] DEBUG -- : [httplog] Header: x-sorting-hat-shopid-cached: 0
+2017-08-31T15:32:42.875475+00:00 app[web.1]: D, [2017-08-31T15:32:42.875439 #4] DEBUG -- : [httplog] Header: x-sorting-hat-podid-cached: 0
+2017-08-31T15:32:42.876360+00:00 app[web.1]: D, [2017-08-31T15:32:42.876301 #4] DEBUG -- : [httplog] Header: p3p: CP="NOI DSP COR NID ADMa OPTa OUR NOR"
+2017-08-31T15:32:42.876979+00:00 app[web.1]: D, [2017-08-31T15:32:42.876931 #4] DEBUG -- response: server: "nginx"
+2017-08-31T15:32:42.875751+00:00 app[web.1]: D, [2017-08-31T15:32:42.875711 #4] DEBUG -- : [httplog] Header: x-frame-options: DENY
+2017-08-31T15:32:42.875437+00:00 app[web.1]: D, [2017-08-31T15:32:42.875397 #4] DEBUG -- : [httplog] Header: x-sorting-hat-podid: 14
+2017-08-31T15:32:42.876982+00:00 app[web.1]: transfer-encoding: "chunked"
+2017-08-31T15:32:42.876988+00:00 app[web.1]: x-shopid: "7041073"
+2017-08-31T15:32:42.875653+00:00 app[web.1]: D, [2017-08-31T15:32:42.875618 #4] DEBUG -- : [httplog] Header: vary: Accept-Encoding
+2017-08-31T15:32:42.876983+00:00 app[web.1]: x-sorting-hat-podid: "14"
+2017-08-31T15:32:42.877001+00:00 app[web.1]: set-cookie: "_master_udr=BAhJIik0MjZjOGFiZi04MDIwLTQ5OTAtYjJmOC0yMGM2MjRmYzVkNGMGOgZFRg%3D%3D--810455981824b360f2d3283df5b20740ec3a56e0; domain=.myshopify.com; path=/admin; expires=Sat, 31 Aug 2019 15:32:42 -0000; secure; HttpOnly, request_method=POST; path=/, _secure_admin_session_id=ead465e4f881416586534dbe8ab23f72; path=/admin; expires=Thu, 30 Nov 2017 15:32:42 -0000; secure; HttpOnly"
+2017-08-31T15:32:42.875987+00:00 app[web.1]: D, [2017-08-31T15:32:42.875937 #4] DEBUG -- : [httplog] Header: set-cookie: _master_udr=BAhJIik0MjZjOGFiZi04MDIwLTQ5OTAtYjJmOC0yMGM2MjRmYzVkNGMGOgZFRg%3D%3D--810455981824b360f2d3283df5b20740ec3a56e0; domain=.myshopify.com; path=/admin; expires=Sat, 31 Aug 2019 15:32:42 -0000; secure; HttpOnly, request_method=POST; path=/, _secure_admin_session_id=ead465e4f881416586534dbe8ab23f72; path=/admin; expires=Thu, 30 Nov 2017 15:32:42 -0000; secure; HttpOnly
+2017-08-31T15:32:42.878681+00:00 heroku[router]: at=info method=GET path="/auth/shopify/callback?code=43d8820e992a3e1c788a6bc1e5eb24d3&hmac=5c1a5e1a61d4efc04820cdc8dc1513eebe654c457c6a77d10519e57b4667a609&shop=sg-drinks-party.myshopify.com&state=f43f4b06f8a1d9d5316edfca3b98a7230de4e524cad679fc&timestamp=1504193562" host=firstorder.herokuapp.com request_id=a981db51-7baf-47b1-a822-ac43db8b1d5d fwd="175.156.60.170" dyno=web.1 connect=1ms service=189ms status=302 bytes=1339 protocol=https
+2017-08-31T15:32:42.875830+00:00 app[web.1]: D, [2017-08-31T15:32:42.875795 #4] DEBUG -- : [httplog] Header: x-shardid: 14
+2017-08-31T15:32:42.877202+00:00 app[web.1]: token f2c67c776bd829ce159d08c9ec47fdcc
+2017-08-31T15:32:42.875805+00:00 app[web.1]: D, [2017-08-31T15:32:42.875754 #4] DEBUG -- : [httplog] Header: x-shopid: 7041073
+2017-08-31T15:32:42.876984+00:00 app[web.1]: x-sorting-hat-shopid: "7041073"
+2017-08-31T15:32:42.875887+00:00 app[web.1]: D, [2017-08-31T15:32:42.875849 #4] DEBUG -- : [httplog] Header: cache-control: no-cache, no-store
+2017-08-31T15:32:42.876013+00:00 app[web.1]: D, [2017-08-31T15:32:42.875978 #4] DEBUG -- : [httplog] Header: x-request-id: a7608586-cf9b-4d08-8dcf-06c0941214ee
+2017-08-31T15:32:42.877004+00:00 app[web.1]: x-content-type-options: "nosniff, nosniff"
+2017-08-31T15:32:42.876078+00:00 app[web.1]: D, [2017-08-31T15:32:42.876035 #4] DEBUG -- : [httplog] Header: content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://maps.googleapis.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=a7608586-cf9b-4d08-8dcf-06c0941214ee
+2017-08-31T15:32:42.876721+00:00 app[web.1]: I, [2017-08-31T15:32:42.876668 #4]  INFO -- : post https://sg-drinks-party.myshopify.com/admin/oauth/access_token
+2017-08-31T15:32:42.877005+00:00 app[web.1]: x-download-options: "noopen"
+2017-08-31T15:32:42.876987+00:00 app[web.1]: referrer-policy: "origin-when-cross-origin"
+2017-08-31T15:32:42.876981+00:00 app[web.1]: content-type: "application/json; charset=utf-8"
+2017-08-31T15:32:42.876118+00:00 app[web.1]: D, [2017-08-31T15:32:42.876077 #4] DEBUG -- : [httplog] Header: x-content-type-options: nosniff, nosniff
+2017-08-31T15:32:42.876849+00:00 app[web.1]: I, [2017-08-31T15:32:42.876810 #4]  INFO -- Status: 200
+2017-08-31T15:32:42.876170+00:00 app[web.1]: D, [2017-08-31T15:32:42.876122 #4] DEBUG -- : [httplog] Header: x-download-options: noopen
+2017-08-31T15:32:42.876494+00:00 app[web.1]: D, [2017-08-31T15:32:42.876450 #4] DEBUG -- : [httplog] Response:
+2017-08-31T15:32:42.876983+00:00 app[web.1]: x-sorting-hat-podid-cached: "0"
+2017-08-31T15:32:42.876987+00:00 app[web.1]: x-frame-options: "DENY"
+2017-08-31T15:32:42.876986+00:00 app[web.1]: vary: "Accept-Encoding"
+2017-08-31T15:32:42.877002+00:00 app[web.1]: x-request-id: "a7608586-cf9b-4d08-8dcf-06c0941214ee"
+2017-08-31T15:32:42.877009+00:00 app[web.1]: x-dc: "chi2"
+2017-08-31T15:32:42.877003+00:00 app[web.1]: content-security-policy: "default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://maps.googleapis.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=a7608586-cf9b-4d08-8dcf-06c0941214ee"
+2017-08-31T15:32:42.877008+00:00 app[web.1]: p3p: "CP=\"NOI DSP COR NID ADMa OPTa OUR NOR\""
+2017-08-31T15:32:42.876984+00:00 app[web.1]: x-sorting-hat-section: "pod"
+2017-08-31T15:32:42.877007+00:00 app[web.1]: x-xss-protection: "1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=a7608586-cf9b-4d08-8dcf-06c0941214ee"
+2017-08-31T15:32:42.877204+00:00 app[web.1]: ******************************
+2017-08-31T15:32:42.876985+00:00 app[web.1]: x-sorting-hat-shopid-cached: "0"
+2017-08-31T15:32:42.876988+00:00 app[web.1]: x-shardid: "14"
+2017-08-31T15:32:42.877005+00:00 app[web.1]: x-permitted-cross-domain-policies: "none"
+2017-08-31T15:32:43.137043+00:00 heroku[router]: at=info method=GET path="/auth/failure?message=csrf_detected&strategy=shopify" host=firstorder.herokuapp.com request_id=d6bcb4cb-b715-444d-8e55-40c788335db6 fwd="175.156.60.170" dyno=web.1 connect=1ms service=5ms status=200 bytes=1461 protocol=https
+2017-08-31T15:32:51.701502+00:00 app[web.1]: I, [2017-08-31T15:32:51.701417 #4]  INFO -- omniauth: (shopify) Setup endpoint detected, running now.
+2017-08-31T15:32:51.701681+00:00 app[web.1]: I, [2017-08-31T15:32:51.701632 #4]  INFO -- omniauth: (shopify) Callback phase initiated.
+2017-08-31T15:32:51.702845+00:00 app[web.1]: ******************************
+2017-08-31T15:32:51.702870+00:00 app[web.1]: ********
+2017-08-31T15:32:51.702874+00:00 app[web.1]: inside build_access_token of omniauth shopify
+2017-08-31T15:32:51.702876+00:00 app[web.1]: ********
+2017-08-31T15:32:51.705503+00:00 app[web.1]: D, [2017-08-31T15:32:51.705450 #4] DEBUG -- : [httplog] Connecting: sg-drinks-party.myshopify.com:443
+2017-08-31T15:32:51.780823+00:00 app[web.1]: D, [2017-08-31T15:32:51.780737 #4] DEBUG -- : [httplog] Sending: POST http://sg-drinks-party.myshopify.com:443/admin/oauth/access_token
+2017-08-31T15:32:51.781021+00:00 app[web.1]: D, [2017-08-31T15:32:51.780977 #4] DEBUG -- : [httplog] Header: user-agent: Faraday v0.9.2
+2017-08-31T15:32:51.781109+00:00 app[web.1]: D, [2017-08-31T15:32:51.781067 #4] DEBUG -- : [httplog] Header: content-type: application/x-www-form-urlencoded
+2017-08-31T15:32:51.781175+00:00 app[web.1]: D, [2017-08-31T15:32:51.781135 #4] DEBUG -- : [httplog] Header: accept-encoding: gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+2017-08-31T15:32:51.781253+00:00 app[web.1]: D, [2017-08-31T15:32:51.781200 #4] DEBUG -- : [httplog] Header: accept: */*
+2017-08-31T15:32:51.781308+00:00 app[web.1]: D, [2017-08-31T15:32:51.781261 #4] DEBUG -- : [httplog] Header: connection: close
+2017-08-31T15:32:51.781440+00:00 app[web.1]: D, [2017-08-31T15:32:51.781359 #4] DEBUG -- : [httplog] Data: client_id=ca39e1ad3ef61cb46d61311cc8ca5cbf&client_secret=e334c3f009badf61e79db743a64faeaa&code=7d8c88ccbf66e40e473832a51619d6d3&grant_type=authorization_code&redirect_uri=https%3A%2F%2Ffirstorder.herokuapp.com%2Fauth%2Fshopify%2Fcallback
+2017-08-31T15:32:51.865101+00:00 app[web.1]: D, [2017-08-31T15:32:51.864997 #4] DEBUG -- : [httplog] Status: 200
+2017-08-31T15:32:51.865150+00:00 app[web.1]: D, [2017-08-31T15:32:51.865098 #4] DEBUG -- : [httplog] Benchmark: 0.083547 seconds
+2017-08-31T15:32:51.865220+00:00 app[web.1]: D, [2017-08-31T15:32:51.865173 #4] DEBUG -- : [httplog] Header: server: nginx
+2017-08-31T15:32:51.865252+00:00 app[web.1]: D, [2017-08-31T15:32:51.865221 #4] DEBUG -- : [httplog] Header: date: Thu, 31 Aug 2017 15:32:51 GMT
+2017-08-31T15:32:51.865282+00:00 app[web.1]: D, [2017-08-31T15:32:51.865253 #4] DEBUG -- : [httplog] Header: content-type: application/json; charset=utf-8
+2017-08-31T15:32:51.865311+00:00 app[web.1]: D, [2017-08-31T15:32:51.865282 #4] DEBUG -- : [httplog] Header: transfer-encoding: chunked
+2017-08-31T15:32:51.865343+00:00 app[web.1]: D, [2017-08-31T15:32:51.865311 #4] DEBUG -- : [httplog] Header: connection: close
+2017-08-31T15:32:51.865396+00:00 app[web.1]: D, [2017-08-31T15:32:51.865348 #4] DEBUG -- : [httplog] Header: x-sorting-hat-podid: 14
+2017-08-31T15:32:51.865447+00:00 app[web.1]: D, [2017-08-31T15:32:51.865401 #4] DEBUG -- : [httplog] Header: x-sorting-hat-podid-cached: 0
+2017-08-31T15:32:51.865518+00:00 app[web.1]: D, [2017-08-31T15:32:51.865455 #4] DEBUG -- : [httplog] Header: x-sorting-hat-shopid: 7041073
+2017-08-31T15:32:51.865591+00:00 app[web.1]: D, [2017-08-31T15:32:51.865509 #4] DEBUG -- : [httplog] Header: x-sorting-hat-section: pod
+2017-08-31T15:32:51.865647+00:00 app[web.1]: D, [2017-08-31T15:32:51.865598 #4] DEBUG -- : [httplog] Header: x-sorting-hat-shopid-cached: 0
+2017-08-31T15:32:51.865730+00:00 app[web.1]: D, [2017-08-31T15:32:51.865679 #4] DEBUG -- : [httplog] Header: vary: Accept-Encoding
+2017-08-31T15:32:51.865783+00:00 app[web.1]: D, [2017-08-31T15:32:51.865738 #4] DEBUG -- : [httplog] Header: referrer-policy: origin-when-cross-origin
+2017-08-31T15:32:51.865836+00:00 app[web.1]: D, [2017-08-31T15:32:51.865791 #4] DEBUG -- : [httplog] Header: x-frame-options: DENY
+2017-08-31T15:32:51.865892+00:00 app[web.1]: D, [2017-08-31T15:32:51.865845 #4] DEBUG -- : [httplog] Header: x-shopid: 7041073
+2017-08-31T15:32:51.865947+00:00 app[web.1]: D, [2017-08-31T15:32:51.865902 #4] DEBUG -- : [httplog] Header: x-shardid: 14
+2017-08-31T15:32:51.866000+00:00 app[web.1]: D, [2017-08-31T15:32:51.865955 #4] DEBUG -- : [httplog] Header: cache-control: no-cache, no-store
+2017-08-31T15:32:51.866056+00:00 app[web.1]: D, [2017-08-31T15:32:51.866009 #4] DEBUG -- : [httplog] Header: strict-transport-security: max-age=7776000
+2017-08-31T15:32:51.866107+00:00 app[web.1]: D, [2017-08-31T15:32:51.866065 #4] DEBUG -- : [httplog] Header: set-cookie: _master_udr=BAhJIiliZDcwOTcwYy04NDk4LTQxYmEtODgwZC05MGUwZjAzM2FjNTcGOgZFRg%3D%3D--525a6123297bfefd6b04d6791c070fb831dc56a1; domain=.myshopify.com; path=/admin; expires=Sat, 31 Aug 2019 15:32:51 -0000; secure; HttpOnly, request_method=POST; path=/, _secure_admin_session_id=be6217eb9864860a996da8609efcbe19; path=/admin; expires=Thu, 30 Nov 2017 15:32:51 -0000; secure; HttpOnly
+2017-08-31T15:32:51.866147+00:00 app[web.1]: D, [2017-08-31T15:32:51.866113 #4] DEBUG -- : [httplog] Header: x-request-id: 94ed9cb2-cdf1-4906-9776-45e2df74a915
+2017-08-31T15:32:51.866197+00:00 app[web.1]: D, [2017-08-31T15:32:51.866153 #4] DEBUG -- : [httplog] Header: content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://maps.googleapis.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=94ed9cb2-cdf1-4906-9776-45e2df74a915
+2017-08-31T15:32:51.866223+00:00 app[web.1]: D, [2017-08-31T15:32:51.866192 #4] DEBUG -- : [httplog] Header: x-content-type-options: nosniff, nosniff
+2017-08-31T15:32:51.866249+00:00 app[web.1]: D, [2017-08-31T15:32:51.866223 #4] DEBUG -- : [httplog] Header: x-download-options: noopen
+2017-08-31T15:32:51.866288+00:00 app[web.1]: D, [2017-08-31T15:32:51.866251 #4] DEBUG -- : [httplog] Header: x-permitted-cross-domain-policies: none
+2017-08-31T15:32:51.866329+00:00 app[web.1]: D, [2017-08-31T15:32:51.866295 #4] DEBUG -- : [httplog] Header: x-xss-protection: 1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=94ed9cb2-cdf1-4906-9776-45e2df74a915
+2017-08-31T15:32:51.866357+00:00 app[web.1]: D, [2017-08-31T15:32:51.866330 #4] DEBUG -- : [httplog] Header: p3p: CP="NOI DSP COR NID ADMa OPTa OUR NOR"
+2017-08-31T15:32:51.866386+00:00 app[web.1]: D, [2017-08-31T15:32:51.866359 #4] DEBUG -- : [httplog] Header: x-dc: chi2
+2017-08-31T15:32:51.866509+00:00 app[web.1]: D, [2017-08-31T15:32:51.866457 #4] DEBUG -- : [httplog] Response:
+2017-08-31T15:32:51.866510+00:00 app[web.1]: {"access_token":"f2c67c776bd829ce159d08c9ec47fdcc","scope":"read_products,read_orders,write_script_tags"}
+2017-08-31T15:32:51.866796+00:00 app[web.1]: D, [2017-08-31T15:32:51.866757 #4] DEBUG -- request: User-Agent: "Faraday v0.9.2"
+2017-08-31T15:32:51.866744+00:00 app[web.1]: I, [2017-08-31T15:32:51.866700 #4]  INFO -- : post https://sg-drinks-party.myshopify.com/admin/oauth/access_token
+2017-08-31T15:32:51.866798+00:00 app[web.1]: Content-Type: "application/x-www-form-urlencoded"
+2017-08-31T15:32:51.866914+00:00 app[web.1]: I, [2017-08-31T15:32:51.866872 #4]  INFO -- Status: 200
+2017-08-31T15:32:51.867215+00:00 app[web.1]: D, [2017-08-31T15:32:51.866971 #4] DEBUG -- response: server: "nginx"
+2017-08-31T15:32:51.867217+00:00 app[web.1]: date: "Thu, 31 Aug 2017 15:32:51 GMT"
+2017-08-31T15:32:51.867218+00:00 app[web.1]: transfer-encoding: "chunked"
+2017-08-31T15:32:51.867220+00:00 app[web.1]: x-sorting-hat-podid: "14"
+2017-08-31T15:32:51.867220+00:00 app[web.1]: x-sorting-hat-podid-cached: "0"
+2017-08-31T15:32:51.867219+00:00 app[web.1]: connection: "close"
+2017-08-31T15:32:51.867217+00:00 app[web.1]: content-type: "application/json; charset=utf-8"
+2017-08-31T15:32:51.867222+00:00 app[web.1]: x-sorting-hat-shopid-cached: "0"
+2017-08-31T15:32:51.867221+00:00 app[web.1]: x-sorting-hat-section: "pod"
+2017-08-31T15:32:51.867221+00:00 app[web.1]: x-sorting-hat-shopid: "7041073"
+2017-08-31T15:32:51.867223+00:00 app[web.1]: vary: "Accept-Encoding"
+2017-08-31T15:32:51.867224+00:00 app[web.1]: x-shopid: "7041073"
+2017-08-31T15:32:51.867225+00:00 app[web.1]: x-shardid: "14"
+2017-08-31T15:32:51.867226+00:00 app[web.1]: strict-transport-security: "max-age=7776000"
+2017-08-31T15:32:51.867226+00:00 app[web.1]: cache-control: "no-cache, no-store"
+2017-08-31T15:32:51.867223+00:00 app[web.1]: referrer-policy: "origin-when-cross-origin"
+2017-08-31T15:32:51.867232+00:00 app[web.1]: set-cookie: "_master_udr=BAhJIiliZDcwOTcwYy04NDk4LTQxYmEtODgwZC05MGUwZjAzM2FjNTcGOgZFRg%3D%3D--525a6123297bfefd6b04d6791c070fb831dc56a1; domain=.myshopify.com; path=/admin; expires=Sat, 31 Aug 2019 15:32:51 -0000; secure; HttpOnly, request_method=POST; path=/, _secure_admin_session_id=be6217eb9864860a996da8609efcbe19; path=/admin; expires=Thu, 30 Nov 2017 15:32:51 -0000; secure; HttpOnly"
+2017-08-31T15:32:51.867233+00:00 app[web.1]: x-request-id: "94ed9cb2-cdf1-4906-9776-45e2df74a915"
+2017-08-31T15:32:51.867234+00:00 app[web.1]: content-security-policy: "default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://* shopify-pos://*; block-all-mixed-content; child-src 'self' https://* shopify-pos://*; connect-src 'self' wss://* https://*; script-src https://cdn.shopify.com https://checkout.shopifycs.com https://js-agent.newrelic.com https://bam.nr-data.net https://dme0ih8comzn4.cloudfront.net https://api.stripe.com https://mpsnare.iesnare.com https://appcenter.intuit.com https://www.paypal.com https://maps.googleapis.com https://stats.g.doubleclick.net https://www.google-analytics.com https://visitors.shopify.com https://v.shopify.com https://widget.intercom.io https://js.intercomcdn.com 'self' 'unsafe-inline' 'unsafe-eval'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=94ed9cb2-cdf1-4906-9776-45e2df74a915"
+2017-08-31T15:32:51.867224+00:00 app[web.1]: x-frame-options: "DENY"
+2017-08-31T15:32:51.867236+00:00 app[web.1]: x-permitted-cross-domain-policies: "none"
+2017-08-31T15:32:51.867235+00:00 app[web.1]: x-content-type-options: "nosniff, nosniff"
+2017-08-31T15:32:51.867257+00:00 app[web.1]: token f2c67c776bd829ce159d08c9ec47fdcc
+2017-08-31T15:32:51.867257+00:00 app[web.1]: ******************************
+2017-08-31T15:32:51.867252+00:00 app[web.1]: p3p: "CP=\"NOI DSP COR NID ADMa OPTa OUR NOR\""
+2017-08-31T15:32:51.867235+00:00 app[web.1]: x-download-options: "noopen"
+2017-08-31T15:32:51.867252+00:00 app[web.1]: x-xss-protection: "1; mode=block; report=/xss-report?source%5Baction%5D=access_token&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Foauth&source%5Bsection%5D=admin&source%5Buuid%5D=94ed9cb2-cdf1-4906-9776-45e2df74a915"
+2017-08-31T15:32:51.867253+00:00 app[web.1]: x-dc: "chi2"
+2017-08-31T15:32:51.867503+00:00 app[web.1]: E, [2017-08-31T15:32:51.867357 #4] ERROR -- omniauth: (shopify) Authentication failure! csrf_detected: OmniAuth::Strategies::OAuth2::CallbackError, csrf_detected | CSRF detected
+2017-08-31T15:32:51.868261+00:00 heroku[router]: at=info method=GET path="/auth/shopify/callback?code=7d8c88ccbf66e40e473832a51619d6d3&hmac=d9f8ad0171fc7cdb8c66855e68f0e9c82471e48ab2967412531e8e65ab7c1168&shop=sg-drinks-party.myshopify.com&state=f43f4b06f8a1d9d5316edfca3b98a7230de4e524cad679fc&timestamp=1504193571" host=firstorder.herokuapp.com request_id=4f6fd845-3bce-412b-8c72-dc33d3f7bb40 fwd="175.156.60.170" dyno=web.1 connect=2ms service=172ms status=302 bytes=1339 protocol=https
+2017-09-01T08:57:45.712976+00:00 heroku[resque.1]: Cycling
+2017-09-01T08:57:45.713439+00:00 heroku[resque.1]: State changed from up to starting
+2017-09-01T08:57:46.543002+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-09-01T08:57:48.658433+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-09-01T08:57:49.242682+00:00 heroku[resque.1]: State changed from starting to up
+2017-09-01T08:57:53.009292+00:00 heroku[resque.1]: Process exited with status 0
+2017-09-01T14:40:11.752763+00:00 heroku[web.1]: Cycling
+2017-09-01T14:40:11.753641+00:00 heroku[web.1]: State changed from up to starting
+2017-09-01T14:40:12.604490+00:00 app[web.1]: === puma shutdown: 2017-09-01 14:40:12 +0000 ===
+2017-09-01T14:40:12.568906+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-09-01T14:40:12.597330+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-09-01T14:40:12.604493+00:00 app[web.1]: - Goodbye!
+2017-09-01T14:40:12.857078+00:00 heroku[web.1]: Process exited with status 0
+2017-09-01T14:40:14.800716+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 40181`
+2017-09-01T14:40:19.966626+00:00 app[web.1]: Puma starting in single mode...
+2017-09-01T14:40:19.966645+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-09-01T14:40:19.966646+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-09-01T14:40:19.966647+00:00 app[web.1]: * Environment: production
+2017-09-01T14:40:19.966738+00:00 app[web.1]: * Listening on tcp://0.0.0.0:40181
+2017-09-01T14:40:19.966916+00:00 app[web.1]: Use Ctrl-C to stop
+2017-09-01T14:40:20.640443+00:00 heroku[web.1]: State changed from starting to up

@@ -1,27 +1,218 @@
-# rethinking
-- marketing is the main problem.
-- so I need audience that is actively seeking and open
-  - new store
-    - store set up
-      http://shopafree.me/
-    - first sales up to 100
-    - product validation
-    - is there an app for that?
-  - others
-    - approve editing  
-  - from amazon
-  - from etsy
-  - kickstarter
-    - there is already some content on it
-   
-# Heroku
+what is first order
 
-heroku logs --tails
-heroku run bundle exec rake -T
-heroku run bundle exec rake db:rollback
+The app focuses on acquiring new customers for your store. Since the customer is new, you would offer a significant discount to entice him/her. In addition, it is likely that the new customer would make a single purchase. This is because the customer is just trying out the store. Thus, it makes sense to offer a discount based on a single purchase, automatically apply the discount and bring the customer to check out immediately.
 
+How does it work
+The app search for a checkout form on the page. If it can find it, it is enabled. It would use the variant selected or use the first variant if none are selected. If the app is not working, please check on the browser javascript console. If you see a message "First Order is not enabled", then sorry the app does not work with your theme. The app works with most of the themes. It does not work with themes that are heavily customized with UI framework like Angular, Ember.
+
+
+what kind of discount code to use
+
+First, we need a discount code that limits the customer to 1 use only. This is because it should be a special discount just for new customers. If it is can be used more than once, it would not be special. Second, we need the discount to be active and no end date. This makes it easy for management. Do not worry about control since it is already limited to 1 use per customer and you can disable the discount code when you uninstall the app. Please do not let use the discount code elsewhere. This would make it easy to check on the effectiveness of the app.
+
+
+when do we trigger the offer?
+
+It can be any value from 10 seconds to 60 seconds. It depends on how aggressive or conservative you want to be. Please consider it carefully together with the discount and strike a balance. If you have Google Analytics installed, you can use the avg. session duration of your channel/landing page to help you make a decision. Otherwise, leave it to use the default value.
+
+
+
+# To Do
+
+- fix shopify
+  - pages
+  - csrf
+    - secret?
+  - pages within app
+  - respond to email
+- check posb bank
+- renew domain
+
+## admin
+- pay cards
+- fix m1
+- clear letters
+- ic
+- driving license
+- fix london hotel
+  - credit cards
+
+# fix shopify
+
+## pages
+- app store
+  - fix positioning, framing
+    Here's how "First Sales" is typically used:
+    Say you spend a bit of money on Facebook Ads to drive traffic to a particular product page on your store.
+    When a prospect clicks on your ad and arrives at the product page, he/she will likely spend a significant amount of time looking/interacting with the product's photo if the prospect is interested in the product.  The app will track the amount of time the product's photos are interacting with the photos.  If there is significant interest, the app will offer a good offer for the new visitor in the sales pop-up.  The app will check whether the visitor is a new prospect or an existing customer.  Offer is only presented to the visitor or logged-in customer who has yet to make a single purchase.  
+
+
+    - Tag line
+      Welcome Newcomers Promo Bar with 1-click buy button
+    - short description
+        -Sales popup designed to acquire new customers
+          First Sales was designed to acquire new customers.  As compared to a general-purpose sales pop-up, that app will deliver better conversion.
+      - track genuine interest by tracking how long customer is looking at the products' photos
+        Typical sales pop-up track how long the customer is on the website.  If the customer stays on a website beyond a predetermined threshold, the sales pop-up will appear.  
+        Instead of time spent on the website, the app uses time spent on the product's photos.  
+
+        If the visitor spends time looking at the photos, it is likely that they are interested.  
+        A Sales Popup with a good offer at that moment may help to close the deal.
+
+        
+        
+        
+      
+      - 1-click buy button
+        1-click buy button will bring visitor straight to Shopify's checkout page.  It reduces sales fiction as it skipped the "add to cart" portion of the checkout process.
+
+        The app will use the currently selected option and it will work with single or multiple product variants. 
+        It is also tested on popular themes.  It uses jQuery to retrieve the selected product variant.  It will not work with a heavily customized theme that uses Angular or other similar frameworks.
+
+
+    - long description
+
+  - fix grammar
+  - fix styling
+
+ - first sales 
+  - tag line
+  - short description
+    - Sales popup designed to acquire new customers
+    - 
+
+ - first sales
+      - tag line
+        Welcome Newcomers Promo Bar with 1-click buy button
+
+
+
+        Promo bar to acquire new customers
+        Convert visitor to new customers 
+
+      - short description - 140 chars
+        Welcome Newcomer Promo bar to convert new customers.  Convert engaged visitors by offering attractive discount and one-click buying experience.
+
+      - long description
+        Benefits
+        - Increase conversion of visitors to new customers
+        Features
+        - Responsive and customizable promo bar
+        - 1-click buying button.  Bring customer to checkout with discount automatically applied.  Less clicks, lower churn.  Suitable for impulse buying.
+
+        Get the first sale from new customer matters.
+          The first sale is the moment of truth for your new customers.  This is where they bought your product and if they like the product and the experience, they would likely to buy more.
+
+        Promo Bar with 1-click buy button.
+          You have spent time and money to drive traffic to a particular product.  Once visitors are engaged in a particular product, promo bar will show them an compelling offer to convert with 1 click, discount will be apply and brought to checkout page.  Less clicks, less churn - good for impulse buying.  Since they are new customers, they are likely to buy just one product to try it out.  
+
+        Target engaged visitors 
+          Promo bar is only shown to engaged visitors who have looked at the product for a certain time.  
+          This make them feel special since the bar is timed.  IN addition, there are less false positives as chances are visitors who are engaged are people who are likely to buy.   
+
+
+- within app
+  - fix grammar
+
+
+
+# hotjar
+
+# marketing
+- fb
+- landing page
+- video?
 
 # Doing
+
+- expand description
+
+
+- fix grammar.
+  - in landing 
+  - in app
+
+
+
+- screen shots
+- error
+- explanations
+
+
+# To Do
+
+- final test
+- review faq
+- marketing
+
+# marketing
+ - app name
+    - first sales
+      - tag line
+        Welcome Newcomers Promo Bar with 1-click buy button
+        Promo bar to acquire new customers
+        Convert visitor to new customers 
+
+      - short description - 140 chars
+        Welcome Newcomer Promo bar to convert new customers.  Convert engaged visitors by offering attractive discount and one-click buying experience.
+
+      - long description
+        Benefits
+        - Increase conversion of visitors to new customers
+        Features
+        - Responsive and customizable promo bar
+        - 1-click buying button.  Bring customer to checkout with discount automatically applied.  Less clicks, lower churn.  Suitable for impulse buying.
+
+        Get the first sale from new customer matters.
+          The first sale is the moment of truth for your new customers.  This is where they bought your product and if they like the product and the experience, they would likely to buy more.
+
+        Promo Bar with 1-click buy button.
+          You have spent time and money to drive traffic to a particular product.  Once visitors are engaged in a particular product, promo bar will show them an compelling offer to convert with 1 click, discount will be apply and brought to checkout page.  Less clicks, less churn - good for impulse buying.  Since they are new customers, they are likely to buy just one product to try it out.  
+
+        Target engaged visitors 
+          Promo bar is only shown to engaged visitors who have looked at the product for a certain time.  
+          This make them feel special since the bar is timed.  IN addition, there are less false positives as chances are visitors who are engaged are people who are likely to buy.   
+
+
+I am building a Shopify App called “First Sales and I need icons and banners created. 
+The app is a promo bar that is shown to engaged visitor with 1-click buy button.  The aim is to offer 
+
+Please see the following url for icons that I like.
+https://dribbble.com/shots/2858193-R-Gift-Logo-Mark
+
+
+– Colors: Something that is appealing but also stands out. I am thinking a base of Red or Orange, with 1-2 additional colors.
+– Format: .jpg, .png (whichever looks best)
+– No rounded corners, no white background
+– Icon should have a simple graphic that conveys “Gifts” or love for customer. Good gifts wrapping show love and considerations for the customer.  That is the emotion that comes to mind with the very first order a store gets from the customer.  Need 120px x 120px, 60px x 60px, 16px x 16px.
+
+– Banners should have a heading: “First Sales” (no quotes), and sub-heading: “Welcome Newcomers Promo Bar with 1-click buy button”. Sizes: 680px x 300px, 310px x 100px.
+– I’d like source files to modify if needed, such as changing the subheading text.
+
+
+
+- listing 
+  - banner
+  - 3 images
+  - video
+- company name
+  - company blog
+    growmyshopifystor.es
+    growmyshopify.shop
+  - services
+
+# marketing research
+- who
+- what
+  - keywords
+  - topics
+- why
+- fb
+
+
+
+# Done
+
 - test
   - installing and uninstalling
   - flash issue
@@ -62,7 +253,7 @@ heroku run bundle exec rake db:rollback
 
     - product, collection
     - checkout, blog, etc
-==========>
+
   - test product variant
     - with single options 
     - with multiple options
@@ -75,99 +266,25 @@ heroku run bundle exec rake db:rollback
         - manually grep the generated js.  add console log lines to it.
           - test on the 3 websites
           - test more ...
-
-==========>
   - test new customer vs old customer.
     - new customer will see it
       - eg@showcrowd.co
     - old customer will not.
       yeoenggu@gmail.com
 
-- omniauth
-  - routing to failure ...
-  - retry
-  - clear ... data?
-
-
 - review 
   - default setting,
   - messages etc
-- review product page
+- publishing app
+  - logos 
+  - screen shots
+  - landing page (deferred)
+  - write up
+  - video (deferred)
+==========>
+- final round of test
+- monitoring
 
-- remove name of the customer ...
-
-
-at=info method=GET path="/form_setting?hmac=49f2f5645a3ee6d90134984cff8cf8bbb435edf18f5198a7990a31b7992e1e99&locale=en&protocol=https%3A%2F%2F&shop=sg-drinks-party.myshopify.com&timestamp=1495558016" host=firstorder.herokuapp.com request_id=ed101a97-d979-4a12-9943-b080ebbd1260 fwd="175.156.72.13" dyno=web.1 connect=1ms service=7ms status=404 bytes=1674 protocol=https
-
-# To Do
-
-- github
-  - fork all the repos
-
-- clean up 
-  - review setting
-    - timing for trigger and font size
-
-- deployment
-- packaging
-
-# Done
-- add in screentime
-  - merge with screen time
-    - change html to have product microdata
-    - test it
-    - import it 
-  - merge it with peekabar
-  - add in credit
-  - add in peekabar css 
-  - new issue ... switching tab should pause count but it does not ...
-  - add discount and redirect to checkout
-    - get variant id 
-      - get product id
-      - if only 1 variant
-        - grep it from url.json
-      - if more than 1 variant
-        - grep the id from url or ask user to enter id  
-    - refer to a perma cart with the item added
-    shop_url/cart/variant_id:qty?discount=code
-    - add in discount code
-    - redirect to checkout page
-  - conditions
-    - check whether new customer ... 
-      if it is a customer whether he has paid a purchase
-      or 30 days reorder .... (deferred)
-    - whether revisit 
-
-    - if signed in 
-      - and if have placed 1st order, do not display
-        else display
-      else
-        display
-
-- add in settings
-- add in admin
-  - styling
-
-- admin
-  - saves the form.
-  - flash alert
-  - preview bar
-  - error
-
-- webhooks
-  - set up webhooks to see which one   
-  - deal with duplicates
-  - clean up
-    - 36, 568  569 load_first_order
-  - disable it at certain places
-    - where?
-      - as long as there is add to cart
-      - collections/all should not load
-      - search
-      - about us
-      - blog
-      - cart
-      - checkout as well
 
 # Deferred
 - puma config
@@ -180,6 +297,14 @@ at=info method=GET path="/form_setting?hmac=49f2f5645a3ee6d90134984cff8cf8bbb435
 
 - store specific jquery selector
   - to select the variant
+- omniauth
+  - routing to failure ...
+  - retry
+  - clear ... data?
+
+
+# Zacky
+- mathplayground
 
 # notes
 
@@ -213,13 +338,13 @@ rack intercept calls ... if it is callback path ... it will call it
 # admin
 - company 
 
-HSBC 3012
+HSBC 3555.06
 08Feb1972000801
-
-Manhattan -168
+08Feb1972150Z
+Manhattan -264
 Y08027204150Z
 E
-
+663883
 
 # test simulation for js jquery
 
@@ -283,3 +408,17 @@ var loadProductUrl = function($) {
         console.log("Normal grep.")
       }
     }; // end of loadProductUrl
+
+# Heroku
+
+heroku logs --tails
+heroku run bundle exec rake -T
+heroku run bundle exec rake db:rollback
+
+
+
+
+
+
+
+
