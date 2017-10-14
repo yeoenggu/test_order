@@ -106,8 +106,8 @@ class SinatraApp < Sinatra::Base
   # from Shopify and displays them inside your app
   get '/' do
     puts "********"
-    puts "sanitized_shop_name: " +  sanitized_shop_name
-    puts "Shop name : "  + current_shop_name
+    puts "sanitized_shop_name: " +  sanitized_shop_name.to_s
+    puts "Shop name : "  + current_shop_name.to_s
     puts "********"
     shopify_session do
       # need this to test whether the token is valid.  
