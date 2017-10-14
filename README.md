@@ -1,35 +1,60 @@
-what is first order
+# e-commerce
 
-The app focuses on acquiring new customers for your store. Since the customer is new, you would offer a significant discount to entice him/her. In addition, it is likely that the new customer would make a single purchase. This is because the customer is just trying out the store. Thus, it makes sense to offer a discount based on a single purchase, automatically apply the discount and bring the customer to check out immediately.
+## close the loop ....
+  - valid business problem.
+  - question is whether a simple solution will suffice
+    - just put a coupon
+    - to justify paying for it
+      - better targeting
+        - based on product
+        - based on credit card
+        - based on address
+        - types of campaign
+          - social
+          - subscription
+          - warrenty/product info
 
-How does it work
-The app search for a checkout form on the page. If it can find it, it is enabled. It would use the variant selected or use the first variant if none are selected. If the app is not working, please check on the browser javascript console. If you see a message "First Order is not enabled", then sorry the app does not work with your theme. The app works with most of the themes. It does not work with themes that are heavily customized with UI framework like Angular, Ember.
+  - qr code on box.  
+  - get a coupon for next purchase 
+  - perform an action
 
 
-what kind of discount code to use
 
-First, we need a discount code that limits the customer to 1 use only. This is because it should be a special discount just for new customers. If it is can be used more than once, it would not be special. Second, we need the discount to be active and no end date. This makes it easy for management. Do not worry about control since it is already limited to 1 use per customer and you can disable the discount code when you uninstall the app. Please do not let use the discount code elsewhere. This would make it easy to check on the effectiveness of the app.
+  - this will be good for lazada
+  
 
+- lazada discovery
+  - no direct communications
 
-when do we trigger the offer?
+- hotjar
 
-It can be any value from 10 seconds to 60 seconds. It depends on how aggressive or conservative you want to be. Please consider it carefully together with the discount and strike a balance. If you have Google Analytics installed, you can use the avg. session duration of your channel/landing page to help you make a decision. Otherwise, leave it to use the default value.
+- other apps
+  - messaging
+  - dynamic hero
+  - blog to product
+  - personalized product
+    - reoder
+    - low in stock
+    - back in stock
+
+- follow up on first order
+  - next order
+  - feedback
+  - reorder
+
+- live email
+
+- shopify marketing
+  - 1st 25 .... manually via service, via forum.  mass emailing not allow
 
 
 
 # To Do
 
-- fix shopify
-  - pages
-  - csrf
-    - secret?
-  - pages within app
-  - respond to email
-- check posb bank
-- renew domain
 
 ## admin
 - pay cards
+  - 
 - fix m1
 - clear letters
 - ic
@@ -339,6 +364,12 @@ rack intercept calls ... if it is callback path ... it will call it
 - company 
 
 HSBC 3555.06
+08Feb1972507926
+5120 4333 8800 0801
+
+507926
+
+
 08Feb1972000801
 08Feb1972150Z
 Manhattan -264

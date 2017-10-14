@@ -105,13 +105,15 @@ class SinatraApp < Sinatra::Base
   # this is a simple example that fetches some products
   # from Shopify and displays them inside your app
   get '/' do
+    puts "********"
+    puts "sanitized_shop_name: " +  sanitized_shop_name
+    puts "Shop name : "  + current_shop_name
+    puts "********"
     shopify_session do
       # need this to test whether the token is valid.  
       @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
       # retrieve setting
       @setting = current_shop.setting
-      # erb :home
-      # flash[:notice] = "testing abc"
       haml :home, :layout => :first_order_app
     end
   end
