@@ -123,9 +123,9 @@ class SinatraApp < Sinatra::Base
   # stores more data.
   post '/uninstall' do
     webhook_session do |params|
-      current_shop.destroy
+      clear_session current_shop
+      current_shop.destroys
     end
-    clear_session current_shop
     # logout
   end
   
