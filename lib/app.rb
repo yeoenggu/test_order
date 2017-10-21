@@ -106,6 +106,8 @@ class SinatraApp < Sinatra::Base
   # from Shopify and displays them inside your app
   get '/' do
     puts "********"
+    puts "params[:shop]: " +  params[:shop].to_s
+    puts "session: " +  session[:shopify].to_s
     puts "sanitized_shop_name: " +  sanitized_shop_name.to_s
     puts "Shop name : "  + current_shop_name.to_s
     puts "********"
@@ -123,9 +125,10 @@ class SinatraApp < Sinatra::Base
   # stores more data.
   post '/uninstall' do
     webhook_session do |params|
-      clear_session current_shop
-      current_shop.destroys
+      current_shop.destroy
+      logout
     end
+    
     # logout
   end
   
