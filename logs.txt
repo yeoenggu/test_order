@@ -299,3 +299,104 @@
 2017-09-01T14:40:19.966738+00:00 app[web.1]: * Listening on tcp://0.0.0.0:40181
 2017-09-01T14:40:19.966916+00:00 app[web.1]: Use Ctrl-C to stop
 2017-09-01T14:40:20.640443+00:00 heroku[web.1]: State changed from starting to up
+2017-10-17T03:48:46.756778+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=ea6ec916-cdf2-4192-9138-24322d8a19b6 fwd="61.2.39.152" dyno=web.1 connect=0ms service=56ms status=200 bytes=24750 protocol=https
+2017-10-17T03:49:03.318534+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=d9c150e3-a53a-40a5-a578-9b04d8d2fb96 fwd="61.2.39.152" dyno=web.1 connect=0ms service=17ms status=200 bytes=24750 protocol=https
+2017-10-17T03:49:17.147095+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=5d387e93-5f31-4698-89a6-0ab75d5f9aa4 fwd="61.2.39.152" dyno=web.1 connect=0ms service=25ms status=200 bytes=24750 protocol=https
+2017-10-17T03:50:13.313021+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=26319123-5640-4184-8371-a19e8c663d21 fwd="61.2.39.152" dyno=web.1 connect=0ms service=21ms status=200 bytes=24750 protocol=https
+2017-10-17T03:50:37.886609+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=cc0c6217-6651-44ad-aed8-c522665687f8 fwd="61.2.39.152" dyno=web.1 connect=0ms service=8ms status=200 bytes=24750 protocol=https
+2017-10-17T03:55:20.380897+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=a6dbddaf-1741-4c54-859f-7f7b2a93ccc9 fwd="61.2.39.152" dyno=web.1 connect=1ms service=16ms status=200 bytes=24750 protocol=https
+2017-10-17T03:55:30.497933+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=7c8e5653-a583-4f94-bb4c-e4216bed37a6 fwd="61.2.39.152" dyno=web.1 connect=1ms service=77ms status=200 bytes=24750 protocol=https
+2017-10-17T04:02:01.618034+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=b2bbd93a-a0d6-425d-9c5a-19ecba233b70 fwd="61.2.39.152" dyno=web.1 connect=1ms service=9ms status=200 bytes=24750 protocol=https
+2017-10-17T04:03:53.926556+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=455cf6f7-e9a0-4ea9-a358-a783d26f35cf fwd="61.2.39.152" dyno=web.1 connect=2ms service=13ms status=200 bytes=24750 protocol=https
+2017-10-17T04:07:59.447725+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=612fbe94-ac8d-40a8-b523-76126ebcff5a fwd="61.2.39.152" dyno=web.1 connect=0ms service=89ms status=200 bytes=24750 protocol=https
+2017-10-17T04:32:04.424851+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=5e0aa283-9040-4182-95c3-01b2a0250fb0 fwd="59.98.58.210" dyno=web.1 connect=0ms service=9ms status=200 bytes=24750 protocol=https
+2017-10-17T05:22:49.387685+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=d021fce6-223d-43ed-b53c-daa7a9bc77a0 fwd="59.98.58.210" dyno=web.1 connect=0ms service=10ms status=200 bytes=24750 protocol=https
+2017-10-17T05:24:55.467740+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=25ab5b86-e90f-4e55-852b-5217cefb2bae fwd="59.98.58.210" dyno=web.1 connect=0ms service=9ms status=200 bytes=24750 protocol=https
+2017-10-17T05:27:13.569104+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=5705b5bc-4153-4687-8822-ef71fc7a4889 fwd="59.98.58.210" dyno=web.1 connect=0ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T05:27:29.809002+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=ecb00e62-392d-4009-b13f-82c9429de1d2 fwd="59.98.58.210" dyno=web.1 connect=0ms service=28ms status=200 bytes=24750 protocol=https
+2017-10-17T05:30:21.000986+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=499a3723-89a3-4da8-a653-689af8eb9222 fwd="59.98.58.210" dyno=web.1 connect=0ms service=10ms status=200 bytes=24750 protocol=https
+2017-10-17T05:31:39.693793+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=f713e975-defe-44e9-a8cf-b4a2b3c53aad fwd="59.98.58.210" dyno=web.1 connect=0ms service=13ms status=200 bytes=24750 protocol=https
+2017-10-17T05:33:04.279110+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=f6d99607-4a9d-4986-8e3c-89df7145a065 fwd="59.98.58.210" dyno=web.1 connect=0ms service=10ms status=200 bytes=24750 protocol=https
+2017-10-17T05:45:03.626134+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=fd42f5bb-8198-4880-b819-8331417793cb fwd="59.98.58.210" dyno=web.1 connect=0ms service=12ms status=200 bytes=24750 protocol=https
+2017-10-17T05:46:29.914755+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=f3216310-6a62-41d1-9f13-db2ab9078c26 fwd="59.98.58.210" dyno=web.1 connect=0ms service=24ms status=200 bytes=24750 protocol=https
+2017-10-17T05:47:18.160678+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=ec92fefa-c4ee-4c11-bfb0-0740d76d37e7 fwd="59.98.58.210" dyno=web.1 connect=0ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T05:47:37.285523+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=eb12dcb5-ca61-45ee-a447-981f5ec6fa0e fwd="59.98.58.210" dyno=web.1 connect=0ms service=18ms status=200 bytes=24750 protocol=https
+2017-10-17T05:48:29.062359+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=69618e8d-41fa-4bd4-9242-cced4daa6e83 fwd="59.98.58.210" dyno=web.1 connect=0ms service=8ms status=200 bytes=24750 protocol=https
+2017-10-17T05:48:59.703684+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=dd3036c9-5d32-4fd4-b08a-901335ab0c26 fwd="59.98.58.210" dyno=web.1 connect=0ms service=12ms status=200 bytes=24750 protocol=https
+2017-10-17T05:49:38.731620+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=ac07e171-1d1a-4235-ac2a-76c499240fc6 fwd="59.98.58.210" dyno=web.1 connect=0ms service=12ms status=200 bytes=24750 protocol=https
+2017-10-17T05:50:36.440610+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=2b29774e-2ee4-40d4-8a43-6917bba8cea0 fwd="59.98.58.210" dyno=web.1 connect=0ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T05:50:40.998642+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=383a16dd-7a7e-45b6-97aa-86f7236cea02 fwd="59.98.58.210" dyno=web.1 connect=0ms service=9ms status=200 bytes=24750 protocol=https
+2017-10-17T05:51:39.892937+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=2198f676-016b-4471-bde9-f22f87b5f212 fwd="59.98.58.210" dyno=web.1 connect=1ms service=12ms status=200 bytes=24750 protocol=https
+2017-10-17T05:51:41.457186+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=697b8cd4-03d5-4f80-95be-0dfc5728da86 fwd="59.98.58.210" dyno=web.1 connect=0ms service=41ms status=200 bytes=24750 protocol=https
+2017-10-17T05:53:52.638258+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=925bb624-0c95-4f80-a03d-3fbb47e8ab0f fwd="59.98.58.210" dyno=web.1 connect=0ms service=8ms status=200 bytes=24750 protocol=https
+2017-10-17T05:53:54.334737+00:00 heroku[router]: at=info method=GET path="/proxy/?shop=testingappstuff4.myshopify.com&path_prefix=%2Fapps%2Ftest&timestamp=1508219634&signature=c64637479e59bed731f2fae10eae359e15a66e0609cd4dd73a57d4a1f31a5b9e" host=firstorder.herokuapp.com request_id=0a2ec835-d483-48ce-8b44-5747e9474d62 fwd="59.98.58.210, 172.24.169.35,23.227.37.119" dyno=web.1 connect=0ms service=16ms status=200 bytes=2427 protocol=https
+2017-10-17T05:53:54.321175+00:00 app[web.1]: inside shopify session
+2017-10-17T05:53:54.321193+00:00 app[web.1]: return_to in shopify session /proxy/
+2017-10-17T05:53:54.321195+00:00 app[web.1]: authenticate
+2017-10-17T05:53:54.321317+00:00 app[web.1]: redirecting to shopify for authentication
+2017-10-17T05:55:19.274005+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=fe8bd772-7f3b-40fc-8f9f-6e5817568f7c fwd="59.98.58.210" dyno=web.1 connect=0ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T05:55:22.538214+00:00 heroku[router]: at=info method=GET path="/proxy/?shop=testingappstuff4.myshopify.com&path_prefix=%2Fapps%2Ftest&timestamp=1508219722&signature=f72060ccc61e8d81ac9a4ada7f58e7f0cbbe93e597509334f584149cc7736c61" host=firstorder.herokuapp.com request_id=574764bc-06eb-4a4f-9cf3-d43ced0f8ccf fwd="59.98.58.210, 172.24.169.37,23.227.37.119" dyno=web.1 connect=0ms service=3ms status=200 bytes=2427 protocol=https
+2017-10-17T05:55:22.535886+00:00 app[web.1]: inside shopify session
+2017-10-17T05:55:22.535904+00:00 app[web.1]: return_to in shopify session /proxy/
+2017-10-17T05:55:22.535906+00:00 app[web.1]: authenticate
+2017-10-17T05:55:22.536000+00:00 app[web.1]: redirecting to shopify for authentication
+2017-10-17T05:56:35.000681+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=022a58a5-8eee-49c8-856b-9f8376639839 fwd="59.98.58.210" dyno=web.1 connect=0ms service=31ms status=200 bytes=24750 protocol=https
+2017-10-17T05:56:36.709766+00:00 heroku[router]: at=info method=GET path="/proxy/?shop=testingappstuff4.myshopify.com&path_prefix=%2Fapps%2Ftest&timestamp=1508219796&signature=b5b7d059fbf9164f4bab8faf31e3eb739e5f11414f17f322a110efe3b92c4446" host=firstorder.herokuapp.com request_id=d8131523-5543-4cc8-a808-ac85619a23c0 fwd="59.98.58.210, 172.24.169.36,23.227.37.119" dyno=web.1 connect=1ms service=6ms status=200 bytes=2427 protocol=https
+2017-10-17T05:56:36.707191+00:00 app[web.1]: inside shopify session
+2017-10-17T05:56:36.707213+00:00 app[web.1]: return_to in shopify session /proxy/
+2017-10-17T05:56:36.707215+00:00 app[web.1]: authenticate
+2017-10-17T05:56:36.707284+00:00 app[web.1]: redirecting to shopify for authentication
+2017-10-17T06:02:24.078997+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=bf9068ea-3c6c-46ba-ae0b-1bdc8410464b fwd="59.98.58.210" dyno=web.1 connect=1ms service=31ms status=200 bytes=24750 protocol=https
+2017-10-17T06:02:26.119504+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=e7daccd9-a012-4af0-abab-d2b8eda0762c fwd="59.98.58.210" dyno=web.1 connect=1ms service=31ms status=200 bytes=24750 protocol=https
+2017-10-17T06:03:42.111761+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=da646ca5-3e50-47b3-9993-0cdf1c07b2b1 fwd="59.98.58.210" dyno=web.1 connect=0ms service=17ms status=200 bytes=24750 protocol=https
+2017-10-17T06:06:43.291609+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=600311d8-8b88-4ae1-9720-d260b9adbd8d fwd="59.98.58.210" dyno=web.1 connect=0ms service=10ms status=200 bytes=24750 protocol=https
+2017-10-17T06:06:44.869080+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=44830a58-4f6f-40ac-982c-81dfd7390803 fwd="59.98.58.210" dyno=web.1 connect=0ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T06:13:04.647947+00:00 heroku[web.1]: Cycling
+2017-10-17T06:13:04.647947+00:00 heroku[web.1]: State changed from up to starting
+2017-10-17T06:13:05.671900+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-10-17T06:13:05.689853+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-10-17T06:13:05.691295+00:00 app[web.1]: === puma shutdown: 2017-10-17 06:13:05 +0000 ===
+2017-10-17T06:13:05.691325+00:00 app[web.1]: - Goodbye!
+2017-10-17T06:13:06.286216+00:00 heroku[web.1]: Process exited with status 0
+2017-10-17T06:13:07.809392+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 10964`
+2017-10-17T06:13:13.321798+00:00 app[web.1]: Puma starting in single mode...
+2017-10-17T06:13:13.321834+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-10-17T06:13:13.321843+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-10-17T06:13:13.321844+00:00 app[web.1]: * Environment: production
+2017-10-17T06:13:13.321938+00:00 app[web.1]: * Listening on tcp://0.0.0.0:10964
+2017-10-17T06:13:13.322265+00:00 app[web.1]: Use Ctrl-C to stop
+2017-10-17T06:13:13.810219+00:00 heroku[web.1]: State changed from starting to up
+2017-10-17T06:30:59.127593+00:00 heroku[resque.1]: Cycling
+2017-10-17T06:30:59.128226+00:00 heroku[resque.1]: State changed from up to starting
+2017-10-17T06:30:59.845991+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-10-17T06:31:02.880380+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-10-17T06:31:03.400668+00:00 heroku[resque.1]: Process exited with status 0
+2017-10-17T06:31:03.625844+00:00 heroku[resque.1]: State changed from starting to up
+2017-10-17T14:28:53.715330+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=5301262a-c299-44a9-82c1-87b573d2a53b fwd="209.171.206.98" dyno=web.1 connect=1ms service=412ms status=200 bytes=24750 protocol=https
+2017-10-17T14:29:27.956243+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=509cfde3-9f1a-4882-99da-8362490bf710 fwd="209.171.206.98" dyno=web.1 connect=1ms service=11ms status=200 bytes=24750 protocol=https
+2017-10-17T14:29:45.343839+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=bd99f492-0319-43c5-8f25-5940e545d4d1 fwd="209.171.206.98" dyno=web.1 connect=1ms service=26ms status=200 bytes=24750 protocol=https
+2017-10-17T14:29:55.109437+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=f132343e-819d-4a20-9a39-83ef4a497c1a fwd="209.171.206.98" dyno=web.1 connect=1ms service=13ms status=200 bytes=24750 protocol=https
+2017-10-17T14:29:55.173381+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=221e6ee1-4866-4d42-894e-a155aa1f65be fwd="209.171.206.98" dyno=web.1 connect=1ms service=9ms status=200 bytes=24750 protocol=https
+2017-10-17T14:30:49.712561+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=2319f844-87f6-4d0a-856e-ede066f73ff1 fwd="209.171.206.98" dyno=web.1 connect=0ms service=25ms status=200 bytes=24750 protocol=https
+2017-10-17T14:30:53.024965+00:00 heroku[router]: at=info method=GET path="/load_first_order.js?shop=testingappstuff4.myshopify.com" host=firstorder.herokuapp.com request_id=bb2f5589-e9e8-4ea9-9c07-79607bfc4bff fwd="209.171.206.98" dyno=web.1 connect=1ms service=17ms status=200 bytes=24750 protocol=https
+2017-10-18T06:32:49.394814+00:00 heroku[web.1]: Cycling
+2017-10-18T06:32:49.395426+00:00 heroku[web.1]: State changed from up to starting
+2017-10-18T06:32:50.275318+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2017-10-18T06:32:50.321138+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2017-10-18T06:32:50.333232+00:00 app[web.1]: === puma shutdown: 2017-10-18 06:32:50 +0000 ===
+2017-10-18T06:32:50.333235+00:00 app[web.1]: - Goodbye!
+2017-10-18T06:32:50.775996+00:00 heroku[web.1]: Process exited with status 0
+2017-10-18T06:32:54.437467+00:00 heroku[web.1]: Starting process with command `bundle exec rackup config.ru -p 13809`
+2017-10-18T06:33:03.774448+00:00 app[web.1]: Puma starting in single mode...
+2017-10-18T06:33:03.774474+00:00 app[web.1]: * Version 3.7.0 (ruby 2.3.0-p0), codename: Snowy Sagebrush
+2017-10-18T06:33:03.774479+00:00 app[web.1]: * Min threads: 0, max threads: 16
+2017-10-18T06:33:03.774480+00:00 app[web.1]: * Environment: production
+2017-10-18T06:33:03.774584+00:00 app[web.1]: * Listening on tcp://0.0.0.0:13809
+2017-10-18T06:33:03.774843+00:00 app[web.1]: Use Ctrl-C to stop
+2017-10-18T06:33:04.279048+00:00 heroku[web.1]: State changed from starting to up
+2017-10-18T06:51:27.438148+00:00 heroku[resque.1]: Cycling
+2017-10-18T06:51:27.438798+00:00 heroku[resque.1]: State changed from up to starting
+2017-10-18T06:51:28.851756+00:00 heroku[resque.1]: Stopping all processes with SIGTERM
+2017-10-18T06:51:30.278154+00:00 heroku[resque.1]: Starting process with command `env TERM_CHILD=1 RESQUE_TERM_TIMEOUT=7 QUEUE=* bundle exec rake resque:work`
+2017-10-18T06:51:31.085913+00:00 heroku[resque.1]: State changed from starting to up
+2017-10-18T06:51:38.422946+00:00 heroku[resque.1]: Process exited with status 0

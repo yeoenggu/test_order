@@ -125,7 +125,8 @@ class SinatraApp < Sinatra::Base
     webhook_session do |params|
       current_shop.destroy
     end
-    logout
+    clear_session current_shop
+    # logout
   end
   
   # this endpoint recieves the order webhook
