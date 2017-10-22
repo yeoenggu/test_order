@@ -453,6 +453,8 @@ Shop.new
 Shop.all
 
 
+bundle update gem ... when updated private gems
+
 
 
 
