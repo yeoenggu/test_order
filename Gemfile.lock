@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://bitbucket.org/eng_guan_yeo/shopify-sinatra-app.git
-  revision: 560cff98ad2a4c1bca04a86992a61125e2dead3d
+  revision: b20e330b87f070d4f9170e43f6374a5fa6ff2bd1
   specs:
     shopify-sinatra-app (0.3.3)
       activesupport (~> 4.1.1)
