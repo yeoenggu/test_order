@@ -21,7 +21,7 @@ class SinatraApp < Sinatra::Base
   use Rack::Flash, :accessorize => [:info, :error, :success], :sweep => true
   set :static, true
 
-  enable :sessions, Rack::Session::Pool
+  enable :sessions
 
   configure do 
     HttpLog.configure do |config|
