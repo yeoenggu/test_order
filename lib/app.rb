@@ -21,7 +21,7 @@ class SinatraApp < Sinatra::Base
   use Rack::Flash, :accessorize => [:info, :error, :success], :sweep => true
   set :static, true
 
-  enable :sessions
+  enable :sessions, Rack::Session::Pool
 
   configure do 
     HttpLog.configure do |config|
@@ -128,7 +128,7 @@ class SinatraApp < Sinatra::Base
       current_shop.destroy
       logout
     end
-    
+    puts "session: " +  session[:shopify].to_s
     # logout
   end
   

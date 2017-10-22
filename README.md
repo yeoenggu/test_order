@@ -446,6 +446,13 @@ heroku logs --tails
 heroku run bundle exec rake -T
 heroku run bundle exec rake db:rollback
 
+heroku run console (irb)
+require './lib/app.rb'
+
+Shop.new
+Shop.all
+
+
 
 
 
