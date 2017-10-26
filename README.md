@@ -1,3 +1,14 @@
+<div class="peek-a-bar bizzbar" id="__peek_a_bar_15604217" 
+style="display: block; margin: 0px; position: fixed; width: 100%; left: 0px; right: 0px; text-align: center; padding: 1em; background-color: rgb(235, 89, 60); opacity: 0.9; bottom: 0px;">
+<p class="bizztext"> Get 20% off your first purchase. <button class="bizzbutton"><a href="https://testingappstuff8.myshopify.com/cart/1282402746397:1?discount=TEST10">Buy Now</a></button></p></div>
+
+
+
+
+
+1) color bizz text
+2) !important
+
 # e-commerce
 
 ## close the loop ....
