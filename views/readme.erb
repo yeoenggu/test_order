@@ -1,0 +1,158 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-1"></div>
+  <div class="col-md-6">
+    <div id="postlist">
+      <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">Welcome</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+                Thanks for installing First Sales.  Please feel free to drop me an email 
+                Please feel free to support: eg@showcrowd.co if you have any problems.  
+            </div>
+        </div>
+        
+        <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">Create a discount coupon and enter it in</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+                
+                First, we need a discount code that limits the customer to 1 use only. This is because it should be a special discount just for new customers. If it is can be used more than once, it would not be special. Second, we need the discount to be active and no end date. This makes it easy for management. Do not worry about control since it is already limited to 1 use per customer and you can disable the discount code when you uninstall the app. Please do not let use the discount code elsewhere. This would make it easy to check on the effectiveness of the app.
+            </div>
+        </div>
+        <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">How does it work?</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+                <iframe src="https://giphy.com/embed/l4Ep5ohMWXMII4qwU" width="480" height="346" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/first-sales-l4Ep5ohMWXMII4qwU">via GIPHY</a></p>
+
+                It will display the promobar provided the following 2 conditions are met.
+                <ul>
+                    <li>
+                        The app can find the "Add to Cart" on the page.
+                    </li>
+                    <li>
+                        Visitor has kept the products' photos visible in the browser too enough to trigger the promobar.
+                    </li>
+                    <li>
+                        Visitor must be a new prospect or a registered user who has yet to make a single purchase.  
+                    </li>
+                </ul>
+
+                </a>
+            </div>
+            
+        </div>
+        <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">It does not work on most homepage ...</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+                <a href="#" class="thumbnail">
+                    <img alt="Image" src=<%="#{base_url}/homepage.jpeg"%>>
+                </a>
+                    Most homepage does not have an "Add to Cart" button.  If the app cannot find it, it would not work and this is designed that way.  Most promobar will work on homepage but we designed "First Sales" to be different.  It work on product page as visitor to product's page is more engaged than visitor to homepage.  Thus, it justify to give that visitor a bigger discount to convert.
+
+                    It will not work on pages that does not have "Add to Cart" button.  This include about, contact, FAQ pages for example.  
+                </a>
+            </div>
+            
+        </div>
+        <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">If it still does not work...</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+
+
+                If it still does not work, drag the following <a style="display: inline-block; padding: 1px 6px; height: 18px; color: #fff; background: #32a0eb; border-radius: 4px;" href="javascript:
+                                      (function(d) {
+                                       var body = d.getElementsByTagName('body')[0],
+                                       script = d.createElement('script');
+                                       script.src = '<%="#{base_url}"%>/testquery.js';
+                                       body.appendChild(script);
+                                      }(window.document));
+                    ">this link</a>
+                </a> to your browser's bookmark bar.  Visit a page that has "Add to Cart" button and click on the bookmarklet.  It will run a test and determine whether we support the theme you are using.  Please remember that the page must have "Add to Cart" button.
+                
+            </div>
+            
+        </div>
+        <div class="panel">
+                <div class="panel-heading">
+                    <div class="text-center">
+                        <div class="row">
+                            <div class="col-sm-9">
+                                <h3 class="pull-left">Disabling First Sales on certain page</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="panel-body">
+                1. Visit your Theme and click 'Edit Code' in the action drop down list.
+                2. Open the product.liquid page inside the Template folder.
+                3. To disable FirstSales from every product page, simply paste this snippet at the top as a new line:
+                <strong> <meta name='first_sales:enabled' content='false'> </strong>
+                An example is shown below.  Make sure you click 'Save' to save it.
+                <a href="#">
+                    <img alt="Image" src=<%="#{base_url}/simple_disabled.png"%>>
+                </a>
+
+                <br>
+                <br>
+                4. To disable FirstSales on a specific products or page, you will need to create an 'if' statement to check for the products that you want FirstSales to be disabled.
+                Below is an example that disable FirstSales on 'expensive-bags' and 'great-stuff' products.
+                <a href="#"∂gr>
+                    <img alt="Image" src=<%="#{base_url}/complex_disabled.png"%>>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+</div>

@@ -1,17 +1,46 @@
-<div class="peek-a-bar bizzbar" id="__peek_a_bar_15604217" 
-style="display: block; margin: 0px; position: fixed; width: 100%; left: 0px; right: 0px; text-align: center; padding: 1em; background-color: rgb(235, 89, 60); opacity: 0.9; bottom: 0px;">
-<p class="bizztext"> Get 20% off your first purchase. <button class="bizzbutton"><a href="https://testingappstuff8.myshopify.com/cart/1282402746397:1?discount=TEST10">Buy Now</a></button></p></div>
+
+# TO DO
+- new listing
+  - video
+    - show text and sequence 
+- mobile screenshots
+====>
+- better onboarding
+  - readme first
+    - tool for debug
+
+  - if discount code is not changed, we use an alert
+  
+- add in disabling
+  - add in documentation
+    - images
+    - help + support
+--->
+- increase font size
+- clean up
+- error reporting
+====>
+
+- load proxy is not working ... proxy not defined.
 
 
+- engage dev from video
+- early manual marketing
+  - fb shopify groups
+  - influencer blogs
+  - keywords:
+    - first fb campaign. first 10 user or 100 user
+  - forum?
+
+- clean up?
 
 
-
-1) color bizz text
-2) !important
+# done
+- read up on engaging shopify
 
 # e-commerce
 
-## close the loop ....
+- close the loop ....
   - valid business problem.
   - question is whether a simple solution will suffice
     - just put a coupon
@@ -32,7 +61,6 @@ style="display: block; margin: 0px; position: fixed; width: 100%; left: 0px; rig
 
 
   - this will be good for lazada
-  
 
 - lazada discovery
   - no direct communications
@@ -41,12 +69,22 @@ style="display: block; margin: 0px; position: fixed; width: 100%; left: 0px; rig
 
 - other apps
   - messaging
+    - personalized, dynamic messaging
   - dynamic hero
   - blog to product
+    - custom CTA
+      - email
+      - product page
+      - blog post
   - personalized product
     - reoder
     - low in stock
     - back in stock
+  - sales event?
+    - member sales
+  - Q+A
+    - someone already did this
+- popular free apps ?
 
 - follow up on first order
   - next order
@@ -57,10 +95,6 @@ style="display: block; margin: 0px; position: fixed; width: 100%; left: 0px; rig
 
 - shopify marketing
   - 1st 25 .... manually via service, via forum.  mass emailing not allow
-
-
-
-# To Do
 
 
 ## admin
@@ -463,6 +497,7 @@ require './lib/app.rb'
 Shop.new
 Shop.all
 
+Shop.sum(:count)
 
 bundle update gem ... when updated private gems
 

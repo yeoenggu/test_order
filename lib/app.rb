@@ -105,12 +105,6 @@ class SinatraApp < Sinatra::Base
   # this is a simple example that fetches some products
   # from Shopify and displays them inside your app
   get '/' do
-    puts "********"
-    puts "params[:shop]: " +  params[:shop].to_s
-    puts "session: " +  session[:shopify].to_s
-    puts "sanitized_shop_name: " +  sanitized_shop_name.to_s
-    puts "Shop name : "  + current_shop_name.to_s
-    puts "********"
     shopify_session do
       # need this to test whether the token is valid.  
       @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
@@ -215,7 +209,11 @@ class SinatraApp < Sinatra::Base
   end
 
   get '/help' do
-    erb :help
+    erb :help, :layout => :help_layout
+  end
+
+  get '/readme' do
+    erb :readme, :layout => :readme_layout
   end
 
   get '/proxy/' do
@@ -307,8 +305,10 @@ class SinatraApp < Sinatra::Base
         display_scope: 'online_store'
       )
       begin
+        puts "loading script ...."
         load_script_tag.save!
       rescue => e
+        puts "loading script failed...."
         raise unless load_script_tag.persisted?
       end
     end

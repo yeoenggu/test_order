@@ -1,0 +1,16 @@
+<script type="text/javascript">
+     window.mainPageTitle = 'ReadMe';
+    ShopifyApp.ready(function(){
+      ShopifyApp.Bar.initialize({
+        title: window.mainPageTitle,
+        icon: '<%= "#{base_url}/icon.png" %>',
+        buttons: {
+          primary: {
+            label: "Back",
+            href: "/",
+            target: 'app'
+          }
+        }
+      });
+    });
+</script>

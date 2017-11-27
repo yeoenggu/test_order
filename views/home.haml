@@ -1,6 +1,9 @@
 
 :javascript
     jQuery(document).ready(function($) {
+            if ($( "input[value='PleaseChangeThisToYourOwnDiscountCode']" ).val() == "PleaseChangeThisToYourOwnDiscountCode") {
+             ShopifyApp.flashNotice("Please change the discount code.");
+            };
             $("#bizzbutton").text('#{@setting.button_text}');
             var cache = $("#bizztext").children();
             $("#bizztext").text('#{@setting.bar_text}').append(cache);
@@ -287,6 +290,7 @@
                     .col-md-4
                         = number_field_tag "targeted_time", :id => "targeted_time", :min => 10, :max => 60, :step => 1, :value => @setting.targeted_time, :class => "form-control input-md"
                         %span.help-block No of seconds that you consider the visitor to be engaged.  It will trigger the bar to make an offer.
+                        %span.help-block Please note that the promo bar will only be shown on page that has 'Add to Cart' button, to new visitor who has yet to make their first purchase and they are consider to be engaged.
         .panel.panel-default
             .panel-heading
                 %h4 How it look
