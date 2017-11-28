@@ -286,6 +286,11 @@
                         = select_tag "text_font_family" , :options => ["Serif", "Sans Serif", 'Arial', 'Arial Black', "Georgia", 'Cambria', 'Calibri', 'Courier New', 'Futura', 'Helvetica', 'Lucida Grande', 'Tahoma', 'Times New Roman', 'Trebuchet MS', 'Verdana'], :selected => @setting.text_font_family_name,  :class => 'form-control'
                         %span.help-block Font family
                 .form-group
+                    = label_tag "Font size", :class => 'col-md-4 control-label', :for => "text_font_size"
+                    .col-md-4
+                        = number_field_tag "text_font_size", :id => "text_font_size", :min => 14, :max => 24, :step => 2, :value => @setting.text_font_size.chomp('px'), :class => "form-control input-md"
+                        %span.help-block The font size of the text in pixels(px).
+                .form-group
                     = label_tag "Time to trigger bar", :class => 'col-md-4 control-label', :for => "targeted_time"
                     .col-md-4
                         = number_field_tag "targeted_time", :id => "targeted_time", :min => 10, :max => 60, :step => 1, :value => @setting.targeted_time, :class => "form-control input-md"

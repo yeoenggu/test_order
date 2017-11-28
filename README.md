@@ -8,15 +8,13 @@
 - better onboarding
   - readme first
     - tool for debug
-
   - if discount code is not changed, we use an alert
-  
 - add in disabling
   - add in documentation
     - images
     - help + support
---->
 - increase font size
+--->
 - clean up
 - error reporting
 ====>

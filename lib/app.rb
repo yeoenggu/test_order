@@ -200,6 +200,9 @@ class SinatraApp < Sinatra::Base
       targeted_time = params['targeted_time']
       @setting.targeted_time = targeted_time if targeted_time
 
+      text_font_size = params['text_font_size']
+      @setting.text_font_size = text_font_size + 'px' if text_font_size
+
       @setting.save!
 
       # erb :home
