@@ -116,78 +116,6 @@
 
 # Done
 
-- test
-  - installing and uninstalling
-  - flash issue
-      - fixing haml. i hard coded flash messages.  these message seem to hang around.
-      - change to sinatra flash - worked
-- bugs
-
-  - onboarding
-    - install
-    - change setting
-      - change the message
-      - change the button text
-      - change the font
-        - bug.  switching font does not work.  revert to local copy
-      - change time to trigger 
-      - change the colors
-        - bar
-        - message
-        - buttons 
-        - buttons text
-        - buttons text hover
-  - test discount
-    - default 
-    - invalid
-    - valid
-      - test web hook
-        - increase count
-
-  - test enabling and disabling
-    - enabled in 
-      - home page
-      - product page
-    - not enabled
-      - about us
-      - blog
-      - search
-      - cart
-
-    - product, collection
-    - checkout, blog, etc
-
-  - test product variant
-    - with single options 
-    - with multiple options
-      - default value
-      - no default value
-        - it select the first one
-        - if you select the option, it will switch to the new one.
-      - how do I test the edge cases ?
-        - manually trace or recreate it 
-        - manually grep the generated js.  add console log lines to it.
-          - test on the 3 websites
-          - test more ...
-  - test new customer vs old customer.
-    - new customer will see it
-      - eg@showcrowd.co
-    - old customer will not.
-      yeoenggu@gmail.com
-
-- review 
-  - default setting,
-  - messages etc
-- publishing app
-  - logos 
-  - screen shots
-  - landing page (deferred)
-  - write up
-  - video (deferred)
-==========>
-- final round of test
-- monitoring
-
 
 # Deferred
 - puma config
@@ -197,9 +125,6 @@
   - something wrong with foreman since I can run the command in procfile ... no problem.
     but when I tried it with foreman ... request never come back.  connection establish.  but took very long to process ..
 - charging the user
-
-- store specific jquery selector
-  - to select the variant
 - omniauth
   - routing to failure ...
   - retry
@@ -261,6 +186,10 @@ https://1c3cdbb2.ngrok.io/proxy
 
 whenever you change ngrok, make sure db is empty.  Manually delete it if needed.
 3rd part JS is added if shop is new.  
+
+## sinatra env
+
+SHOPIFY_REDIRECT_URI=https://b71634ca.ngrok.io/auth/shopify/callback
 
 ## running local server
 bundle exec foreman run rackup -s Puma config.ru
