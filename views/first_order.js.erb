@@ -651,10 +651,10 @@ aren’t available to the outside world.
         position: 'bottom',
         closeOnClick: true,
         onShow: function() {
-             console.log('called after bar is shown');
+             // console.log('called after bar is shown');
         },
         onHide: function() {
-             console.log('called after bar is hidden');
+             // console.log('called after bar is hidden');
         }
       });
 
@@ -709,7 +709,7 @@ aren’t available to the outside world.
             // hard code for the time being
             var discount_html = "?discount=<%= @setting.discount_code %>";
             final_html = html_1 + "https://" +window.location.hostname + productUrl + discount_html + html_2;
-            console.log("final html "+ final_html);
+            // console.log("final html "+ final_html);
             bar.show({
                 html: final_html
             });
