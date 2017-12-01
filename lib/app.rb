@@ -11,7 +11,12 @@ require './lib/jobs/increment_job'
 
 require 'httplog'
 require 'padrino-helpers'
+require 'airbrake-ruby'
 
+Airbrake.configure do |c|
+  c.project_id = 164967
+  c.project_key = '6201ef180b9f56f69667f0b2cc4c2d22'
+end
 
 class SinatraApp < Sinatra::Base
   register Sinatra::Shopify

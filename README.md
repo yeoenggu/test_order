@@ -1,10 +1,9 @@
-Testing 123
+
 # TO DO
 - new listing
   - video
     - show text and sequence 
 - mobile screenshots
-====>
 - better onboarding
   - readme first
     - tool for debug
@@ -14,12 +13,10 @@ Testing 123
     - images
     - help + support
 - increase font size
---->
 - clean up
-- error reporting
 ====>
-
-- load proxy is not working ... proxy not defined.
+- error reporting
+- revisit airbrake
 
 
 - engage dev from video
