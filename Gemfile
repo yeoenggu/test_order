@@ -26,7 +26,7 @@ gem 'padrino'
 gem 'foreman'
 gem 'redis', '~>3.2'
 gem 'redis-namespace'
-gem 'airbrake-ruby', '~> 2.6'
+gem 'airbrake', '~> 7.1'
 
 group :production do
   gem 'pg'
