@@ -240,6 +240,9 @@ class SinatraApp < Sinatra::Base
     erb :'proxy.liquid', :layout => false
   end
 
+  # for testing airbrake
+  get('/') { 1/0 }
+
   get '/load_first_order.js' do
     if !enabled?
       halt 204
