@@ -7,18 +7,11 @@ require 'liquid'
 require 'tilt/coffee'
 require 'haml'
 require 'pry'
-require './lib/jobs/increment_job'
+
 
 require 'httplog'
 require 'padrino-helpers'
-require 'airbrake-ruby'
 
-Airbrake.configure do |c|
-  c.project_id = 164967
-  c.project_key = '6201ef180b9f56f69667f0b2cc4c2d22'
-   # Display debug output.
-  c.logger.level = Logger::DEBUG
-end
 
 class SinatraApp < Sinatra::Base
   register Sinatra::Shopify
@@ -114,7 +107,7 @@ class SinatraApp < Sinatra::Base
   get '/' do
     shopify_session do
       # need this to test whether the token is valid.  
-      @products = ShopifyAPI::Product.find(:all, params: { limit: 10 })
+      @products = ShopifyAPI::Product.find(:all, params: { limit: 1 })
       # retrieve setting
       @setting = current_shop.setting
       haml :home, :layout => :first_order_app
@@ -132,25 +125,7 @@ class SinatraApp < Sinatra::Base
     puts "session: " +  session[:shopify].to_s
     # logout
   end
-  
-  # this endpoint recieves the order webhook
-  # and cleans up data, add to this endpoint as your app
-  # stores more data.
-  post '/order' do
-    webhook_session do |params|
-      # if there is a discount code
-      if params["discount_codes"][0]
-        if params["discount_codes"][0]["code"] == current_shop.setting.discount_code
-          my_webhook_job(IncrementJob, params)
-        else 
-          puts "the discount code does not match"
-        end
-      else
-        puts "there are no discount_code"
-      end
-    end
-  end
-  
+
   @@font = {
     'Serif' => "Georgia, 'Times New Roman', Times, serif",
     'Sans Serif' => "Helvetica, Arial, sans-serif",
@@ -226,37 +201,6 @@ class SinatraApp < Sinatra::Base
     erb :readme, :layout => :readme_layout
   end
 
-  get '/proxy/' do
-    if !enabled?
-      halt 204
-    end
-
-    params = request.env['rack.request.query_hash']
-    shopify_session do
-      # do nothing.
-    end
-
-    content_type :'application/liquid'
-    erb :'proxy.liquid', :layout => false
-  end
-
-  # for testing airbrake
-  get('/') { 1/0 }
-
-  get '/load_first_order.js' do
-    if !enabled?
-      halt 204
-    end
-
-    @shop_name = params['shop']
-
-    shop = Shop.find_by(name: @shop_name)
-    @setting = shop.setting
-    content_type :js
-    # coffee :load_first_order
-    erb :'first_order.js', :layout => false
-  end
-
   def is_protected_from_csrf?
     return false
   end
@@ -328,4 +272,43 @@ class SinatraApp < Sinatra::Base
   end
 end
 
+class Setting < ActiveRecord::Base
+  belongs_to :shop
 
+  # validates :shop_id, presence: true
+  # validates :shop_id, uniqueness: true
+
+  after_initialize :set_default_values
+  
+  def set_default_values
+    # Only set if time_zone IS NOT set
+    self.bar_color ||= "#eb593c"
+    self.text_color ||= "#fff"
+    self.text_font_family ||= "Georgia, 'Times New Roman', Times, serif"
+    self.text_font_family_name ||= "Serif"
+    self.text_font_size ||= "14px"
+    self.button_color ||= "#333"
+    self.button_hover_color ||= "#0000ff"
+    self.button_text_color ||= "white"
+    self.bar_text ||= "Get 20% off your first purchase."
+    self.button_text ||= "Buy Now"
+    self.targeted_time ||= 15
+    self.discount_code ||= "PleaseChangeThisToYourOwnDiscountCode"
+  end
+end
+
+class Shop < ActiveRecord::Base
+  after_create :create_setting
+  has_one :setting, dependent: :destroy
+
+  def increaseCount
+    self.count += 1
+    save!
+  end
+  
+  private
+
+  def create_setting
+    Setting.create(shop: self)
+  end
+end
